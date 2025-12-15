@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Relatório Técnico</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; margin: 10px; font-weight: 600; }
+        .btn-primary { background: #007bff; color: white; }
+        .btn-success { background: #28a745; color: white; }
+        .btn-warning { background: #ffc107; color: #212529; }
+        .btn-info { background: #17a2b8; color: white; }
+        .log { 
+            background: white; 
+            border: 1px solid #dee2e6; 
+            padding: 15px; 
+            margin: 10px 0; 
+            border-radius: 8px; 
+            font-family: monospace; 
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .success { background: #d4edda; color: #155724; border-color: #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border-color: #ffeaa7; }
+        .info { background: #d1ecf1; color: #0c5460; border-color: #bee5eb; }
+        
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-close {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Teste do Relatório Técnico do Imóvel</h1>
+        
+        <div class="test-section">
+            <h3>Testes Funcionais:</h3>
+            <button class="btn btn-primary" onclick="abrirModalDocumentos()">Abrir Modal de Documentos</button>
+            <button class="btn btn-success" onclick="testarValidacao()">Testar Validação</button>
+            <button class="btn btn-warning" onclick="testarSalvamento()">Testar Salvamento</button>
+            <button class="btn btn-info" onclick="testarCarregamento()">Testar Carregamento</button>
+        </div>
+        
+        <div id="resultado"></div>
+
+        <!-- Modal de teste -->
+        <div id="modalDocumentos" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Documentos do Imóvel e Locadores</h3>
+                    <span class="modal-close" onclick="fecharModal()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <!-- Relatório Técnico do Imóvel -->
+                    <div class="relatorio-tecnico mb-4">
+                        <h4 style="color: #333; border-bottom: 2px solid #ff6b35; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                            🔧 Relatório Técnico do Imóvel
+                        </h4>
+                        <div id="relatorioTecnicoContainer" style="background: #fff9f5; padding: 1.5rem; border-radius: 8px; border: 1px solid #ffe0cc;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                <div class="form-group">
+                                    <label for="areaContratada" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Área a ser Contratada (m²)</label>
+                                    <input type="number" id="areaContratada" class="form-input" placeholder="Ex: 1250.50" step="0.01" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="valorTotalObra" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor Total da Obra (R$)</label>
+                                    <input type="number" id="valorTotalObra" class="form-input" placeholder="Ex: 150000.00" step="0.01" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                <div class="form-group">
+                                    <label for="valorObraCaixa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor da Obra - CAIXA (R$)</label>
+                                    <input type="number" id="valorObraCaixa" class="form-input" placeholder="Ex: 90000.00" step="0.01" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="valorObraLocador" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor da Obra - LOCADOR (R$)</label>
+                                    <input type="number" id="valorObraLocador" class="form-input" placeholder="Ex: 60000.00" step="0.01" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                <div class="form-group">
+                                    <label for="prazoTotalObra" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo Total da Obra (meses)</label>
+                                    <input type="number" id="prazoTotalObra" class="form-input" placeholder="Ex: 18" min="1" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="prazoCaixa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo CAIXA (meses)</label>
+                                    <input type="number" id="prazoCaixa" class="form-input" placeholder="Ex: 12" min="1" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="prazoLocador" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo LOCADOR (meses)</label>
+                                    <input type="number" id="prazoLocador" class="form-input" placeholder="Ex: 6" min="1" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; justify-content: flex-end; border-top: 1px solid #ffe0cc; padding-top: 1rem;">
+                                <button class="btn btn-secondary" onclick="limparCampos()">Limpar</button>
+                                <button class="btn btn-warning" onclick="salvarDados()">Salvar Relatório</button>
+                                <button class="btn btn-success" onclick="validarDados()">Validar Dados</button>
+                            </div>
+                            
+                            <div id="statusRelatorioTecnico" style="margin-top: 1rem; padding: 0.75rem; border-radius: 6px; display: none;">
+                                <!-- Status do relatório técnico será exibido aqui -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simular dados do sistema
+        const dadosRelatorio = {
+            areaContratada: null,
+            valorTotalObra: null,
+            valorObraCaixa: null,
+            valorObraLocador: null,
+            prazoTotalObra: null,
+            prazoCaixa: null,
+            prazoLocador: null
+        };
+
+        function log(msg, type = 'info') {
+            const div = document.getElementById('resultado');
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log ' + type;
+            logDiv.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${msg}`;
+            div.appendChild(logDiv);
+            console.log(msg);
+        }
+
+        function abrirModalDocumentos() {
+            log('🔧 Abrindo modal com seção de relatório técnico...', 'info');
+            document.getElementById('modalDocumentos').style.display = 'block';
+            log('✅ Modal aberto com sucesso!', 'success');
+        }
+
+        function fecharModal() {
+            document.getElementById('modalDocumentos').style.display = 'none';
+            log('🚪 Modal fechado', 'info');
+        }
+
+        function limparCampos() {
+            const campos = ['areaContratada', 'valorTotalObra', 'valorObraCaixa', 'valorObraLocador', 'prazoTotalObra', 'prazoCaixa', 'prazoLocador'];
+            campos.forEach(campo => {
+                const elemento = document.getElementById(campo);
+                if (elemento) elemento.value = '';
+            });
+            exibirStatus('Dados limpos', 'info');
+            log('🧹 Campos limpos', 'info');
+        }
+
+        function coletarDados() {
+            const campos = ['areaContratada', 'valorTotalObra', 'valorObraCaixa', 'valorObraLocador', 'prazoTotalObra', 'prazoCaixa', 'prazoLocador'];
+            const dados = {};
+            let valido = true;
+
+            campos.forEach(campo => {
+                const elemento = document.getElementById(campo);
+                if (elemento) {
+                    const valor = elemento.value.trim();
+                    if (valor === '') {
+                        valido = false;
+                    } else {
+                        dados[campo] = parseFloat(valor);
+                    }
+                } else {
+                    valido = false;
+                }
+            });
+
+            return { dados, valido };
+        }
+
+        function salvarDados() {
+            const resultado = coletarDados();
+            
+            if (!resultado.valido) {
+                exibirStatus('Preencha todos os campos obrigatórios', 'error');
+                log('❌ Erro: Dados incompletos', 'error');
+                return;
+            }
+            
+            Object.assign(dadosRelatorio, resultado.dados);
+            dadosRelatorio.dataAtualizacao = new Date().toLocaleString('pt-BR');
+            
+            exibirStatus('Relatório técnico salvo com sucesso!', 'success');
+            log('💾 Dados salvos: ' + JSON.stringify(dadosRelatorio), 'success');
+        }
+
+        function validarDados() {
+            const resultado = coletarDados();
+            
+            if (!resultado.valido) {
+                exibirStatus('Dados incompletos ou inválidos', 'error');
+                log('❌ Erro: Dados incompletos', 'error');
+                return;
+            }
+            
+            const validacoes = [];
+            
+            // Validar se a soma dos valores das obras confere
+            const somaObras = resultado.dados.valorObraCaixa + resultado.dados.valorObraLocador;
+            if (Math.abs(somaObras - resultado.dados.valorTotalObra) > 0.01) {
+                validacoes.push('A soma dos valores CAIXA + LOCADOR deve ser igual ao valor total da obra');
+            }
+            
+            // Validar se a soma dos prazos não excede o prazo total
+            const somaPrazos = resultado.dados.prazoCaixa + resultado.dados.prazoLocador;
+            if (somaPrazos > resultado.dados.prazoTotalObra) {
+                validacoes.push('A soma dos prazos CAIXA + LOCADOR não pode exceder o prazo total');
+            }
+            
+            // Validar área contratada
+            if (resultado.dados.areaContratada <= 0) {
+                validacoes.push('Área contratada deve ser maior que zero');
+            }
+            
+            // Validar valores
+            if (resultado.dados.valorTotalObra <= 0) {
+                validacoes.push('Valor total da obra deve ser maior que zero');
+            }
+            
+            if (validacoes.length > 0) {
+                const mensagem = 'Problemas encontrados:\\n• ' + validacoes.join('\\n• ');
+                exibirStatus(mensagem, 'error');
+                log('❌ Validação falhou: ' + validacoes.length + ' erro(s)', 'error');
+            } else {
+                exibirStatus('Todos os dados estão válidos!', 'success');
+                log('✅ Validação bem-sucedida!', 'success');
+            }
+        }
+
+        function exibirStatus(mensagem, tipo = 'info') {
+            const statusDiv = document.getElementById('statusRelatorioTecnico');
+            if (!statusDiv) return;
+            
+            const cores = {
+                success: { bg: '#d4edda', border: '#c3e6cb', text: '#155724' },
+                error: { bg: '#f8d7da', border: '#f5c6cb', text: '#721c24' },
+                warning: { bg: '#fff3cd', border: '#ffeaa7', text: '#856404' },
+                info: { bg: '#d1ecf1', border: '#bee5eb', text: '#0c5460' }
+            };
+            
+            const cor = cores[tipo] || cores.info;
+            
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = cor.bg;
+            statusDiv.style.border = `1px solid ${cor.border}`;
+            statusDiv.style.color = cor.text;
+            statusDiv.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-weight: 600;">
+                        ${tipo === 'success' ? '✅' : tipo === 'error' ? '❌' : tipo === 'warning' ? '⚠️' : 'ℹ️'}
+                    </span>
+                    <span style="white-space: pre-line;">${mensagem}</span>
+                </div>
+            `;
+        }
+
+        function testarValidacao() {
+            log('🧪 Testando validação com dados de exemplo...', 'info');
+            
+            // Preencher dados de teste
+            document.getElementById('areaContratada').value = '1500.75';
+            document.getElementById('valorTotalObra').value = '200000';
+            document.getElementById('valorObraCaixa').value = '120000';
+            document.getElementById('valorObraLocador').value = '80000';
+            document.getElementById('prazoTotalObra').value = '18';
+            document.getElementById('prazoCaixa').value = '12';
+            document.getElementById('prazoLocador').value = '6';
+            
+            validarDados();
+        }
+
+        function testarSalvamento() {
+            log('💾 Testando salvamento com dados válidos...', 'info');
+            testarValidacao();
+            salvarDados();
+        }
+
+        function testarCarregamento() {
+            log('📂 Testando carregamento de dados salvos...', 'info');
+            
+            if (dadosRelatorio.dataAtualizacao) {
+                // Carregar dados salvos
+                Object.keys(dadosRelatorio).forEach(campo => {
+                    if (campo !== 'dataAtualizacao') {
+                        const elemento = document.getElementById(campo);
+                        if (elemento && dadosRelatorio[campo] !== null) {
+                            elemento.value = dadosRelatorio[campo];
+                        }
+                    }
+                });
+                
+                exibirStatus(`Dados carregados (última atualização: ${dadosRelatorio.dataAtualizacao})`, 'info');
+                log('✅ Dados carregados com sucesso!', 'success');
+            } else {
+                log('❌ Nenhum dado salvo encontrado', 'warning');
+            }
+        }
+
+        // Fechar modal ao clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalDocumentos');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        }
+
+        log('🚀 Página de teste carregada. Clique nos botões para testar as funcionalidades!', 'success');
+    </script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+{
+  "schema_version": "1.0",
+  "produto": "SILIC 2.0",
+  "artefato": "Gerador de Edital CAIXA (Licitação)",
+  "ui": {
+    "layout": "3-colunas",
+    "colunas": {
+      "A": "Modelo Renderizado (preview)",
+      "B": "Texto-base editável com variáveis",
+      "C": "Dados estruturados da demanda (arrastar/soltar)"
+    }
+  },
+  "modos_insercao_drag_drop": [
+    "inserir_valor",
+    "inserir_variavel"
+  ],
+  "status_documento": [
+    "DRAFT",
+    "DONE"
+  ],
+  "grupos": [
+    {
+      "id": "identificacao",
+      "titulo": "Identificação do certame",
+      "campos": [
+        {
+          "id": "licitacao_numero",
+          "label": "Número da licitação",
+          "tipo": "string",
+          "origem": "silic",
+          "silic_path": "demanda.licitacao.numero",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Licitação"
+          ],
+          "validacoes": [
+            "regex:^\\d{1,4}/\\d{4}$"
+          ]
+        },
+        {
+          "id": "licitacao_ano",
+          "label": "Ano",
+          "tipo": "int",
+          "origem": "derivado",
+          "derivacao": "extrair_ano(licitacao_numero)",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Ano"
+          ]
+        },
+        {
+          "id": "unidade_demandante",
+          "label": "Unidade demandante da licitação",
+          "tipo": "string",
+          "origem": "silic",
+          "silic_path": "demanda.unidade.nome",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Unidade_Demandante_da_Licitação"
+          ]
+        },
+        {
+          "id": "sigla_unidade",
+          "label": "Sigla da unidade",
+          "tipo": "string",
+          "origem": "silic",
+          "silic_path": "demanda.unidade.sigla",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "SIGLA"
+          ]
+        },
+        {
+          "id": "uf_demanda",
+          "label": "UF da demanda",
+          "tipo": "uf",
+          "origem": "silic",
+          "silic_path": "demanda.unidade.uf",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "UF_da_Demanda"
+          ]
+        },
+        {
+          "id": "licitador",
+          "label": "Licitador responsável",
+          "tipo": "string",
+          "origem": "silic",
+          "silic_path": "demanda.licitador.nome",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Licitador"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "publicacao_marcos",
+      "titulo": "Publicação e marcos (datas/horas)",
+      "campos": [
+        {
+          "id": "data_dou",
+          "label": "Data da publicação no DOU",
+          "tipo": "date",
+          "origem": "silic",
+          "silic_path": "demanda.publicacao.dou.data",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Data_DOU",
+            "Ano_DOU",
+            "Mês_DOU_Extenso"
+          ]
+        },
+        {
+          "id": "dt_cred_propostas",
+          "label": "Data do credenciamento e recebimento de propostas",
+          "tipo": "date",
+          "origem": "silic",
+          "silic_path": "demanda.sessao.credenciamento.data",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Dt_Cred_e_Propostas"
+          ]
+        },
+        {
+          "id": "hora_cred",
+          "label": "Hora limite do credenciamento",
+          "tipo": "time",
+          "origem": "silic",
+          "silic_path": "demanda.sessao.credenciamento.hora",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Hora_Cred"
+          ]
+        },
+        {
+          "id": "hora_prop",
+          "label": "Hora limite de envio de propostas",
+          "tipo": "time",
+          "origem": "silic",
+          "silic_path": "demanda.sessao.propostas.hora",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Hora_Prop"
+          ]
+        },
+        {
+          "id": "dt_sessao_lances",
+          "label": "Data da sessão pública de lances",
+          "tipo": "date",
+          "origem": "silic",
+          "silic_path": "demanda.sessao.lances.data",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Dt_Sessão_de_Lances"
+          ]
+        },
+        {
+          "id": "hora_lances",
+          "label": "Hora de abertura de lances",
+          "tipo": "time",
+          "origem": "silic",
+          "silic_path": "demanda.sessao.lances.hora",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Hora_Lances"
+          ]
+        },
+        {
+          "id": "dt_impug_esclar",
+          "label": "Data limite para impugnações e esclarecimentos",
+          "tipo": "date",
+          "origem": "derivado",
+          "derivacao": "calcular_limite_impugnacao(dt_sessao_lances, regra='2_dias_uteis_antes')",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Dt_ImpugEsclar"
+          ]
+        },
+        {
+          "id": "hora_esclarecimentos",
+          "label": "Hora limite para esclarecimentos",
+          "tipo": "time",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Hora_Esclarecimentos"
+          ]
+        }
+      ],
+      "validacoes_grupo": [
+        "dt_cred_propostas <= dt_sessao_lances",
+        "hora_prop <= hora_lances quando dt_cred_propostas == dt_sessao_lances"
+      ]
+    },
+    {
+      "id": "objeto",
+      "titulo": "Objeto e escopo",
+      "campos": [
+        {
+          "id": "objeto",
+          "label": "Objeto (texto completo)",
+          "tipo": "text",
+          "origem": "silic|manual",
+          "silic_path": "demanda.objeto.texto",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Objeto"
+          ]
+        },
+        {
+          "id": "objeto_resumido",
+          "label": "Objeto resumido",
+          "tipo": "string",
+          "origem": "silic|manual",
+          "silic_path": "demanda.objeto.resumo",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Objeto_Resumido",
+            "OBJETO_RESUMIDO"
+          ]
+        },
+        {
+          "id": "endereco_execucao",
+          "label": "Endereço/local de execução",
+          "tipo": "text",
+          "origem": "silic|manual",
+          "silic_path": "demanda.local_execucao.endereco",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Endereço"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valores",
+      "titulo": "Valores, estimativas e garantias",
+      "campos": [
+        {
+          "id": "valor_mensal_contratado",
+          "label": "Valor mensal contratado",
+          "tipo": "money",
+          "origem": "silic|manual",
+          "silic_path": "demanda.valores.mensal",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Valor_Mensal_Contratado",
+            "Extenso_Valor_Mensal_Contratado"
+          ]
+        },
+        {
+          "id": "valor_global_contratado",
+          "label": "Valor global contratado",
+          "tipo": "money",
+          "origem": "silic|manual",
+          "silic_path": "demanda.valores.global",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Valor_Global_Contratado",
+            "Extenso_Valor_Global_Contratado"
+          ]
+        },
+        {
+          "id": "estimativa_sigilosa",
+          "label": "Estimativa orçamentária sigilosa?",
+          "tipo": "boolean",
+          "origem": "manual",
+          "obrigatorio": true,
+          "regras": [
+            {
+              "quando": "estimativa_sigilosa == false",
+              "acao": "remover_blocos",
+              "alvos": [
+                "edital.item_6_4_2",
+                "edital.item_6_4_2_1"
+              ]
+            },
+            {
+              "quando": "estimativa_sigilosa == true",
+              "acao": "incluir_blocos",
+              "alvos": [
+                "edital.item_6_4_2",
+                "edital.item_6_4_2_1"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "garantia_percentual",
+          "label": "Percentual de garantia",
+          "tipo": "percent",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "M__Garantia"
+          ]
+        },
+        {
+          "id": "valor_garantia",
+          "label": "Valor de garantia (R$)",
+          "tipo": "money",
+          "origem": "derivado",
+          "derivacao": "calcular_garantia(valor_global_contratado, garantia_percentual)",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Valor_Garantia_R",
+            "Garantia_Extenso",
+            "Garantia_Extenso1"
+          ]
+        },
+        {
+          "id": "recurso_orcamentario",
+          "label": "Recurso orçamentário",
+          "tipo": "string",
+          "origem": "silic|manual",
+          "silic_path": "demanda.orcamento.recurso",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Rec_Orçamentário"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "partes_contrato",
+      "titulo": "Partes e minuta contratual",
+      "campos": [
+        {
+          "id": "numero_contrato",
+          "label": "Número do contrato",
+          "tipo": "string",
+          "origem": "silic|manual",
+          "silic_path": "contrato.numero",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Nº_Contrato"
+          ]
+        },
+        {
+          "id": "processo",
+          "label": "Processo administrativo",
+          "tipo": "string",
+          "origem": "silic",
+          "silic_path": "demanda.processo.numero",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Processo"
+          ]
+        },
+        {
+          "id": "doc_autorizacao",
+          "label": "Documento de autorização",
+          "tipo": "string",
+          "origem": "silic|manual",
+          "silic_path": "demanda.autorizacao.numero",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Doc_Autorização",
+            "Data_Doc_Autorização",
+            "Autorizador_Contratação"
+          ]
+        },
+        {
+          "id": "nome_repr_caixa",
+          "label": "Representante CAIXA - Nome",
+          "tipo": "string",
+          "origem": "silic",
+          "silic_path": "contrato.representante_caixa.nome",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Nome_Repr_CAIXA"
+          ]
+        },
+        {
+          "id": "cpf_repr_caixa",
+          "label": "Representante CAIXA - CPF",
+          "tipo": "cpf",
+          "origem": "silic",
+          "silic_path": "contrato.representante_caixa.cpf",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "CPF_Repr_CAIXA"
+          ]
+        },
+        {
+          "id": "cargo_repr_caixa",
+          "label": "Representante CAIXA - Cargo",
+          "tipo": "string",
+          "origem": "silic",
+          "silic_path": "contrato.representante_caixa.cargo",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Cargo_Repr_CAIXA"
+          ]
+        },
+        {
+          "id": "empresa_nome",
+          "label": "Empresa contratada/licitante",
+          "tipo": "string",
+          "origem": "silic",
+          "silic_path": "fornecedor.nome",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "Empresa"
+          ]
+        },
+        {
+          "id": "empresa_cnpj",
+          "label": "CNPJ",
+          "tipo": "cnpj",
+          "origem": "silic",
+          "silic_path": "fornecedor.cnpj",
+          "obrigatorio": true,
+          "tokens_docx": [
+            "CNPJ_Empresa"
+          ]
+        },
+        {
+          "id": "empresa_endereco_completo",
+          "label": "Endereço completo da empresa",
+          "tipo": "text",
+          "origem": "silic|manual",
+          "silic_path": "fornecedor.endereco.completo",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Endereço_Completo_Empresa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vigencia_assinaturas",
+      "titulo": "Vigência e assinaturas",
+      "campos": [
+        {
+          "id": "vigencia_texto",
+          "label": "Vigência (texto)",
+          "tipo": "string",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Vigência",
+            "Extenso_Vig"
+          ]
+        },
+        {
+          "id": "inicio_vigencia",
+          "label": "Início da vigência",
+          "tipo": "date",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Início_Vigência"
+          ]
+        },
+        {
+          "id": "data_subs",
+          "label": "Data de assinatura/subscrição",
+          "tipo": "date",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Data_Subs",
+            "Ano_Assin",
+            "Mês_Assin"
+          ]
+        },
+        {
+          "id": "livro_subs",
+          "label": "Livro (subscrição)",
+          "tipo": "string",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Livro_Subs"
+          ]
+        },
+        {
+          "id": "pagina_subs",
+          "label": "Página (subscrição)",
+          "tipo": "string",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Pág__Subs"
+          ]
+        },
+        {
+          "id": "designacao",
+          "label": "Designação/ato",
+          "tipo": "string",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Designação"
+          ]
+        },
+        {
+          "id": "lotacao",
+          "label": "Lotação",
+          "tipo": "string",
+          "origem": "manual",
+          "obrigatorio": false,
+          "tokens_docx": [
+            "Lotação"
+          ]
+        }
+      ]
+    }
+  ],
+  "tokens_docx_detectados": [
+    "Ano",
+    "Ano_Assin",
+    "Ano_DOU",
+    "Autorizador_Contratação",
+    "CNPJ_Empresa",
+    "CPF_Repr_CAIXA",
+    "CPF_Repres_1",
+    "CPF_Repres_2",
+    "Cargo",
+    "Cargo_Repr_CAIXA",
+    "Data_DOU",
+    "Data_Doc_Autorização",
+    "Data_Subs",
+    "Designação",
+    "Doc_Autorização",
+    "Dt_Cred_e_Propostas",
+    "Dt_ImpugEsclar",
+    "Dt_Sessão_de_Lances",
+    "Empresa",
+    "Endereço",
+    "Endereço_Completo_Empresa",
+    "Extenso_Valor_Global_Contratado",
+    "Extenso_Valor_Mensal_Contratado",
+    "Extenso_Vig",
+    "Garantia_Extenso",
+    "Garantia_Extenso1",
+    "Hora_Cred",
+    "Hora_Esclarecimentos",
+    "Hora_Lances",
+    "Hora_Prop",
+    "Início_Vigência",
+    "Licitador",
+    "Licitação",
+    "Livro_Subs",
+    "Lotação",
+    "M__Garantia",
+    "Mês_Assin",
+    "Mês_DOU_Extenso",
+    "Nome_Repr_CAIXA",
+    "Nome_Repres_1",
+    "Nome_Repres_2",
+    "Nº_Contrato",
+    "OBJETO_RESUMIDO",
+    "Objeto",
+    "Objeto_Resumido",
+    "Patrimônio_Líq",
+    "Patrimônio_Líquido_Extenso",
+    "Processo",
+    "Pág__Subs",
+    "Rec_Orçamentário",
+    "SIGLA",
+    "UF_da_Demanda",
+    "Unidade_Demandante_da_Licitação",
+    "Valor_Garantia_R",
+    "Valor_Global_Contratado",
+    "Valor_Mensal_Contratado",
+    "Vigência"
+  ]
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Botão Editar do Modal</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+        .btn-info { background-color: #17a2b8; color: white; }
+        .btn-success { background-color: #28a745; color: white; }
+        .log { 
+            background: #f8f9fa; 
+            border: 1px solid #dee2e6; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 4px; 
+            font-family: monospace; 
+            font-size: 12px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>Teste - Fluxo Completo: Detalhar → Editar</h1>
+    
+    <h3>Passo a Passo:</h3>
+    <button class="btn btn-info" onclick="passo1()">1. Abrir Modal de Detalhes</button>
+    <button class="btn btn-success" onclick="passo2()">2. Testar Botão "Editar Imóvel"</button>
+    <button class="btn btn-info" onclick="verificarFormulario()">3. Verificar Formulário</button>
+    
+    <div id="resultado"></div>
+
+    <script src="script.js?v=20250709"></script>
+    <script>
+        function log(msg, type = 'info') {
+            const div = document.getElementById('resultado');
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log ' + (type === 'error' ? 'error' : type === 'success' ? 'success' : '');
+            logDiv.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${msg}`;
+            div.appendChild(logDiv);
+            console.log(msg);
+        }
+
+        function passo1() {
+            log('=== PASSO 1: ABRINDO MODAL DE DETALHES ===');
+            
+            if (!window.sistema) {
+                log('ERRO: Sistema não carregado!', 'error');
+                return;
+            }
+            
+            if (!window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                log('ERRO: Nenhum imóvel disponível!', 'error');
+                return;
+            }
+            
+            const primeiroImovel = window.sistema.imoveis[0];
+            log(`Tentando abrir detalhes do imóvel ID: ${primeiroImovel.id} (${primeiroImovel.denominacao})`);
+            
+            try {
+                window.sistema.mostrarDetalhesImovel(primeiroImovel.id);
+                log('Modal de detalhes aberto com sucesso!', 'success');
+                
+                // Verificar se a variável imovelAtualModal foi definida
+                setTimeout(() => {
+                    if (window.sistema.imovelAtualModal) {
+                        log(`Variável imovelAtualModal definida: ${window.sistema.imovelAtualModal}`, 'success');
+                    } else {
+                        log('AVISO: Variável imovelAtualModal não foi definida', 'error');
+                    }
+                }, 100);
+                
+            } catch (e) {
+                log(`ERRO: ${e.message}`, 'error');
+            }
+        }
+
+        function passo2() {
+            log('=== PASSO 2: TESTANDO BOTÃO EDITAR IMÓVEL ===');
+            
+            if (!window.sistema) {
+                log('ERRO: Sistema não carregado!', 'error');
+                return;
+            }
+            
+            // Verificar se há um imóvel no modal
+            if (!window.sistema.imovelAtualModal) {
+                log('ERRO: Nenhum imóvel está sendo exibido no modal. Execute o Passo 1 primeiro.', 'error');
+                return;
+            }
+            
+            log(`Tentando editar imóvel ID: ${window.sistema.imovelAtualModal}`);
+            
+            try {
+                window.sistema.editarImovelModal();
+                log('Função editarImovelModal() executada com sucesso!', 'success');
+                
+                // Verificar se o formulário foi preenchido
+                setTimeout(() => {
+                    const codigo = document.getElementById('codigoEdificio')?.value;
+                    const denominacao = document.getElementById('denominacaoEdificio')?.value;
+                    
+                    if (codigo && denominacao) {
+                        log(`Formulário preenchido: Código=${codigo}, Denominação=${denominacao}`, 'success');
+                        log(`Modo edição ativo: ${window.sistema.imovelEditando ? 'SIM' : 'NÃO'} (ID: ${window.sistema.imovelEditando})`);
+                    } else {
+                        log('ERRO: Formulário não foi preenchido corretamente', 'error');
+                    }
+                }, 100);
+                
+            } catch (e) {
+                log(`ERRO: ${e.message}`, 'error');
+            }
+        }
+
+        function verificarFormulario() {
+            log('=== PASSO 3: VERIFICANDO FORMULÁRIO ===');
+            
+            const campos = [
+                'codigoEdificio', 'denominacaoEdificio', 'localCidade', 
+                'ruaEndereco', 'cepImovel', 'statusImovel'
+            ];
+            
+            let todosPreenchidos = true;
+            
+            campos.forEach(campo => {
+                const elemento = document.getElementById(campo);
+                if (elemento) {
+                    const valor = elemento.value;
+                    log(`${campo}: ${valor || '(vazio)'}`);
+                    if (!valor) todosPreenchidos = false;
+                } else {
+                    log(`ERRO: Campo ${campo} não encontrado!`, 'error');
+                    todosPreenchidos = false;
+                }
+            });
+            
+            const btnAdicionar = document.getElementById('adicionarImovel');
+            if (btnAdicionar) {
+                log(`Texto do botão: "${btnAdicionar.textContent}"`, 
+                    btnAdicionar.textContent.includes('Atualizar') ? 'success' : 'error');
+            }
+            
+            log(`Status geral: ${todosPreenchidos ? 'SUCESSO - Formulário preenchido corretamente' : 'ERRO - Formulário incompleto'}`, 
+                todosPreenchidos ? 'success' : 'error');
+        }
+
+        // Aguardar carregamento
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('Página carregada. Sistema disponível: ' + (window.sistema ? 'SIM' : 'NÃO'));
+                if (window.sistema && window.sistema.imoveis) {
+                    log(`Imóveis disponíveis: ${window.sistema.imoveis.length}`);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Completo - Modal de Documentos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { 
+            padding: 20px; 
+            background: #f8f9fa; 
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .test-btn {
+            background: linear-gradient(135deg, #0066cc, #004499);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .test-btn:hover {
+            background: linear-gradient(135deg, #004499, #003366);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
+        }
+        .status-info {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Teste Completo - Modal de Documentos</h1>
+        
+        <div class="status-info">
+            <h3>Status do Teste:</h3>
+            <p>Este teste verifica se o modal de documentos está sendo apresentado corretamente com todos os estilos CSS.</p>
+        </div>
+        
+        <button class="test-btn" onclick="abrirModalDocumentos()">📋 Abrir Modal de Documentos</button>
+        <button class="test-btn" onclick="verificarEstilos()">🔍 Verificar Estilos CSS</button>
+        
+        <div id="resultado" style="margin-top: 20px;"></div>
+    </div>
+
+    <!-- Modal de Documentos (Cópia exata do index.html) -->
+    <div id="modalDocumentos" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 1000px;">
+            <div class="modal-header">
+                <h3>Documentos do Imóvel e Locadores</h3>
+                <span class="modal-close" onclick="fecharModalDocumentos()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="infoImovelDocumentos" class="mb-3" style="background: #f8f9fa; padding: 1rem; border-radius: 6px; border: 1px solid #e9ecef;">
+                    <h5>📍 Imóvel Teste</h5>
+                    <p><strong>Endereço:</strong> Rua Teste, 123 - Centro - São Paulo/SP</p>
+                    <p><strong>CEP:</strong> 01234-567</p>
+                </div>
+                
+                <!-- Documentos do Imóvel -->
+                <div class="documentos-imovel mb-4">
+                    <h4 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        📋 Documentos do Imóvel
+                    </h4>
+                    <div id="documentosImovelContainer">
+                        <div class="documento-card" style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                            <h6>Escritura do Imóvel</h6>
+                            <p>Status: Pendente | Data: 01/01/2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Relatório Técnico do Imóvel -->
+                <div class="relatorio-tecnico mb-4">
+                    <h4 style="color: #333; border-bottom: 2px solid #ff6b35; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        🔧 Relatório Técnico do Imóvel
+                    </h4>
+                    <div id="relatorioTecnicoContainer" style="background: #fff9f5; padding: 1.5rem; border-radius: 8px; border: 1px solid #ffe0cc;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group">
+                                <label for="areaContratada" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Área a ser Contratada (m²)</label>
+                                <input type="number" id="areaContratada" class="form-input" placeholder="Ex: 1250.50" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorTotalObra" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor Total da Obra (R$)</label>
+                                <input type="number" id="valorTotalObra" class="form-input" placeholder="Ex: 150000.00" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorObraCaixa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor da Obra CAIXA (R$)</label>
+                                <input type="number" id="valorObraCaixa" class="form-input" placeholder="Ex: 120000.00" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorObraLocador" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor da Obra LOCADOR (R$)</label>
+                                <input type="number" id="valorObraLocador" class="form-input" placeholder="Ex: 30000.00" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoTotal" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo Total (meses)</label>
+                                <input type="number" id="prazoTotal" class="form-input" placeholder="Ex: 18" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoCaixa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo CAIXA (meses)</label>
+                                <input type="number" id="prazoCaixa" class="form-input" placeholder="Ex: 12" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoLocador" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo LOCADOR (meses)</label>
+                                <input type="number" id="prazoLocador" class="form-input" placeholder="Ex: 6" min="1">
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 1.5rem;">
+                            <button class="btn btn-success" onclick="salvarRelatorioTecnico()">💾 Salvar Relatório</button>
+                            <button class="btn btn-secondary" onclick="limparRelatorioTecnico()">🗑️ Limpar</button>
+                        </div>
+                        <div id="statusRelatorio" style="margin-top: 1rem; padding: 0.75rem; border-radius: 6px; display: none;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="fecharModalDocumentos()">Fechar</button>
+                <button class="btn btn-primary">Imprimir Relatório</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirModalDocumentos() {
+            document.getElementById('modalDocumentos').style.display = 'block';
+            document.getElementById('resultado').innerHTML = '<div class="status-info">✅ Modal de documentos aberto! Verifique se está corretamente estilizado.</div>';
+        }
+        
+        function fecharModalDocumentos() {
+            document.getElementById('modalDocumentos').style.display = 'none';
+            document.getElementById('resultado').innerHTML = '<div class="status-info">🔒 Modal de documentos fechado.</div>';
+        }
+        
+        function verificarEstilos() {
+            const modal = document.getElementById('modalDocumentos');
+            const modalContent = modal.querySelector('.modal-content');
+            const computedStyles = window.getComputedStyle(modalContent);
+            
+            let resultado = '<div class="status-info"><h4>🔍 Verificação dos Estilos CSS:</h4>';
+            resultado += `<p><strong>Display:</strong> ${computedStyles.display}</p>`;
+            resultado += `<p><strong>Background:</strong> ${computedStyles.backgroundColor}</p>`;
+            resultado += `<p><strong>Border Radius:</strong> ${computedStyles.borderRadius}</p>`;
+            resultado += `<p><strong>Box Shadow:</strong> ${computedStyles.boxShadow}</p>`;
+            resultado += `<p><strong>Max Width:</strong> ${computedStyles.maxWidth}</p>`;
+            resultado += '</div>';
+            
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+        
+        function salvarRelatorioTecnico() {
+            alert('✅ Relatório técnico salvo com sucesso!');
+        }
+        
+        function limparRelatorioTecnico() {
+            const inputs = document.querySelectorAll('#relatorioTecnicoContainer input');
+            inputs.forEach(input => input.value = '');
+            alert('🗑️ Campos do relatório técnico limpos!');
+        }
+        
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalDocumentos');
+            if (event.target === modal) {
+                fecharModalDocumentos();
+            }
+        }
+    </script>
+</body>
+</html>

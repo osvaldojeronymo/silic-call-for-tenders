@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Modal de Documentos</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; background: #ffc107; color: black; }
+        .btn-success { background: #28a745; color: white; }
+        .btn-danger { background: #dc3545; color: white; }
+        .console { background: #f8f9fa; border: 1px solid #dee2e6; padding: 15px; margin: 15px 0; border-radius: 5px; font-family: monospace; font-size: 12px; max-height: 400px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <h1>Teste - Modal de Documentos</h1>
+    
+    <button class="btn" onclick="testarModalDocumentos()">Abrir Modal de Documentos</button>
+    <button class="btn btn-success" onclick="verificarModal()">Verificar Modal</button>
+    <button class="btn btn-danger" onclick="fecharModal()">Fechar Modal</button>
+    
+    <div id="console" class="console"></div>
+
+    <script src="script.js?v=20250709"></script>
+    <script>
+        function logConsole(msg) {
+            const consoleDiv = document.getElementById('console');
+            const timestamp = new Date().toLocaleTimeString();
+            consoleDiv.innerHTML += `[${timestamp}] ${msg}<br>`;
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+            console.log(msg);
+        }
+
+        function testarModalDocumentos() {
+            logConsole('=== TESTANDO MODAL DE DOCUMENTOS ===');
+            
+            if (!window.sistema) {
+                logConsole('ERRO: Sistema não carregado');
+                return;
+            }
+            
+            if (!window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                logConsole('ERRO: Nenhum imóvel disponível');
+                return;
+            }
+            
+            const primeiroImovel = window.sistema.imoveis[0];
+            logConsole(`Abrindo documentos do imóvel: ${primeiroImovel.denominacao} (ID: ${primeiroImovel.id})`);
+            
+            try {
+                window.sistema.mostrarDocumentosImovel(primeiroImovel.id);
+                logConsole('Função mostrarDocumentosImovel chamada com sucesso!');
+                
+                setTimeout(() => {
+                    const modal = document.getElementById('modalDocumentos');
+                    if (modal && modal.style.display === 'block') {
+                        logConsole('✅ Modal de documentos aberto com sucesso!');
+                        verificarConteudoModal();
+                    } else {
+                        logConsole('❌ Modal de documentos não foi aberto');
+                    }
+                }, 200);
+                
+            } catch (e) {
+                logConsole('ERRO: ' + e.message);
+            }
+        }
+
+        function verificarModal() {
+            logConsole('=== VERIFICANDO MODAL ===');
+            
+            const modal = document.getElementById('modalDocumentos');
+            if (!modal) {
+                logConsole('❌ Modal não encontrado no DOM');
+                return;
+            }
+            
+            logConsole(`Modal existe: display = ${modal.style.display}`);
+            
+            // Verificar elementos internos
+            const elementos = [
+                'infoImovelDocumentos',
+                'documentosImovelContainer',
+                'documentosLocadoresContainer',
+                'totalEntregues',
+                'totalPendentes',
+                'totalAnalise',
+                'totalRejeitados'
+            ];
+            
+            elementos.forEach(id => {
+                const elemento = document.getElementById(id);
+                if (elemento) {
+                    logConsole(`✅ ${id}: encontrado`);
+                    if (elemento.textContent && elemento.textContent.trim()) {
+                        logConsole(`   Conteúdo: ${elemento.textContent.substring(0, 50)}...`);
+                    }
+                } else {
+                    logConsole(`❌ ${id}: NÃO encontrado`);
+                }
+            });
+        }
+
+        function verificarConteudoModal() {
+            logConsole('--- Verificando conteúdo do modal ---');
+            
+            const infoImovel = document.getElementById('infoImovelDocumentos');
+            if (infoImovel && infoImovel.innerHTML.trim()) {
+                logConsole('✅ Informações do imóvel preenchidas');
+            } else {
+                logConsole('❌ Informações do imóvel não preenchidas');
+            }
+            
+            const docsImovel = document.getElementById('documentosImovelContainer');
+            if (docsImovel && docsImovel.innerHTML.trim()) {
+                logConsole('✅ Documentos do imóvel preenchidos');
+            } else {
+                logConsole('❌ Documentos do imóvel não preenchidos');
+            }
+            
+            const docsLocadores = document.getElementById('documentosLocadoresContainer');
+            if (docsLocadores && docsLocadores.innerHTML.trim()) {
+                logConsole('✅ Documentos dos locadores preenchidos');
+            } else {
+                logConsole('❌ Documentos dos locadores não preenchidos');
+            }
+            
+            // Verificar contadores
+            const contadores = ['totalEntregues', 'totalPendentes', 'totalAnalise', 'totalRejeitados'];
+            contadores.forEach(id => {
+                const elem = document.getElementById(id);
+                if (elem) {
+                    logConsole(`${id}: ${elem.textContent}`);
+                }
+            });
+        }
+
+        function fecharModal() {
+            if (window.sistema && typeof window.sistema.fecharModalDocumentos === 'function') {
+                window.sistema.fecharModalDocumentos();
+                logConsole('Modal fechado via função do sistema');
+            } else {
+                const modal = document.getElementById('modalDocumentos');
+                if (modal) {
+                    modal.style.display = 'none';
+                    logConsole('Modal fechado manualmente');
+                }
+            }
+        }
+
+        // Aguardar carregamento
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                logConsole('Página carregada');
+                if (window.sistema) {
+                    logConsole(`Sistema carregado. Imóveis: ${window.sistema.imoveis ? window.sistema.imoveis.length : 'N/A'}`);
+                    if (window.sistema.locadores) {
+                        logConsole(`Locadores: ${window.sistema.locadores.length}`);
+                    }
+                    verificarModal();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

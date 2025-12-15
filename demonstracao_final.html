@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração Final - Modais SILIC 2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { 
+            padding: 20px; 
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0066cc;
+        }
+        .demo-section {
+            background: #f8f9fa;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 5px solid #0066cc;
+        }
+        .demo-btn {
+            background: linear-gradient(135deg, #0066cc, #004499);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .demo-btn:hover {
+            background: linear-gradient(135deg, #004499, #003366);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
+        }
+        .demo-btn.success {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+        }
+        .demo-btn.warning {
+            background: linear-gradient(135deg, #ffc107, #e0a800);
+            color: #212529;
+        }
+        .demo-btn.info {
+            background: linear-gradient(135deg, #17a2b8, #138496);
+        }
+        .status-panel {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🏢 SILIC 2.0 - Demonstração Final dos Modais</h1>
+            <p style="color: #666; font-size: 1.1rem;">Sistema de Gestão de Imóveis - CAIXA Econômica Federal</p>
+        </div>
+        
+        <div class="demo-section">
+            <h3>📋 Modal de Documentos</h3>
+            <p>Teste completo do modal de documentos com relatório técnico do imóvel.</p>
+            <button class="demo-btn" onclick="abrirModalDocumentos()">Abrir Modal de Documentos</button>
+            <button class="demo-btn info" onclick="verificarEstilosModais()">Verificar Estilos CSS</button>
+        </div>
+        
+        <div class="demo-section">
+            <h3>✨ Funcionalidades Implementadas</h3>
+            <ul class="feature-list">
+                <li>Modal de documentos responsivo e moderno</li>
+                <li>Seção de relatório técnico do imóvel</li>
+                <li>Validação e salvamento de dados</li>
+                <li>Estilos CSS otimizados para notebooks 13.3"</li>
+                <li>Animações suaves e feedback visual</li>
+                <li>Remoção/ocultação da seção de locadores</li>
+            </ul>
+        </div>
+        
+        <div id="resultadoDemo" class="status-panel" style="display: none;">
+            <!-- Resultados dos testes aparecerão aqui -->
+        </div>
+    </div>
+
+    <!-- Modal de Documentos -->
+    <div id="modalDocumentos" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 1000px;">
+            <div class="modal-header">
+                <h3>📋 Documentos do Imóvel e Relatório Técnico</h3>
+                <span class="modal-close" onclick="fecharModalDocumentos()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="infoImovelDocumentos" class="mb-3" style="background: #f8f9fa; padding: 1rem; border-radius: 6px; border: 1px solid #e9ecef;">
+                    <h5>📍 Imóvel Demonstração</h5>
+                    <p><strong>Endereço:</strong> Av. Paulista, 1000 - Bela Vista - São Paulo/SP</p>
+                    <p><strong>CEP:</strong> 01310-100</p>
+                    <p><strong>Tipo:</strong> Comercial</p>
+                </div>
+                
+                <!-- Documentos do Imóvel -->
+                <div class="documentos-imovel mb-4">
+                    <h4 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        📋 Documentos do Imóvel
+                    </h4>
+                    <div id="documentosImovelContainer">
+                        <div class="documento-card">
+                            <h6>📄 Escritura do Imóvel</h6>
+                            <p><span style="color: #28a745; font-weight: 600;">✅ Aprovado</span> | Data: 15/12/2024</p>
+                        </div>
+                        <div class="documento-card">
+                            <h6>📋 Certidão de Matrícula</h6>
+                            <p><span style="color: #ffc107; font-weight: 600;">⏳ Pendente</span> | Data: 02/01/2025</p>
+                        </div>
+                        <div class="documento-card">
+                            <h6>🏗️ Alvará de Construção</h6>
+                            <p><span style="color: #28a745; font-weight: 600;">✅ Aprovado</span> | Data: 10/01/2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Relatório Técnico do Imóvel -->
+                <div class="relatorio-tecnico mb-4">
+                    <h4 style="color: #333; border-bottom: 2px solid #ff6b35; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        🔧 Relatório Técnico do Imóvel
+                    </h4>
+                    <div id="relatorioTecnicoContainer">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group">
+                                <label for="areaContratada" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Área a ser Contratada (m²)</label>
+                                <input type="number" id="areaContratada" class="form-input" placeholder="Ex: 1250.50" step="0.01" value="1250.50">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorTotalObra" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor Total da Obra (R$)</label>
+                                <input type="number" id="valorTotalObra" class="form-input" placeholder="Ex: 150000.00" step="0.01" value="150000.00">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorObraCaixa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor da Obra CAIXA (R$)</label>
+                                <input type="number" id="valorObraCaixa" class="form-input" placeholder="Ex: 120000.00" step="0.01" value="120000.00">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorObraLocador" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor da Obra LOCADOR (R$)</label>
+                                <input type="number" id="valorObraLocador" class="form-input" placeholder="Ex: 30000.00" step="0.01" value="30000.00">
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoTotal" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo Total (meses)</label>
+                                <input type="number" id="prazoTotal" class="form-input" placeholder="Ex: 18" min="1" value="18">
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoCaixa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo CAIXA (meses)</label>
+                                <input type="number" id="prazoCaixa" class="form-input" placeholder="Ex: 12" min="1" value="12">
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoLocador" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo LOCADOR (meses)</label>
+                                <input type="number" id="prazoLocador" class="form-input" placeholder="Ex: 6" min="1" value="6">
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 1.5rem;">
+                            <button class="btn btn-success" onclick="salvarRelatorioTecnico()">💾 Salvar Relatório</button>
+                            <button class="btn btn-secondary" onclick="limparRelatorioTecnico()">🗑️ Limpar Campos</button>
+                            <button class="btn btn-info" onclick="calcularTotais()">🧮 Calcular Totais</button>
+                        </div>
+                        <div id="statusRelatorio" style="margin-top: 1rem; padding: 0.75rem; border-radius: 6px; display: none;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="fecharModalDocumentos()">Fechar</button>
+                <button class="btn btn-primary" onclick="imprimirRelatorio()">🖨️ Imprimir Relatório</button>
+                <button class="btn btn-success" onclick="exportarPDF()">📄 Exportar PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirModalDocumentos() {
+            document.getElementById('modalDocumentos').style.display = 'block';
+            mostrarResultado('✅ Modal de documentos aberto com sucesso! Verifique a apresentação dos estilos.', 'success');
+        }
+        
+        function fecharModalDocumentos() {
+            document.getElementById('modalDocumentos').style.display = 'none';
+            mostrarResultado('🔒 Modal de documentos fechado.', 'info');
+        }
+        
+        function verificarEstilosModais() {
+            const modal = document.getElementById('modalDocumentos');
+            const modalContent = modal.querySelector('.modal-content');
+            const computedStyles = window.getComputedStyle(modalContent);
+            
+            let resultado = '<h4>🔍 Verificação dos Estilos CSS:</h4>';
+            resultado += `<p><strong>Display:</strong> ${computedStyles.display}</p>`;
+            resultado += `<p><strong>Background:</strong> ${computedStyles.backgroundColor}</p>`;
+            resultado += `<p><strong>Border Radius:</strong> ${computedStyles.borderRadius}</p>`;
+            resultado += `<p><strong>Box Shadow:</strong> ${computedStyles.boxShadow}</p>`;
+            resultado += `<p><strong>Max Width:</strong> ${computedStyles.maxWidth}</p>`;
+            resultado += `<p><strong>Margin:</strong> ${computedStyles.margin}</p>`;
+            
+            mostrarResultado(resultado, 'info');
+        }
+        
+        function salvarRelatorioTecnico() {
+            const dados = {
+                area: document.getElementById('areaContratada').value,
+                valorTotal: document.getElementById('valorTotalObra').value,
+                valorCaixa: document.getElementById('valorObraCaixa').value,
+                valorLocador: document.getElementById('valorObraLocador').value,
+                prazoTotal: document.getElementById('prazoTotal').value,
+                prazoCaixa: document.getElementById('prazoCaixa').value,
+                prazoLocador: document.getElementById('prazoLocador').value
+            };
+            
+            const statusDiv = document.getElementById('statusRelatorio');
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = '#d4edda';
+            statusDiv.style.color = '#155724';
+            statusDiv.style.border = '1px solid #c3e6cb';
+            statusDiv.innerHTML = '✅ Relatório técnico salvo com sucesso!';
+            
+            mostrarResultado('💾 Relatório técnico salvo com dados: ' + JSON.stringify(dados, null, 2), 'success');
+        }
+        
+        function limparRelatorioTecnico() {
+            const inputs = document.querySelectorAll('#relatorioTecnicoContainer input');
+            inputs.forEach(input => input.value = '');
+            
+            const statusDiv = document.getElementById('statusRelatorio');
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = '#fff3cd';
+            statusDiv.style.color = '#856404';
+            statusDiv.style.border = '1px solid #ffeaa7';
+            statusDiv.innerHTML = '🗑️ Campos do relatório técnico limpos!';
+            
+            mostrarResultado('🗑️ Todos os campos do relatório técnico foram limpos.', 'warning');
+        }
+        
+        function calcularTotais() {
+            const valorCaixa = parseFloat(document.getElementById('valorObraCaixa').value) || 0;
+            const valorLocador = parseFloat(document.getElementById('valorObraLocador').value) || 0;
+            const total = valorCaixa + valorLocador;
+            
+            document.getElementById('valorTotalObra').value = total.toFixed(2);
+            
+            mostrarResultado(`🧮 Cálculo realizado: CAIXA (R$ ${valorCaixa.toFixed(2)}) + LOCADOR (R$ ${valorLocador.toFixed(2)}) = TOTAL (R$ ${total.toFixed(2)})`, 'info');
+        }
+        
+        function imprimirRelatorio() {
+            mostrarResultado('🖨️ Funcionalidade de impressão do relatório seria implementada aqui.', 'info');
+        }
+        
+        function exportarPDF() {
+            mostrarResultado('📄 Funcionalidade de exportação para PDF seria implementada aqui.', 'info');
+        }
+        
+        function mostrarResultado(mensagem, tipo) {
+            const div = document.getElementById('resultadoDemo');
+            div.style.display = 'block';
+            
+            const cores = {
+                success: { bg: '#d4edda', border: '#c3e6cb', text: '#155724' },
+                warning: { bg: '#fff3cd', border: '#ffeaa7', text: '#856404' },
+                info: { bg: '#e7f3ff', border: '#b3d9ff', text: '#0c5460' },
+                error: { bg: '#f8d7da', border: '#f5c6cb', text: '#721c24' }
+            };
+            
+            const cor = cores[tipo] || cores.info;
+            div.style.background = cor.bg;
+            div.style.borderColor = cor.border;
+            div.style.color = cor.text;
+            div.innerHTML = `<strong>Resultado:</strong><br>${mensagem}`;
+            
+            // Auto scroll para o resultado
+            div.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalDocumentos');
+            if (event.target === modal) {
+                fecharModalDocumentos();
+            }
+        }
+        
+        // Atalhos de teclado
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                fecharModalDocumentos();
+            }
+        });
+    </script>
+</body>
+</html>

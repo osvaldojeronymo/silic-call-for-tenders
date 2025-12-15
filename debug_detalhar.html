@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Botão Detalhar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn-info {
+            background-color: #17a2b8;
+            color: white;
+        }
+        .btn-info:hover {
+            background-color: #138496;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .modal-content {
+            position: relative;
+            background: white;
+            margin: 5% auto;
+            padding: 0;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .modal-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-close {
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+        .modal-body {
+            padding: 20px;
+        }
+        .modal-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #dee2e6;
+            text-align: right;
+        }
+        .error-log {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success-log {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Debug - Teste do Botão Detalhar</h1>
+        
+        <div id="logContainer"></div>
+        
+        <h3>Teste com diferentes IDs:</h3>
+        <button class="btn btn-info" onclick="testarDetalhar(1)">Testar Detalhar ID 1</button>
+        <button class="btn btn-info" onclick="testarDetalhar(5)">Testar Detalhar ID 5</button>
+        <button class="btn btn-info" onclick="testarDetalhar(10)">Testar Detalhar ID 10</button>
+        <button class="btn btn-info" onclick="testarDetalhar(999)">Testar Detalhar ID inexistente (999)</button>
+        
+        <h3>Verificações:</h3>
+        <button class="btn btn-info" onclick="verificarSistema()">Verificar Sistema</button>
+        <button class="btn btn-info" onclick="verificarImoveis()">Verificar Imóveis</button>
+        <button class="btn btn-info" onclick="verificarModal()">Verificar Modal</button>
+    </div>
+
+    <!-- Modal de Detalhes (cópia do original) -->
+    <div id="modalDetalhesImovel" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detalhes do Imóvel</h3>
+                <span class="modal-close" onclick="fecharModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="detalhesImovelContent">
+                    <!-- Conteúdo será preenchido dinamicamente -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=20250709"></script>
+    <script>
+        function log(message, type = 'info') {
+            const container = document.getElementById('logContainer');
+            const div = document.createElement('div');
+            div.className = type === 'error' ? 'error-log' : 'success-log';
+            div.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${message}`;
+            container.appendChild(div);
+            console.log(message);
+        }
+
+        function testarDetalhar(id) {
+            try {
+                log(`Tentando chamar sistema.mostrarDetalhesImovel(${id})`);
+                
+                if (!window.sistema) {
+                    log('ERRO: Sistema não está disponível!', 'error');
+                    return;
+                }
+                
+                if (typeof sistema.mostrarDetalhesImovel !== 'function') {
+                    log('ERRO: Função mostrarDetalhesImovel não existe!', 'error');
+                    return;
+                }
+                
+                sistema.mostrarDetalhesImovel(id);
+                log(`Função chamada com sucesso para ID ${id}`);
+                
+                // Verificar se o modal foi aberto
+                setTimeout(() => {
+                    const modal = document.getElementById('modalDetalhesImovel');
+                    if (modal && modal.style.display !== 'none') {
+                        log(`Modal aberto com sucesso para ID ${id}`);
+                    } else {
+                        log(`ERRO: Modal não foi aberto para ID ${id}`, 'error');
+                    }
+                }, 100);
+                
+            } catch (error) {
+                log(`ERRO: ${error.message}`, 'error');
+                console.error(error);
+            }
+        }
+
+        function verificarSistema() {
+            try {
+                log('Verificando sistema...');
+                
+                if (!window.sistema) {
+                    log('ERRO: Sistema não está carregado!', 'error');
+                    return;
+                }
+                
+                log(`Sistema carregado com sucesso`);
+                log(`Tipo do sistema: ${typeof sistema}`);
+                log(`Métodos disponíveis: ${Object.getOwnPropertyNames(Object.getPrototypeOf(sistema)).join(', ')}`);
+                
+            } catch (error) {
+                log(`ERRO: ${error.message}`, 'error');
+            }
+        }
+
+        function verificarImoveis() {
+            try {
+                log('Verificando imóveis...');
+                
+                if (!window.sistema || !sistema.imoveis) {
+                    log('ERRO: Imóveis não disponíveis!', 'error');
+                    return;
+                }
+                
+                log(`Total de imóveis: ${sistema.imoveis.length}`);
+                
+                if (sistema.imoveis.length > 0) {
+                    log(`Primeiro imóvel ID: ${sistema.imoveis[0].id}`);
+                    log(`Primeiro imóvel: ${JSON.stringify(sistema.imoveis[0], null, 2)}`);
+                }
+                
+            } catch (error) {
+                log(`ERRO: ${error.message}`, 'error');
+            }
+        }
+
+        function verificarModal() {
+            try {
+                log('Verificando modal...');
+                
+                const modal = document.getElementById('modalDetalhesImovel');
+                if (!modal) {
+                    log('ERRO: Modal não encontrado!', 'error');
+                    return;
+                }
+                
+                log(`Modal encontrado`);
+                log(`Display atual: ${modal.style.display}`);
+                
+                const content = document.getElementById('detalhesImovelContent');
+                if (!content) {
+                    log('ERRO: Container de conteúdo do modal não encontrado!', 'error');
+                    return;
+                }
+                
+                log(`Container de conteúdo encontrado`);
+                
+            } catch (error) {
+                log(`ERRO: ${error.message}`, 'error');
+            }
+        }
+
+        function fecharModal() {
+            const modal = document.getElementById('modalDetalhesImovel');
+            if (modal) {
+                modal.style.display = 'none';
+                log('Modal fechado');
+            }
+        }
+
+        // Aguardar carregamento
+        window.addEventListener('load', () => {
+            log('Página carregada');
+            
+            setTimeout(() => {
+                verificarSistema();
+            }, 1000);
+        });
+
+        // Interceptar erros JavaScript
+        window.addEventListener('error', (event) => {
+            log(`ERRO JavaScript: ${event.message} em ${event.filename}:${event.lineno}`, 'error');
+        });
+    </script>
+</body>
+</html>

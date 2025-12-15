@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Botão Detalhar</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .resultado { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .erro { background-color: #ffebee; border-color: #f44336; }
+        .sucesso { background-color: #e8f5e8; border-color: #4caf50; }
+        button { padding: 10px 20px; margin: 10px; background: #2196f3; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1976d2; }
+    </style>
+</head>
+<body>
+    <h1>Teste do Botão Detalhar</h1>
+    
+    <button onclick="testarSistema()">Testar Sistema</button>
+    <button onclick="testarDetalhes()">Testar Função Detalhar</button>
+    
+    <div id="resultado"></div>
+    
+    <script src="script.js"></script>
+    <script>
+        function log(mensagem, tipo = 'info') {
+            const resultado = document.getElementById('resultado');
+            const div = document.createElement('div');
+            div.className = `resultado ${tipo}`;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}:</strong> ${mensagem}`;
+            resultado.appendChild(div);
+            console.log(mensagem);
+        }
+        
+        function testarSistema() {
+            document.getElementById('resultado').innerHTML = '';
+            
+            try {
+                log('Verificando se o sistema existe...', 'info');
+                
+                if (typeof window.sistema === 'undefined') {
+                    log('❌ Erro: window.sistema não está definido', 'erro');
+                    return;
+                }
+                
+                log('✅ Sistema encontrado', 'sucesso');
+                
+                if (!window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                    log('⚠️ Aviso: Nenhum imóvel carregado, carregando dados...', 'info');
+                    window.sistema.carregarDadosDemo();
+                }
+                
+                log(`✅ ${window.sistema.imoveis.length} imóveis carregados`, 'sucesso');
+                log(`✅ ${window.sistema.locadores.length} locadores carregados`, 'sucesso');
+                
+                // Testar se a função mostrarDetalhesImovel existe
+                if (typeof window.sistema.mostrarDetalhesImovel === 'function') {
+                    log('✅ Função mostrarDetalhesImovel existe', 'sucesso');
+                } else {
+                    log('❌ Erro: Função mostrarDetalhesImovel não encontrada', 'erro');
+                }
+                
+                // Testar se a função gerarDocumentosImovelHTML existe
+                if (typeof window.sistema.gerarDocumentosImovelHTML === 'function') {
+                    log('✅ Função gerarDocumentosImovelHTML existe', 'sucesso');
+                } else {
+                    log('❌ Erro: Função gerarDocumentosImovelHTML não encontrada', 'erro');
+                }
+                
+            } catch (error) {
+                log(`❌ Erro no teste: ${error.message}`, 'erro');
+                console.error('Erro completo:', error);
+            }
+        }
+        
+        function testarDetalhes() {
+            try {
+                if (!window.sistema || !window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                    log('❌ Sistema não carregado. Execute "Testar Sistema" primeiro.', 'erro');
+                    return;
+                }
+                
+                const primeiroImovel = window.sistema.imoveis[0];
+                log(`Testando detalhes do imóvel: ${primeiroImovel.codigo}`, 'info');
+                
+                // Verificar se o modal existe
+                const modal = document.getElementById('modalDetalhesImovel');
+                if (!modal) {
+                    log('❌ Erro: Modal modalDetalhesImovel não encontrado no DOM', 'erro');
+                    return;
+                }
+                log('✅ Modal encontrado no DOM', 'sucesso');
+                
+                // Verificar se o conteúdo existe
+                const conteudo = document.getElementById('detalhesImovelContent');
+                if (!conteudo) {
+                    log('❌ Erro: Elemento detalhesImovelContent não encontrado', 'erro');
+                    return;
+                }
+                log('✅ Elemento de conteúdo encontrado', 'sucesso');
+                
+                // Testar a função
+                window.sistema.mostrarDetalhesImovel(primeiroImovel.id);
+                log('✅ Função mostrarDetalhesImovel executada sem erro', 'sucesso');
+                
+                // Verificar se o modal foi exibido
+                if (modal.style.display === 'block') {
+                    log('✅ Modal exibido com sucesso!', 'sucesso');
+                } else {
+                    log('❌ Modal não foi exibido', 'erro');
+                }
+                
+            } catch (error) {
+                log(`❌ Erro ao testar detalhes: ${error.message}`, 'erro');
+                console.error('Erro completo:', error);
+            }
+        }
+        
+        // Auto-executar teste básico quando a página carregar
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('Página carregada, executando teste automático...', 'info');
+                testarSistema();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

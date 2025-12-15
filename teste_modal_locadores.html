@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Modal de Locadores</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; background: #007bff; color: white; }
+        .btn-success { background: #28a745; }
+        .console { background: #f8f9fa; border: 1px solid #dee2e6; padding: 15px; margin: 15px 0; border-radius: 5px; font-family: monospace; font-size: 12px; max-height: 300px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <h1>Teste - Modal de Locadores</h1>
+    
+    <button class="btn" onclick="testarModalLocadores()">Abrir Modal de Locadores</button>
+    <button class="btn btn-success" onclick="verificarModal()">Verificar Modal</button>
+    <button class="btn" onclick="fecharModal()">Fechar Modal</button>
+    
+    <div id="console" class="console"></div>
+
+    <script src="script.js?v=20250709"></script>
+    <script>
+        function logConsole(msg) {
+            const consoleDiv = document.getElementById('console');
+            const timestamp = new Date().toLocaleTimeString();
+            consoleDiv.innerHTML += `[${timestamp}] ${msg}<br>`;
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+            console.log(msg);
+        }
+
+        function testarModalLocadores() {
+            logConsole('=== TESTANDO MODAL DE LOCADORES ===');
+            
+            if (!window.sistema) {
+                logConsole('ERRO: Sistema não carregado');
+                return;
+            }
+            
+            if (!window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                logConsole('ERRO: Nenhum imóvel disponível');
+                return;
+            }
+            
+            const primeiroImovel = window.sistema.imoveis[0];
+            logConsole(`Selecionando imóvel: ${primeiroImovel.denominacao} (ID: ${primeiroImovel.id})`);
+            
+            try {
+                window.sistema.selecionarImovel(primeiroImovel.id);
+                logConsole('Função selecionarImovel chamada com sucesso!');
+                
+                setTimeout(() => {
+                    const modal = document.getElementById('modalLocadores');
+                    if (modal && modal.style.display === 'block') {
+                        logConsole('✅ Modal de locadores aberto com sucesso!');
+                        verificarConteudoModal();
+                    } else {
+                        logConsole('❌ Modal de locadores não foi aberto');
+                    }
+                }, 100);
+                
+            } catch (e) {
+                logConsole('ERRO: ' + e.message);
+            }
+        }
+
+        function verificarModal() {
+            logConsole('=== VERIFICANDO MODAL ===');
+            
+            const modal = document.getElementById('modalLocadores');
+            if (!modal) {
+                logConsole('❌ Modal não encontrado no DOM');
+                return;
+            }
+            
+            logConsole(`Modal existe: display = ${modal.style.display}`);
+            
+            // Verificar elementos internos
+            const elementos = [
+                'infoImovelModal',
+                'totalLocadoresModal',
+                'pessoaFisicaModal',
+                'pessoaJuridicaModal',
+                'listaLocadoresModal'
+            ];
+            
+            elementos.forEach(id => {
+                const elemento = document.getElementById(id);
+                if (elemento) {
+                    logConsole(`✅ ${id}: encontrado`);
+                } else {
+                    logConsole(`❌ ${id}: NÃO encontrado`);
+                }
+            });
+        }
+
+        function verificarConteudoModal() {
+            logConsole('--- Verificando conteúdo do modal ---');
+            
+            const infoImovel = document.getElementById('infoImovelModal');
+            if (infoImovel && infoImovel.innerHTML.trim()) {
+                logConsole('✅ Informações do imóvel preenchidas');
+            } else {
+                logConsole('❌ Informações do imóvel não preenchidas');
+            }
+            
+            const totalLocadores = document.getElementById('totalLocadoresModal');
+            if (totalLocadores) {
+                logConsole(`Total de locadores: ${totalLocadores.textContent}`);
+            }
+            
+            const listaLocadores = document.getElementById('listaLocadoresModal');
+            if (listaLocadores && listaLocadores.innerHTML.trim()) {
+                logConsole('✅ Lista de locadores preenchida');
+            } else {
+                logConsole('❌ Lista de locadores vazia');
+            }
+        }
+
+        function fecharModal() {
+            if (window.sistema && typeof window.sistema.fecharModalLocadores === 'function') {
+                window.sistema.fecharModalLocadores();
+                logConsole('Modal fechado via função do sistema');
+            } else {
+                const modal = document.getElementById('modalLocadores');
+                if (modal) {
+                    modal.style.display = 'none';
+                    logConsole('Modal fechado manualmente');
+                }
+            }
+        }
+
+        // Aguardar carregamento
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                logConsole('Página carregada');
+                if (window.sistema) {
+                    logConsole(`Sistema carregado. Imóveis: ${window.sistema.imoveis ? window.sistema.imoveis.length : 'N/A'}`);
+                    verificarModal();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

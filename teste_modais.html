@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Modais</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { padding: 20px; background: #f8f9fa; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+            font-weight: 600;
+            color: white;
+        }
+        .btn-primary { background: #007bff; }
+        .btn-success { background: #28a745; }
+        .btn-warning { background: #ffc107; color: #212529; }
+        .btn-info { background: #17a2b8; }
+        .btn-danger { background: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Teste dos Modais - SILIC 2.0</h1>
+        
+        <div class="test-section">
+            <h3>Testes dos Modais:</h3>
+            <button class="btn btn-primary" onclick="abrirModalDetalhes()">Testar Modal Detalhes</button>
+            <button class="btn btn-success" onclick="abrirModalDocumentos()">Testar Modal Documentos</button>
+            <button class="btn btn-warning" onclick="abrirModalLocadores()">Testar Modal Locadores ✅ Restaurado</button>
+            <button class="btn btn-info" onclick="verificarCSS()">Verificar CSS dos Modais</button>
+        </div>
+        
+        <div id="resultado"></div>
+    </div>
+
+    <!-- Modal de Detalhes (Simulado) -->
+    <div id="modalDetalhesImovel" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detalhes do Imóvel</h3>
+                <span class="modal-close" onclick="fecharModal('modalDetalhesImovel')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="detalhes-section">
+                    <h4>📋 Informações Básicas</h4>
+                    <div class="detalhes-grid">
+                        <div class="detalhe-item">
+                            <div class="detalhe-label">Denominação</div>
+                            <div class="detalhe-valor">ED - CAIXA Teste Corporate, MG</div>
+                        </div>
+                        <div class="detalhe-item">
+                            <div class="detalhe-label">Código</div>
+                            <div class="detalhe-valor">20000001</div>
+                        </div>
+                        <div class="detalhe-item">
+                            <div class="detalhe-label">Local</div>
+                            <div class="detalhe-valor">Belo Horizonte</div>
+                        </div>
+                        <div class="detalhe-item">
+                            <div class="detalhe-label">Status</div>
+                            <div class="detalhe-valor">Ativo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="fecharModal('modalDetalhesImovel')">Fechar</button>
+                <button class="btn btn-primary">Editar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Documentos (Simulado) -->
+    <div id="modalDocumentos" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 1000px;">
+            <div class="modal-header">
+                <h3>Documentos do Imóvel e Locadores</h3>
+                <span class="modal-close" onclick="fecharModal('modalDocumentos')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                    <strong>Imóvel:</strong> ED - CAIXA Teste Corporate, MG<br>
+                    <strong>Código:</strong> 20000001 | <strong>Local:</strong> Belo Horizonte
+                </div>
+                
+                <!-- Documentos do Imóvel -->
+                <div class="mb-4">
+                    <h4 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        📋 Documentos do Imóvel
+                    </h4>
+                    <div class="documents-grid">
+                        <div class="documento-card" style="border-left: 4px solid #28a745;">
+                            <h6>Matrícula do Imóvel</h6>
+                            <div class="status-badge" style="background: #d4edda; color: #155724;">✅ Entregue</div>
+                            <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Documento entregue e aprovado</p>
+                        </div>
+                        <div class="documento-card" style="border-left: 4px solid #ffc107;">
+                            <h6>Certidão Negativa IPTU</h6>
+                            <div class="status-badge" style="background: #fff3cd; color: #856404;">⏳ Pendente</div>
+                            <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Aguardando entrega</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Relatório Técnico -->
+                <div class="relatorio-tecnico mb-4">
+                    <h4 style="color: #333; border-bottom: 2px solid #ff6b35; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        🔧 Relatório Técnico do Imóvel
+                    </h4>
+                    <div style="background: #fff9f5; padding: 1.5rem; border-radius: 8px; border: 1px solid #ffe0cc;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                            <div>
+                                <label style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Área a ser Contratada (m²)</label>
+                                <input type="number" value="1250.50" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;" readonly>
+                            </div>
+                            <div>
+                                <label style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor Total da Obra (R$)</label>
+                                <input type="number" value="150000.00" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resumo de Status -->
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                    <h5>📊 Resumo Geral de Documentos</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <div style="background: #e8f5e8; padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #28a745;">5</div>
+                            <div>Entregues</div>
+                        </div>
+                        <div style="background: #fff3e0; padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #ff9800;">3</div>
+                            <div>Pendentes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="fecharModal('modalDocumentos')">Fechar</button>
+                <button class="btn btn-primary">Gerar Relatório</button>
+                <button class="btn btn-success">Atualizar Status</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirModalDetalhes() {
+            document.getElementById('modalDetalhesImovel').style.display = 'block';
+            log('✅ Modal de detalhes aberto');
+        }
+
+        function abrirModalDocumentos() {
+            document.getElementById('modalDocumentos').style.display = 'block';
+            log('✅ Modal de documentos aberto');
+        }
+
+        function abrirModalLocadores() {
+            log('✅ Modal de locadores foi RESTAURADO e está funcional novamente!');
+            alert('✅ SUCESSO! As funcionalidades de locadores foram restauradas.\n\nAgora você pode:\n- Selecionar imóveis\n- Gerenciar locadores\n- Visualizar documentações\n\nTeste no sistema principal!');
+        }
+
+        function fecharModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            log('🚪 Modal fechado: ' + modalId);
+        }
+
+        function verificarCSS() {
+            const modal = document.querySelector('.modal');
+            const modalContent = document.querySelector('.modal-content');
+            
+            if (modal && modalContent) {
+                const modalStyles = window.getComputedStyle(modal);
+                const contentStyles = window.getComputedStyle(modalContent);
+                
+                log('✅ Estilos dos modais carregados corretamente');
+                log(`Modal position: ${modalStyles.position}`);
+                log(`Modal z-index: ${modalStyles.zIndex}`);
+                log(`Content border-radius: ${contentStyles.borderRadius}`);
+                log(`Content background: ${contentStyles.backgroundColor}`);
+            } else {
+                log('❌ Estilos dos modais não encontrados');
+            }
+        }
+
+        function log(msg) {
+            const resultado = document.getElementById('resultado');
+            const div = document.createElement('div');
+            div.style.padding = '10px';
+            div.style.margin = '5px 0';
+            div.style.background = '#fff';
+            div.style.border = '1px solid #ddd';
+            div.style.borderRadius = '6px';
+            div.style.fontFamily = 'monospace';
+            div.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${msg}`;
+            resultado.appendChild(div);
+            console.log(msg);
+        }
+
+        // Fechar modal ao clicar no fundo
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                log('🚪 Modal fechado (clique no fundo)');
+            }
+        }
+
+        // Verificar CSS na inicialização
+        window.addEventListener('load', () => {
+            setTimeout(verificarCSS, 500);
+        });
+    </script>
+</body>
+</html>

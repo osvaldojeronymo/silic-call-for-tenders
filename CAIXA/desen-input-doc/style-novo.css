@@ -1,0 +1,280 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* Header balanceado - melhor das duas versões */
+header {
+    background: #1e3a8a;
+    padding: 1.1rem 0;  /* Meio-termo entre as versões */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    flex: 1;  /* Para expandir e manter o botão à direita */
+}
+
+.logo {
+    height: 34px;  /* Meio-termo entre 32px e 36px */
+    width: auto;
+    display: block;
+    max-width: none;
+}
+
+.title-section {
+    text-align: left;  /* Alinhado à esquerda como na referência */
+    flex: 0;  /* Não expandir, manter junto ao logo */
+    margin-left: 0;  /* Sem margem extra */
+}
+
+.title-section h1 {
+    color: white;
+    font-size: 1.55rem;  /* Meio-termo entre 1.5rem e 1.625rem */
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.82);  /* Meio-termo */
+    font-size: 0.885rem;  /* Meio-termo */
+    margin: 0.2rem 0 0 0;  /* Meio-termo */
+    font-weight: 400;
+}
+
+.portal-nav .btn-voltar-portal {
+    background: rgba(255, 255, 255, 0.12);  /* Meio-termo */
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: white;
+    padding: 0.55rem 1.1rem;  /* Meio-termo */
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.portal-nav .btn-voltar-portal:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Título da seção */
+.section-title {
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 3rem;
+}
+
+/* Dashboard overview */
+.dashboard-overview {
+    margin-bottom: 3rem;
+}
+
+/* Card total destacado */
+.dashboard-total {
+    margin-bottom: 2rem;
+}
+
+.stat-card-total {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-total .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-card-total .stat-label {
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Grid de status */
+.dashboard-status {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    line-height: 1;
+}
+
+.stat-card .stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Cores específicas para cada status */
+.stat-card:nth-child(1) .stat-number { color: #059669; } /* Verde - Ativos */
+.stat-card:nth-child(2) .stat-number { color: #d97706; } /* Laranja - Prospecção */
+.stat-card:nth-child(3) .stat-number { color: #0284c7; } /* Azul - Mobilização */
+.stat-card:nth-child(4) .stat-number { color: #dc2626; } /* Vermelho - Desmobilização */
+
+/* Ações principais */
+.main-actions {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.actions-primary {
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background: #1e40af;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1e3a8a;
+}
+
+.actions-secondary {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-info {
+    background: #0284c7;
+    color: white;
+}
+
+.btn-warning {
+    background: #d97706;
+    color: white;
+}
+
+.btn-success {
+    background: #059669;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .dashboard-status {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .dashboard-status {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .actions-secondary {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .actions-secondary .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Formulário expandido */
+.form-imovel-expandido {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-header h3 {
+    color: #1e40af;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #64748b;
+    font-size: 0.875rem;
+}

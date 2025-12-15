@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Simples - Botão Detalhar</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+        .btn-info { background-color: #17a2b8; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Teste Simples do Botão Detalhar</h1>
+    
+    <button class="btn btn-info" onclick="testarFuncao()">Testar Função Diretamente</button>
+    <button class="btn btn-info" onclick="sistema.mostrarDetalhesImovel(1)">Testar sistema.mostrarDetalhesImovel(1)</button>
+    <button class="btn btn-info" onclick="window.sistema.mostrarDetalhesImovel(1)">Testar window.sistema.mostrarDetalhesImovel(1)</button>
+    
+    <div id="resultado"></div>
+
+    <script src="script.js?v=20250709"></script>
+    <script>
+        function log(msg) {
+            const div = document.getElementById('resultado');
+            div.innerHTML += '<div>' + new Date().toLocaleTimeString() + ': ' + msg + '</div>';
+            console.log(msg);
+        }
+
+        function testarFuncao() {
+            log('=== INICIANDO TESTE ===');
+            
+            log('window.sistema existe? ' + (window.sistema ? 'SIM' : 'NÃO'));
+            
+            if (window.sistema) {
+                log('Tipo: ' + typeof window.sistema);
+                log('É função mostrarDetalhesImovel? ' + (typeof window.sistema.mostrarDetalhesImovel === 'function' ? 'SIM' : 'NÃO'));
+                log('Quantidade de imóveis: ' + (window.sistema.imoveis ? window.sistema.imoveis.length : 'INDEFINIDO'));
+                
+                if (window.sistema.imoveis && window.sistema.imoveis.length > 0) {
+                    log('Primeiro imóvel ID: ' + window.sistema.imoveis[0].id);
+                    
+                    try {
+                        log('Tentando chamar mostrarDetalhesImovel(1)...');
+                        window.sistema.mostrarDetalhesImovel(1);
+                        log('Chamada realizada com sucesso!');
+                    } catch (e) {
+                        log('ERRO: ' + e.message);
+                    }
+                }
+            }
+        }
+
+        // Aguardar carregamento completo
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('Página carregada, sistema disponível: ' + (window.sistema ? 'SIM' : 'NÃO'));
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!-- Versão atualizada: 2025-07-09 -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILIC 2.0 - Gestão</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="logo-caixa.svg" alt="CAIXA" class="logo">
+            </div>
+            <div class="title-section">
+                <h1>SILIC 2.0</h1>
+                <p class="subtitle">Protótipo - Gestão de Imóveis</p>
+            </div>
+            <div class="portal-nav">
+                <button id="voltarPortalBtn" class="btn-voltar-portal" onclick="voltarAoPortal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Voltar ao Portal
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="dashboard-layout">
+            <div class="dashboard-content">
+                <!-- Seção de Cadastro de Imóveis -->
+                <section class="cadastro-imoveis">
+                    <h2 class="section-title">Gestão de Imóveis</h2>
+                    
+                    <!-- Dashboard de Estatísticas -->
+                    <div class="dashboard-overview">
+                        <!-- Total de Imóveis Cadastrados - Em separado -->
+                        <div class="dashboard-total">
+                            <div class="stat-card stat-card-total">
+                                <div class="stat-number" id="totalImoveis">100</div>
+                                <div class="stat-label">Imóveis Cadastrados</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Status dos Imóveis - Grid 4x1 -->
+                        <div class="dashboard-status stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number" id="imoveisAtivos">65</div>
+                                <div class="stat-label">Ativos</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="imoveisProspeccao">15</div>
+                                <div class="stat-label">Em Prospecção</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="imoveisMobilizacao">10</div>
+                                <div class="stat-label">Em Mobilização</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="imoveisDesmobilizacao">8</div>
+                                <div class="stat-label">Em Desmobilização</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ações Principais -->
+            <div class="main-actions">
+                <div class="actions-primary">
+                    <button id="btnNovoImovel" class="btn btn-primary btn-compact btn-action-responsive tooltip-wrapper" 
+                            data-tooltip="Clique para abrir o formulário de cadastro">
+                         Cadastrar Novo Edifício
+                    </button>
+                </div>
+                <div class="actions-secondary">
+                    <button class="btn btn-info btn-compact btn-action-responsive tooltip-wrapper" 
+                            onclick="alert('Funcionalidade a ser implementada!')" 
+                            data-tooltip="Buscar dados no sistema SIPGE/SAP">
+                         Buscar no SIPGE/SAP
+                    </button>
+                    <button class="btn btn-warning btn-compact btn-action-responsive tooltip-wrapper" 
+                            onclick="alert('Funcionalidade a ser implementada!')" 
+                            data-tooltip="Consultar dados públicos disponíveis">
+                         Buscar Consulta Pública
+                    </button>
+                    <button class="btn btn-success btn-compact btn-action-responsive tooltip-wrapper" 
+                            onclick="sistema.executarAuditoriaCompleta()" 
+                            data-tooltip="Executar auditoria completa dos dados">
+                         Auditoria de Dados
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Formulário Expandido para Imóveis (Inicialmente Oculto) -->
+            <div class="form-imovel-expandido" id="formularioImovel" style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; display: none; border: 1px solid #e9ecef;">
+                <div class="form-header" style="margin-bottom: 2rem; text-align: center;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: #0066cc; font-size: 1.5rem;">Cadastro de Edifício</h3>
+                    <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">Preencha os dados do imóvel para cadastro no sistema</p>
+                </div>
+                
+                <!-- Seção 1: Informações Básicas -->
+                <div class="form-section" style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid #0066cc;">
+                    <h4 style="margin: 0 0 1rem 0; color: #0066cc; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Informações Básicas
+                    </h4>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label for="codigoEdificio" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Código do Edifício*</label>
+                            <div style="position: relative;">
+                                <input type="text" id="codigoEdificio" class="form-input" placeholder="20000000" pattern="2000[0-9]{4}" maxlength="8" required style="padding-right: 3rem;">
+                                <button type="button" class="btn btn-sm" style="position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); padding: 0.25rem 0.5rem; font-size: 0.75rem; background: #0066cc; color: white; border: none; border-radius: 4px;">
+                                    SIPGE/SAP
+                                </button>
+                            </div>
+                            <small class="form-hint" style="color: #6c757d; font-size: 0.8rem;">8 dígitos, inicia com 2000</small>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label for="statusImovel" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Status do Imóvel*</label>
+                            <select id="statusImovel" class="form-select" required>
+                                <option value="">Selecione o status</option>
+                                <option value="Ativo">Ativo</option>
+                                <option value="Desativado">Desativado</option>
+                                <option value="Em desmobilização">Em desmobilização</option>
+                                <option value="Em mobilização">Em mobilização</option>
+                                <option value="Em prospecção">Em prospecção</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="denominacaoEdificio" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Denominação do Edifício*</label>
+                        <input type="text" id="denominacaoEdificio" class="form-input" placeholder="ED - Nome da Unidade, UF" required>
+                        <small class="form-hint" style="color: #6c757d; font-size: 0.8rem;">Formato: ED - nome da unidade, UF</small>
+                    </div>
+                </div>
+                
+                <!-- Seção 2: Localização -->
+                <div class="form-section" style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid #28a745;">
+                    <h4 style="margin: 0 0 1rem 0; color: #28a745; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Localização
+                    </h4>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 1rem;">
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label for="localCidade" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Cidade*</label>
+                            <input type="text" id="localCidade" class="form-input" placeholder="Nome da cidade" required>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label for="ruaEndereco" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Endereço Completo*</label>
+                            <input type="text" id="ruaEndereco" class="form-input" placeholder="Rua, número, complemento" required>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label for="cepImovel" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">CEP*</label>
+                            <input type="text" id="cepImovel" class="form-input" placeholder="00000-000" pattern="[0-9]{5}-[0-9]{3}" maxlength="9" required>
+                            <small class="form-hint" style="color: #6c757d; font-size: 0.8rem;">99999-999</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção 3: Validade e Tributos -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                    <!-- Validade do Objeto -->
+                    <div class="form-section" style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #17a2b8;">
+                        <h4 style="margin: 0 0 1rem 0; color: #17a2b8; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Validade do Objeto
+                        </h4>
+                        
+                        <div style="display: grid; gap: 1rem;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="inicioValidadeObj" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Início Validade*</label>
+                                <input type="date" id="inicioValidadeObj" class="form-input" required readonly style="background: #f8f9fa;">
+                                <small class="form-hint" style="color: #6c757d; font-size: 0.8rem;">Auto-gerado pelo SIPGE/SAP</small>
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="objetoValidoAte" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Válido Até</label>
+                                <input type="date" id="objetoValidoAte" class="form-input">
+                                <small class="form-hint" style="color: #6c757d; font-size: 0.8rem;">Preenchido na baixa</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Impostos e Tributos -->
+                    <div class="form-section" style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <h4 style="margin: 0 0 1rem 0; color: #e0a800; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Impostos e Tributos
+                        </h4>
+                        
+                        <div style="display: grid; gap: 1rem;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="inscricaoIPTU" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Inscrição IPTU</label>
+                                <input type="text" id="inscricaoIPTU" class="form-input" placeholder="Campo alfanumérico">
+                                <small class="form-hint" style="color: #6c757d; font-size: 0.8rem;">Aceita letras e números</small>
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="numeroITR" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Nº ITR</label>
+                                <input type="text" id="numeroITR" class="form-input" placeholder="Campo alfanumérico">
+                                <small class="form-hint" style="color: #6c757d; font-size: 0.8rem;">Aceita letras e números</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ações do Formulário -->
+                <div class="form-actions" style="display: flex; gap: 1rem; justify-content: flex-end; padding-top: 1rem; border-top: 1px solid #e9ecef;">
+                    <button type="button" id="limparFormulario" class="btn btn-secondary btn-compact" style="padding: 0.75rem 1.5rem;">
+                        Limpar
+                    </button>
+                    <button type="button" id="adicionarImovel" class="btn btn-primary btn-compact" style="padding: 0.75rem 1.5rem;">
+                        Cadastrar Imóvel
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Filtros e Busca Melhorados -->
+            <div class="search-section" style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e9ecef;">
+                <div class="search-header" style="display: flex; align-items: center; justify-content: between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <h3 style="margin: 0; color: #0066cc; font-size: 1.2rem; font-weight: 600;">Buscar e Filtrar Imóveis</h3>
+                    </div>
+                    <button class="btn btn-ghost btn-sm btn-compact" id="btnLimparFiltros" style="padding: 0.5rem 1rem; font-size: 0.85rem; color: #6c757d; background: transparent; border: 1px solid #dee2e6;">
+                        Limpar Filtros
+                    </button>
+                </div>
+                
+                <div class="search-body" style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; align-items: center;">
+                    <!-- Campo de Busca -->
+                    <div class="search-input-group" style="position: relative;">
+                        <div class="input-with-icon" style="position: relative;">
+                            <input type="text" id="filtroImoveis" class="form-input search-input" placeholder="Digite código, denominação ou local do imóvel..." style="padding-left: 1rem; border-radius: 8px; border: 2px solid #dee2e6; transition: all 0.2s ease;">
+                        </div>
+                    </div>
+                    
+                    <!-- Filtro por Status -->
+                    <div class="filter-group" style="position: relative;">
+                        <div class="select-wrapper" style="position: relative;">
+                            <select id="filtroStatusImoveis" class="form-select filter-select" style="width: 100%; padding: 0.75rem 2.5rem 0.75rem 1rem; border-radius: 8px; border: 2px solid #dee2e6; background: white; font-size: 0.9rem; cursor: pointer; transition: all 0.2s ease;">
+                                <option value="">Todos os status</option>
+                                <option value="Ativo">Ativo</option>
+                                <option value="Desativado">Desativado</option>
+                                <option value="Em desmobilização">Em desmobilização</option>
+                                <option value="Em mobilização">Em mobilização</option>
+                                <option value="Em prospecção">Em prospecção</option>
+                            </select>
+                            <span class="select-arrow" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: #6c757d; pointer-events: none;">▼</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Estatísticas de Busca -->
+                <div class="search-stats" id="searchStats" style="display: none; margin-top: 1rem; padding: 0.75rem 1rem; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 8px; border-left: 4px solid #0066cc;">
+                    <div class="stats-item" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="stats-number" id="filteredCount" style="font-weight: bold; color: #0066cc; font-size: 1.1rem;">0</span>
+                        <span class="stats-label" style="color: #6c757d; font-size: 0.9rem;">resultados encontrados</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabela de Imóveis com Controles Modernizados -->
+            <div class="table-section">
+                <div class="table-header">
+                    <div class="table-info">
+                        <span id="imoveisResultadosInfo" class="results-info">
+                            <span class="info-text">Carregando dados...</span>
+                        </span>
+                    </div>
+                    <div class="table-pagination-controls">
+                        <label>Itens por página:</label>
+                        <select id="imoveisPorPaginaSelect" class="pagination-select">
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="table table-modern">
+                        <thead>
+                            <tr>
+                                <th class="th-codigo">Código</th>
+                                <th class="th-denominacao">Denominação</th>
+                                <th class="th-local">Local</th>
+                                <th class="th-status">Status</th>
+                                <th class="th-locadores">Locadores</th>
+                                <th class="th-acoes">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaImoveis"></tbody>
+                    </table>
+                </div>
+                
+                <div class="pagination-section">
+                    <div class="pagination-wrapper">
+                        <div class="pagination-info">
+                            <span id="imoveis-pagination-info" class="pagination-text">Página 1 de 1</span>
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn pagination-btn-first btn-compact" id="primeiraPaginaImoveis" onclick="sistema.irParaPaginaImoveis(1)" title="Primeira página">
+                                Primeira
+                            </button>
+                            <button class="pagination-btn pagination-btn-prev btn-compact" id="anteriorPaginaImoveis" onclick="sistema.irParaPaginaImoveis(sistema.currentPageImoveis - 1)" title="Página anterior">
+                                Anterior
+                            </button>
+                            <button class="pagination-btn pagination-btn-next btn-compact" id="proximaPaginaImoveis" onclick="sistema.irParaPaginaImoveis(sistema.currentPageImoveis + 1)" title="Próxima página">
+                                Próxima
+                            </button>
+                            <button class="pagination-btn pagination-btn-last btn-compact" id="ultimaPaginaImoveis" onclick="sistema.irParaPaginaImoveis(sistema.totalPaginasImoveis)" title="Última página">
+                                Última
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Seção de Locadores (OCULTA) -->
+        <section class="locadores-section" style="display: none;">
+            <h2>Locadores vinculados ao imóvel selecionado</h2>
+            
+            <!-- Dashboard de Estatísticas -->
+            <div class="dashboard-stats" id="dashboardStats" style="display: none;">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalLocadores">0</div>
+                    <div class="stat-label">Total Locadores</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="docsCompletos">0</div>
+                    <div class="stat-label">Docs Completos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="docsPendentes">0</div>
+                    <div class="stat-label">Docs Pendentes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="progressoGeral">0%</div>
+                    <div class="stat-label">Progresso Geral</div>
+                </div>
+            </div>
+            
+            <div class="form-group" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <div style="display: grid; grid-template-columns: 2fr 1fr auto; gap: 1rem; align-items: end;">
+                    <div>
+                        <label class="filter-label">Nome do Locador</label>
+                        <div class="search-input-group">
+                            <input type="text" id="nomeLocador" class="form-input search-input" placeholder="Digite o nome do locador...">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="filter-label">Tipo</label>
+                        <div class="select-wrapper">
+                            <select id="tipoLocador" class="form-select filter-select">
+                                <option value="Pessoa Física">Pessoa Física</option>
+                                <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+                    <button id="adicionarLocador" class="btn btn-primary btn-compact">
+                        Adicionar Locador
+                    </button>
+                </div>
+            </div>
+
+            <!-- Controles de Busca e Filtro Modernizados -->
+            <div class="search-filters" id="searchFilters" style="display: none;">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label class="filter-label">Buscar Locador</label>
+                        <div class="search-input-group">
+                            <input type="text" id="buscaLocador" class="form-input search-input" placeholder="Buscar por nome...">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Tipo de Pessoa</label>
+                        <div class="select-wrapper">
+                            <select id="filtroTipo" class="form-select filter-select">
+                                <option value="">Todos os tipos</option>
+                                <option value="Pessoa Física">Pessoa Física</option>
+                                <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Status dos Documentos</label>
+                        <div class="select-wrapper">
+                            <select id="filtroStatus" class="form-select filter-select">
+                                <option value="">Todos os status</option>
+                                <option value="completo">Documentos Completos</option>
+                                <option value="pendente">Documentos Pendentes</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Ações</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button id="limparFiltros" class="btn btn-secondary btn-sm btn-compact">
+                                Limpar
+                            </button>
+                            <button id="exportarLocadores" class="btn btn-info btn-sm btn-compact">
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="locadores-info">
+                <p>Selecione um imóvel acima para vincular locadores.</p>
+            </div>
+
+            <!-- Toggle de Visualização Modernizado -->
+            <div class="view-toggle" id="viewToggle" style="display: none;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span style="font-weight: 600; color: var(--color-text); font-size: 0.9rem;">👁️ Visualização:</span>
+                    <button id="viewTable" class="btn btn-secondary btn-sm btn-compact active">
+                        Tabela
+                    </button>
+                    <button id="viewCards" class="btn btn-secondary btn-sm btn-compact">
+                        Cards
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Tabela de Locadores com Upload de Documentos -->
+            <div id="tableView">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Documentos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaLocadores"></tbody>
+                </table>
+            </div>
+
+            <!-- Visualização em Cards -->
+            <div id="cardsView" style="display: none;">
+                <div class="cards-container" id="cardsContainer"></div>
+            </div>
+
+            <!-- Barra de Paginação Modernizada -->
+            <div class="pagination-bar">
+                <div class="pagination-bar-row">
+                    <div class="pagination-left">
+                        <div class="page-info" id="resultadosInfo">
+                            📊 Carregando resultados...
+                        </div>
+                    </div>
+                    <div class="pagination-center">
+                        <div class="page-info" id="pagination-info">
+                            Página 1 de 1
+                        </div>
+                    </div>
+                    <div class="pagination-right" id="pagination-buttons">
+                        <button class="pagination-button" disabled>
+                            ⬅️ Anterior
+                        </button>
+                        <button class="pagination-button" disabled>
+                            Próxima ➡️
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Container para Notificações Toast -->
+    <div id="toastContainer" class="toast-container"></div>
+    
+    <!-- Modal para Detalhes do Imóvel -->
+    <div id="modalDetalhesImovel" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detalhes do Imóvel</h3>
+                <span class="modal-close" onclick="sistema.fecharModalDetalhes()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="detalhesImovelContent">
+                    <!-- Conteúdo será preenchido dinamicamente -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="sistema.fecharModalDetalhes()">Fechar</button>
+                <button class="btn btn-primary" onclick="sistema.editarImovelModal()">Editar Imóvel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Locadores (OCULTO - MODO APRESENTAÇÃO) -->
+    <div id="modalLocadores" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 900px;">
+            <div class="modal-header">
+                <h3>Gerenciar Locadores</h3>
+                <span class="modal-close" onclick="sistema.fecharModalLocadores()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="infoImovelModal" class="mb-3" style="background: #f8f9fa; padding: 1rem; border-radius: 6px; border: 1px solid #e9ecef;">
+                    <!-- Informações do imóvel serão preenchidas aqui -->
+                </div>
+                
+                <div class="locadores-stats mb-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div class="stat-card" style="background: #e7f3ff; padding: 1rem; border-radius: 6px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #0066cc;" id="totalLocadoresModal">0</div>
+                        <div style="color: #666;">Total de Locadores</div>
+                    </div>
+                    <div class="stat-card" style="background: #e8f5e8; padding: 1rem; border-radius: 6px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #28a745;" id="pessoaFisicaModal">0</div>
+                        <div style="color: #666;">Pessoa Física</div>
+                    </div>
+                    <div class="stat-card" style="background: #fff3e0; padding: 1rem; border-radius: 6px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #ff9800;" id="pessoaJuridicaModal">0</div>
+                        <div style="color: #666;">Pessoa Jurídica</div>
+                    </div>
+                </div>
+
+                <div class="locadores-actions mb-3" style="display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="margin: 0;">Lista de Locadores</h4>
+                    <button class="btn btn-primary" onclick="sistema.abrirFormularioLocador()">
+                        Adicionar Locador
+                    </button>
+                </div>
+
+                <div id="listaLocadoresModal" class="locadores-list">
+                    <!-- Lista de locadores será preenchida aqui -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="sistema.fecharModalLocadores()">Fechar</button>
+                <button class="btn btn-primary" onclick="sistema.gerarMaisLocadores()">Gerar Mais Locadores</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Documentos -->
+    <div id="modalDocumentos" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 1000px;">
+            <div class="modal-header">
+                <h3>Documentos do Imóvel e Locadores</h3>
+                <span class="modal-close" onclick="sistema.fecharModalDocumentos()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="infoImovelDocumentos" class="mb-3" style="background: #f8f9fa; padding: 1rem; border-radius: 6px; border: 1px solid #e9ecef;">
+                    <!-- Informações do imóvel serão preenchidas aqui -->
+                </div>
+                
+                <!-- Documentos do Imóvel -->
+                <div class="documentos-imovel mb-4">
+                    <h4 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        📋 Documentos do Imóvel
+                    </h4>
+                    <div id="documentosImovelContainer">
+                        <!-- Documentos do imóvel serão preenchidos aqui -->
+                    </div>
+                </div>
+
+                <!-- Relatório Técnico do Imóvel -->
+                <div class="relatorio-tecnico mb-4">
+                    <h4 style="color: #333; border-bottom: 2px solid #ff6b35; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        🔧 Relatório Técnico do Imóvel
+                    </h4>
+                    <div id="relatorioTecnicoContainer" style="background: #fff9f5; padding: 1.5rem; border-radius: 8px; border: 1px solid #ffe0cc;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group">
+                                <label for="areaContratada" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Área a ser Contratada (m²)</label>
+                                <input type="number" id="areaContratada" class="form-input" placeholder="Ex: 1250.50" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorTotalObra" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor Total da Obra (R$)</label>
+                                <input type="number" id="valorTotalObra" class="form-input" placeholder="Ex: 150000.00" step="0.01">
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group">
+                                <label for="valorObraCaixa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor da Obra - CAIXA (R$)</label>
+                                <input type="number" id="valorObraCaixa" class="form-input" placeholder="Ex: 90000.00" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorObraLocador" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor da Obra - LOCADOR (R$)</label>
+                                <input type="number" id="valorObraLocador" class="form-input" placeholder="Ex: 60000.00" step="0.01">
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group">
+                                <label for="prazoTotalObra" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo Total da Obra (meses)</label>
+                                <input type="number" id="prazoTotalObra" class="form-input" placeholder="Ex: 18" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoCaixa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo CAIXA (meses)</label>
+                                <input type="number" id="prazoCaixa" class="form-input" placeholder="Ex: 12" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoLocador" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Prazo LOCADOR (meses)</label>
+                                <input type="number" id="prazoLocador" class="form-input" placeholder="Ex: 6" min="1">
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; justify-content: flex-end; border-top: 1px solid #ffe0cc; padding-top: 1rem;">
+                            <button class="btn btn-secondary btn-sm" onclick="sistema.limparRelatorioTecnico()">Limpar</button>
+                            <button class="btn btn-warning btn-sm" onclick="sistema.salvarRelatorioTecnico()">Salvar Relatório</button>
+                            <button class="btn btn-success btn-sm" onclick="sistema.validarRelatorioTecnico()">Validar Dados</button>
+                        </div>
+                        
+                        <div id="statusRelatorioTecnico" style="margin-top: 1rem; padding: 0.75rem; border-radius: 6px; display: none;">
+                            <!-- Status do relatório técnico será exibido aqui -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentos dos Locadores -->
+                <div class="documentos-locadores">
+                    <h4 style="color: #333; border-bottom: 2px solid #28a745; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                        👥 Documentos dos Locadores
+                    </h4>
+                    <div id="documentosLocadoresContainer">
+                        <!-- Documentos dos locadores serão preenchidos aqui -->
+                    </div>
+                </div>
+
+                <!-- Resumo de Status -->
+                <div class="resumo-status mt-4" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #e9ecef;">
+                    <h5 style="margin-bottom: 1rem; color: #333;">📊 Resumo Geral de Documentos</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div class="stat-card" style="background: #e8f5e8; padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #28a745;" id="totalEntregues">0</div>
+                            <div style="color: #666;">Entregues</div>
+                        </div>
+                        <div class="stat-card" style="background: #fff3e0; padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #ff9800;" id="totalPendentes">0</div>
+                            <div style="color: #666;">Pendentes</div>
+                        </div>
+                        <div class="stat-card" style="background: #e7f3ff; padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #2196f3;" id="totalAnalise">0</div>
+                            <div style="color: #666;">Em Análise</div>
+                        </div>
+                        <div class="stat-card" style="background: #ffebee; padding: 1rem; border-radius: 6px; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #f44336;" id="totalRejeitados">0</div>
+                            <div style="color: #666;">Rejeitados</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="sistema.fecharModalDocumentos()">Fechar</button>
+                <button class="btn btn-primary" onclick="sistema.gerarRelatorioDocumentos()">Gerar Relatório</button>
+                <button class="btn btn-success" onclick="sistema.atualizarStatusDocumentos()">Atualizar Status</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Avaliação do Imóvel -->
+    <div id="modalAvaliacao" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 900px;">
+            <div class="modal-header">
+                <h3>📊 Laudo de Avaliação do Imóvel</h3>
+                <span class="modal-close" onclick="sistema.fecharModalAvaliacao()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="infoImovelAvaliacao" class="mb-3" style="background: #f8f9fa; padding: 1rem; border-radius: 6px; border: 1px solid #e9ecef;">
+                    <!-- Informações do imóvel serão preenchidas aqui -->
+                </div>
+                
+                <!-- Formulário de Avaliação -->
+                <div class="avaliacao-form">
+                    <h4 style="color: #333; border-bottom: 2px solid #28a745; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+                        📋 Dados do Laudo de Avaliação
+                    </h4>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="form-group">
+                            <label for="dataElaboracao" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Data de Elaboração *</label>
+                            <input type="date" id="dataElaboracao" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numeroDocumento" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Número do Documento *</label>
+                            <input type="text" id="numeroDocumento" class="form-input" placeholder="Ex: LAI-2025-001" required>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="form-group">
+                            <label for="nomeEmpresa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Nome da Empresa Responsável *</label>
+                            <input type="text" id="nomeEmpresa" class="form-input" placeholder="Ex: Avaliações Técnicas Ltda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpjEmpresa" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">CNPJ da Empresa *</label>
+                            <input type="text" id="cnpjEmpresa" class="form-input" placeholder="Ex: 12.345.678/0001-90" required maxlength="18">
+                        </div>
+                    </div>
+                    
+                    <h5 style="color: #333; margin: 2rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #dee2e6;">
+                        💰 Valores de Locação Mensal (R$)
+                    </h5>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div class="form-group">
+                            <label for="valorMinimo" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor Mínimo *</label>
+                            <input type="number" id="valorMinimo" class="form-input" placeholder="Ex: 5000.00" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="valorMedio" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor Médio *</label>
+                            <input type="number" id="valorMedio" class="form-input" placeholder="Ex: 6500.00" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="valorMaximo" style="font-weight: 600; color: #333; margin-bottom: 0.5rem; display: block;">Valor Máximo *</label>
+                            <input type="number" id="valorMaximo" class="form-input" placeholder="Ex: 8000.00" step="0.01" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 1rem; border-radius: 6px; margin: 1.5rem 0;">
+                        <strong>💡 Dica:</strong> Os valores devem estar em ordem crescente (Mínimo ≤ Médio ≤ Máximo)
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button class="btn btn-success" onclick="sistema.salvarAvaliacaoImovel()">💾 Salvar Avaliação</button>
+                        <button class="btn btn-secondary" onclick="sistema.limparFormularioAvaliacao()">🗑️ Limpar Formulário</button>
+                    </div>
+                    
+                    <div id="statusAvaliacao" style="margin-top: 1rem; padding: 0.75rem; border-radius: 6px; display: none;"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="sistema.fecharModalAvaliacao()">Fechar</button>
+                <button class="btn btn-primary" onclick="sistema.gerarRelatorioAvaliacao()">📄 Gerar Relatório</button>
+                <button class="btn btn-info" onclick="sistema.exportarAvaliacaoPDF()">📋 Exportar PDF</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js?v=20250709"></script>
+    <script>
+        console.log('Página carregada, iniciando sistema...');
+        
+        // Aguardar o carregamento completo do sistema
+        function aguardarSistemaCarregado() {
+            if (!window.sistema) {
+                console.log('⏳ Aguardando sistema...');
+                setTimeout(aguardarSistemaCarregado, 100);
+                return;
+            }
+            
+            if (!window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                console.log('⏳ Aguardando dados...');
+                setTimeout(aguardarSistemaCarregado, 100);
+                return;
+            }
+            
+            console.log('✅ Sistema carregado, configurando controles...');
+            configurarControles();
+        }
+        
+        function configurarControles() {
+            // 1. Configurar botão Cadastrar
+            const btnNovoImovel = document.getElementById('btnNovoImovel');
+            if (btnNovoImovel) {
+                btnNovoImovel.addEventListener('click', function() {
+                    console.log('� Abrindo formulário...');
+                    if (window.sistema.mostrarFormulario) {
+                        window.sistema.mostrarFormulario();
+                    }
+                });
+                console.log('✅ Botão Cadastrar configurado');
+            }
+            
+            // 2. Forçar atualização da tabela
+            if (window.sistema.atualizarTabelaImoveis) {
+                console.log('🔄 Forçando atualização da tabela...');
+                window.sistema.atualizarTabelaImoveis();
+            }
+            
+            // 3. Configurar filtros usando as funções originais do sistema
+            if (window.sistema.configurarFiltrosImoveisImediato) {
+                console.log('� Configurando filtros...');
+                window.sistema.configurarFiltrosImoveisImediato();
+            }
+            
+            console.log('✅ Todos os controles configurados');
+        }
+        
+        // Iniciar o processo
+        setTimeout(aguardarSistemaCarregado, 500);
+    </script>
+    </script>
+    <script>
+        console.log('Página carregada, botões prontos - versão atualizada');
+        
+        // Função para garantir que os filtros funcionem
+        function garantirFiltrosFuncionando() {
+            console.log('🔧 Garantindo que filtros funcionem...');
+            
+            // Verificar se elementos existem
+            const filtroImoveis = document.getElementById('filtroImoveis');
+            const filtroStatusImoveis = document.getElementById('filtroStatusImoveis');
+            const btnLimparFiltros = document.getElementById('btnLimparFiltros');
+            
+            if (!filtroImoveis || !filtroStatusImoveis || !btnLimparFiltros) {
+                console.error('❌ Elementos de filtro não encontrados');
+                return;
+            }
+            
+            console.log('✅ Todos os elementos encontrados');
+            
+            // Limpar event listeners existentes e recriar
+            filtroImoveis.replaceWith(filtroImoveis.cloneNode(true));
+            filtroStatusImoveis.replaceWith(filtroStatusImoveis.cloneNode(true));
+            btnLimparFiltros.replaceWith(btnLimparFiltros.cloneNode(true));
+            
+            // Reobter elementos após clone
+            const novoFiltroImoveis = document.getElementById('filtroImoveis');
+            const novoFiltroStatus = document.getElementById('filtroStatusImoveis');
+            const novoBtnLimpar = document.getElementById('btnLimparFiltros');
+            
+            // Adicionar event listeners diretamente
+            novoFiltroImoveis.addEventListener('input', function(e) {
+                console.log('🔍 Filtro texto:', e.target.value);
+                if (window.sistema && window.sistema.filtrarImoveis) {
+                    window.sistema.filtrarImoveis();
+                }
+            });
+            
+            novoFiltroStatus.addEventListener('change', function(e) {
+                console.log('🏷️ Filtro status:', e.target.value);
+                if (window.sistema && window.sistema.filtrarImoveis) {
+                    window.sistema.filtrarImoveis();
+                }
+            });
+            
+            novoBtnLimpar.addEventListener('click', function() {
+                console.log('🗑️ Limpar filtros');
+                if (window.sistema && window.sistema.limparFiltrosImoveis) {
+                    window.sistema.limparFiltrosImoveis();
+                }
+            });
+            
+            console.log('✅ Filtros reconfigurados com sucesso!');
+        }
+        
+        // Função para garantir que o botão Cadastrar funcione
+        function garantirBotaoCadastrarFuncionando() {
+            console.log('🔧 Garantindo que botão Cadastrar funcione...');
+            
+            const btnNovoImovel = document.getElementById('btnNovoImovel');
+            if (btnNovoImovel) {
+                btnNovoImovel.addEventListener('click', function() {
+                    console.log('📋 Botão Cadastrar clicado');
+                    if (window.sistema && window.sistema.mostrarFormulario) {
+                        window.sistema.mostrarFormulario();
+                    } else {
+                        console.error('❌ Sistema ou função mostrarFormulario não encontrada');
+                    }
+                });
+                console.log('✅ Botão Cadastrar configurado');
+            } else {
+                console.error('❌ Botão btnNovoImovel não encontrado');
+            }
+        }
+        
+        // Aguardar sistema estar pronto e forçar inicialização
+        function inicializarSistemaCompleto() {
+            console.log('🔄 Inicializando sistema completo...');
+            
+            if (!window.sistema) {
+                console.log('❌ Sistema não encontrado');
+                return;
+            }
+            
+            // 1. Forçar carregamento de dados se necessário
+            if (!window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                console.log('📊 Forçando carregamento de dados...');
+                window.sistema.carregarDadosDemo();
+                
+                // Aguardar carregamento
+                setTimeout(() => {
+                    console.log('📋 Dados carregados:', window.sistema.imoveis?.length || 0);
+                    configurarTudo();
+                }, 1500);
+            } else {
+                configurarTudo();
+            }
+        }
+        
+        function configurarTudo() {
+            // 1. Atualizar tabela
+            if (window.sistema.atualizarTabelaImoveis) {
+                console.log('🔄 Atualizando tabela...');
+                window.sistema.atualizarTabelaImoveis();
+            }
+            
+            // 2. Configurar filtros
+            if (window.sistema.configurarFiltrosImoveisImediato) {
+                console.log('🔧 Configurando filtros...');
+                window.sistema.configurarFiltrosImoveisImediato();
+            }
+            
+            // 3. Configurar botão cadastrar
+            const btnNovoImovel = document.getElementById('btnNovoImovel');
+            if (btnNovoImovel && window.sistema.mostrarFormulario) {
+                btnNovoImovel.addEventListener('click', () => {
+                    console.log('📋 Abrindo formulário...');
+                    window.sistema.mostrarFormulario();
+                });
+                console.log('✅ Botão cadastrar configurado');
+            }
+            
+            console.log('✅ Sistema configurado completamente');
+        }
+        
+        // Aguardar sistema estar disponível
+        let tentativas = 0;
+        const aguardarSistema = setInterval(() => {
+            tentativas++;
+            
+            if (window.sistema) {
+                clearInterval(aguardarSistema);
+                console.log('✅ Sistema encontrado');
+                inicializarSistemaCompleto();
+            } else if (tentativas > 50) {
+                clearInterval(aguardarSistema);
+                console.error('❌ Timeout - sistema não encontrado');
+            }
+        }, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Direto - Editar</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; background: #007bff; color: white; }
+        .console { background: #f8f9fa; border: 1px solid #dee2e6; padding: 15px; margin: 15px 0; border-radius: 5px; font-family: monospace; font-size: 14px; max-height: 400px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <h1>Teste Direto - Editar</h1>
+    
+    <button class="btn" onclick="testeSimples()">Teste Simples</button>
+    <button class="btn" onclick="window.location.reload()">Recarregar</button>
+    
+    <div id="console" class="console"></div>
+
+    <script src="script.js?v=20250709"></script>
+    <script>
+        // Console personalizado
+        function logConsole(msg) {
+            const consoleDiv = document.getElementById('console');
+            const timestamp = new Date().toLocaleTimeString();
+            consoleDiv.innerHTML += `[${timestamp}] ${msg}<br>`;
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+            console.log(msg);
+        }
+
+        // Interceptar console.log original
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            logConsole(args.join(' '));
+            originalLog.apply(console, args);
+        };
+        
+        console.error = function(...args) {
+            logConsole('ERROR: ' + args.join(' '));
+            originalError.apply(console, args);
+        };
+
+        function testeSimples() {
+            logConsole('=== INICIANDO TESTE SIMPLES ===');
+            
+            if (!window.sistema) {
+                logConsole('ERRO: Sistema não carregado');
+                return;
+            }
+            
+            logConsole('Sistema carregado: ' + typeof window.sistema);
+            logConsole('Imóveis disponíveis: ' + (window.sistema.imoveis ? window.sistema.imoveis.length : 'NENHUM'));
+            
+            if (window.sistema.imoveis && window.sistema.imoveis.length > 0) {
+                const primeiroImovel = window.sistema.imoveis[0];
+                logConsole('Primeiro imóvel: ID=' + primeiroImovel.id + ', Código=' + primeiroImovel.codigo);
+                
+                logConsole('Chamando editarImovel(' + primeiroImovel.id + ')...');
+                
+                try {
+                    window.sistema.editarImovel(primeiroImovel.id);
+                    logConsole('Chamada concluída!');
+                } catch (e) {
+                    logConsole('ERRO na chamada: ' + e.message);
+                }
+            }
+        }
+
+        // Aguardar carregamento
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                logConsole('Página carregada');
+                logConsole('Sistema disponível: ' + (window.sistema ? 'SIM' : 'NÃO'));
+            }, 1000);
+        });
+
+        // Interceptar erros
+        window.addEventListener('error', (e) => {
+            logConsole('ERRO JS: ' + e.message + ' em ' + e.filename + ':' + e.lineno);
+        });
+    </script>
+</body>
+</html>

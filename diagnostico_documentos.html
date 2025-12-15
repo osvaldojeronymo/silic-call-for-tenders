@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Botão Documentos</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+        .btn-warning { background-color: #ffc107; color: black; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        .btn-info { background-color: #17a2b8; color: white; }
+        .log { 
+            background: #f8f9fa; 
+            border: 1px solid #dee2e6; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 4px; 
+            font-family: monospace; 
+            font-size: 12px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .warning { background-color: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <h1>Diagnóstico - Botão Documentos</h1>
+    
+    <h3>Testes Diagnósticos:</h3>
+    <button class="btn btn-warning" onclick="testarMostrarDocumentos()">Testar mostrarDocumentosImovel(1)</button>
+    <button class="btn btn-info" onclick="verificarFuncao()">Verificar Função</button>
+    <button class="btn btn-danger" onclick="verificarModal()">Verificar Modal DOM</button>
+    <button class="btn btn-info" onclick="testarComImovelReal()">Testar com Imóvel Real</button>
+    
+    <div id="resultado"></div>
+
+    <script src="script.js?v=20250709"></script>
+    <script>
+        function log(msg, type = 'info') {
+            const div = document.getElementById('resultado');
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log ' + (type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : '');
+            logDiv.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${msg}`;
+            div.appendChild(logDiv);
+            console.log(msg);
+        }
+
+        function testarMostrarDocumentos() {
+            log('=== TESTANDO mostrarDocumentosImovel(1) ===');
+            
+            if (!window.sistema) {
+                log('ERRO: Sistema não carregado!', 'error');
+                return;
+            }
+            
+            if (typeof window.sistema.mostrarDocumentosImovel !== 'function') {
+                log('ERRO: Função mostrarDocumentosImovel não existe!', 'error');
+                return;
+            }
+            
+            log('✅ Função mostrarDocumentosImovel existe', 'success');
+            
+            try {
+                window.sistema.mostrarDocumentosImovel(1);
+                log('Função executada sem erros!', 'success');
+                
+                // Verificar se modal foi aberto
+                setTimeout(() => {
+                    const modal = document.getElementById('modalDocumentos');
+                    if (modal && modal.style.display === 'block') {
+                        log('✅ Modal de documentos aberto com sucesso!', 'success');
+                    } else {
+                        log('❌ Modal de documentos não foi aberto', 'error');
+                        if (modal) {
+                            log(`Display do modal: ${modal.style.display}`, 'warning');
+                        } else {
+                            log('Modal não existe no DOM', 'error');
+                        }
+                    }
+                }, 100);
+                
+            } catch (e) {
+                log(`ERRO na execução: ${e.message}`, 'error');
+                console.error(e);
+            }
+        }
+
+        function verificarFuncao() {
+            log('=== VERIFICANDO FUNÇÃO ===');
+            
+            if (!window.sistema) {
+                log('ERRO: Sistema não carregado', 'error');
+                return;
+            }
+            
+            // Verificar se todas as funções relacionadas existem
+            const funcoes = [
+                'mostrarDocumentosImovel',
+                'preencherInfoImovelDocumentos',
+                'preencherDocumentosImovel',
+                'preencherDocumentosLocadores',
+                'atualizarResumoStatusDocumentos',
+                'obterInfoStatusDocumento',
+                'gerarDocumentosLocador',
+                'fecharModalDocumentos'
+            ];
+            
+            funcoes.forEach(funcao => {
+                if (typeof window.sistema[funcao] === 'function') {
+                    log(`✅ ${funcao}: EXISTE`, 'success');
+                } else {
+                    log(`❌ ${funcao}: NÃO EXISTE`, 'error');
+                }
+            });
+            
+            // Verificar propriedades
+            log(`Imóveis: ${window.sistema.imoveis ? window.sistema.imoveis.length : 'INDEFINIDO'}`);
+            log(`Locadores: ${window.sistema.locadores ? window.sistema.locadores.length : 'INDEFINIDO'}`);
+        }
+
+        function verificarModal() {
+            log('=== VERIFICANDO MODAL NO DOM ===');
+            
+            const modal = document.getElementById('modalDocumentos');
+            if (!modal) {
+                log('❌ Modal modalDocumentos não encontrado no DOM!', 'error');
+                return;
+            }
+            
+            log('✅ Modal modalDocumentos encontrado', 'success');
+            log(`Display atual: ${modal.style.display}`);
+            
+            // Verificar elementos filhos
+            const elementos = [
+                'infoImovelDocumentos',
+                'documentosImovelContainer', 
+                'documentosLocadoresContainer',
+                'totalEntregues',
+                'totalPendentes',
+                'totalAnalise',
+                'totalRejeitados'
+            ];
+            
+            elementos.forEach(id => {
+                const elemento = document.getElementById(id);
+                if (elemento) {
+                    log(`✅ ${id}: encontrado`, 'success');
+                } else {
+                    log(`❌ ${id}: NÃO encontrado`, 'error');
+                }
+            });
+        }
+
+        function testarComImovelReal() {
+            log('=== TESTANDO COM IMÓVEL REAL ===');
+            
+            if (!window.sistema || !window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                log('ERRO: Nenhum imóvel disponível!', 'error');
+                return;
+            }
+            
+            const primeiroImovel = window.sistema.imoveis[0];
+            log(`Testando com imóvel: ${primeiroImovel.denominacao} (ID: ${primeiroImovel.id})`, 'warning');
+            
+            // Verificar se o imóvel tem documentos
+            if (primeiroImovel.documentosImovel) {
+                log('✅ Imóvel possui documentos', 'success');
+                log(`Documentos: ${Object.keys(primeiroImovel.documentosImovel).length}`);
+            } else {
+                log('⚠️ Imóvel não possui documentos', 'warning');
+            }
+            
+            // Verificar locadores vinculados
+            const locadoresDoImovel = window.sistema.locadores.filter(l => l.imovelId === primeiroImovel.id);
+            log(`Locadores vinculados: ${locadoresDoImovel.length}`, locadoresDoImovel.length > 0 ? 'success' : 'warning');
+            
+            try {
+                window.sistema.mostrarDocumentosImovel(primeiroImovel.id);
+                log('✅ Função chamada com sucesso!', 'success');
+            } catch (e) {
+                log(`❌ ERRO: ${e.message}`, 'error');
+            }
+        }
+
+        // Interceptar alertas para ver o que está acontecendo
+        const originalAlert = window.alert;
+        window.alert = function(message) {
+            log(`🚨 ALERT: ${message}`, 'warning');
+            return originalAlert(message);
+        };
+
+        // Aguardar carregamento
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('Página carregada. Iniciando diagnóstico...');
+                if (window.sistema) {
+                    log(`✅ Sistema carregado: ${typeof window.sistema}`, 'success');
+                    verificarFuncao();
+                } else {
+                    log('❌ Sistema NÃO carregado', 'error');
+                }
+            }, 1000);
+        });
+
+        // Interceptar erros
+        window.addEventListener('error', (event) => {
+            log(`💥 ERRO JavaScript: ${event.message} em ${event.filename}:${event.lineno}`, 'error');
+        });
+    </script>
+</body>
+</html>

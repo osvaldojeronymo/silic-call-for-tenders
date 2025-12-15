@@ -1,0 +1,65 @@
+/* ==================== CORREÇÕES FINAIS - MÁXIMA PRIORIDADE ==================== */
+
+/* FOOTER: Garantir que todos os elementos do footer fiquem contidos */
+.modern-footer * {
+    color: inherit !important;
+}
+
+.modern-footer,
+.modern-footer .footer-container,
+.modern-footer .footer-content,
+.modern-footer .footer-info,
+.modern-footer .footer-links,
+.modern-footer .footer-col,
+.modern-footer .footer-bottom {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.modern-footer .footer-content {
+    display: grid !important;
+}
+
+.modern-footer .footer-links {
+    display: grid !important;
+}
+
+/* Garantir que listas do footer usem display correto */
+.modern-footer ul {
+    display: block !important;
+}
+
+.modern-footer li {
+    display: list-item !important;
+    list-style: none !important;
+}
+
+/* Links do footer sempre visíveis */
+.modern-footer a {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 0.8 !important;
+}
+
+.modern-footer a:hover {
+    opacity: 1 !important;
+}
+
+/* Títulos do footer sempre visíveis */
+.modern-footer h4,
+.modern-footer h5 {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Parágrafos do footer sempre visíveis */
+.modern-footer p {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Após o footer, esconda quaisquer elementos soltos que não sejam o modal ou scripts */
+.modern-footer ~ *:not(.modal):not(script) {
+    display: none !important;
+}

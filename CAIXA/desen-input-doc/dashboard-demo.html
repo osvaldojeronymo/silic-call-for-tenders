@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILIC 2.0 - Dashboard Operacional</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Design System -->
+    <link rel="stylesheet" href="design-system-dashboard.css">
+    
+    <style>
+        /* Exemplos específicos para demonstração */
+        .demo-section {
+            margin-bottom: var(--space-12);
+        }
+        
+        .demo-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-3);
+            border-bottom: 2px solid var(--primary-100);
+        }
+    </style>
+</head>
+<body>
+    <!-- Layout Dashboard -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <img src="logo-caixa.svg" alt="CAIXA" class="sidebar-logo">
+                <h1 class="sidebar-brand">SILIC 2.0</h1>
+            </div>
+            
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Principal</h3>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <div class="nav-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="nav-icon"><i class="fas fa-file-contract"></i></div>
+                            <span class="nav-text">Solicitações</span>
+                            <span class="nav-badge">12</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="nav-icon"><i class="fas fa-clipboard-list"></i></div>
+                            <span class="nav-text">Processos</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Gestão</h3>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="nav-icon"><i class="fas fa-users"></i></div>
+                            <span class="nav-text">Usuários</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="nav-icon"><i class="fas fa-cog"></i></div>
+                            <span class="nav-text">Configurações</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="nav-icon"><i class="fas fa-chart-bar"></i></div>
+                            <span class="nav-text">Relatórios</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Sistema</h3>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="nav-icon"><i class="fas fa-bell"></i></div>
+                            <span class="nav-text">Notificações</span>
+                            <span class="nav-badge">3</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="nav-icon"><i class="fas fa-question-circle"></i></div>
+                            <span class="nav-text">Ajuda</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main" id="mainContent">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="header-title">Dashboard Operacional</h1>
+                    <div class="header-breadcrumb">
+                        <span>SILIC</span>
+                        <span class="breadcrumb-separator">•</span>
+                        <span>Dashboard</span>
+                        <span class="breadcrumb-separator">•</span>
+                        <span>Visão Geral</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-icon btn-secondary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-icon btn-secondary">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Nova Solicitação
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Seção 1: Métricas Principais -->
+                <div class="demo-section">
+                    <h2 class="demo-title">
+                        <i class="fas fa-chart-line"></i>
+                        Métricas Principais
+                    </h2>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-card success fade-in">
+                            <div class="metric-header">
+                                <span class="metric-title">Total de Solicitações</span>
+                                <div class="metric-icon">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                            </div>
+                            <div class="metric-value">1,247</div>
+                            <div class="metric-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                +12.5% vs mês anterior
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card warning fade-in">
+                            <div class="metric-header">
+                                <span class="metric-title">Pendentes</span>
+                                <div class="metric-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                            </div>
+                            <div class="metric-value">89</div>
+                            <div class="metric-change neutral">
+                                <i class="fas fa-minus"></i>
+                                Sem alteração
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card info fade-in">
+                            <div class="metric-header">
+                                <span class="metric-title">Processadas</span>
+                                <div class="metric-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="metric-value">1,158</div>
+                            <div class="metric-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                +8.3% vs mês anterior
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card error fade-in">
+                            <div class="metric-header">
+                                <span class="metric-title">Tempo Médio</span>
+                                <div class="metric-icon">
+                                    <i class="fas fa-stopwatch"></i>
+                                </div>
+                            </div>
+                            <div class="metric-value">3.2d</div>
+                            <div class="metric-change negative">
+                                <i class="fas fa-arrow-down"></i>
+                                -15% vs mês anterior
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção 2: Filtros -->
+                <div class="demo-section">
+                    <h2 class="demo-title">
+                        <i class="fas fa-filter"></i>
+                        Sistema de Filtros
+                    </h2>
+                    
+                    <div class="filters-section">
+                        <div class="filters-header">
+                            <h3 class="filters-title">Filtros Avançados</h3>
+                            <button class="filters-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="filters-grid">
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option>Todos</option>
+                                    <option>Pendente</option>
+                                    <option>Em Análise</option>
+                                    <option>Aprovado</option>
+                                    <option>Rejeitado</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Período</label>
+                                <select class="form-select">
+                                    <option>Últimos 30 dias</option>
+                                    <option>Últimos 7 dias</option>
+                                    <option>Último mês</option>
+                                    <option>Último trimestre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Departamento</label>
+                                <select class="form-select">
+                                    <option>Todos</option>
+                                    <option>TI</option>
+                                    <option>Financeiro</option>
+                                    <option>RH</option>
+                                    <option>Operações</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group search-input">
+                                <label class="form-label">Buscar</label>
+                                <input type="text" class="form-input" placeholder="Digite para buscar...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção 3: Stepper Dashboard -->
+                <div class="demo-section">
+                    <h2 class="demo-title">
+                        <i class="fas fa-route"></i>
+                        Progresso do Processo
+                    </h2>
+                    
+                    <div class="dashboard-stepper">
+                        <div class="stepper">
+                            <div class="step completed">
+                                <div class="step-circle">1</div>
+                                <div class="step-label">Solicitação</div>
+                            </div>
+                            <div class="step completed">
+                                <div class="step-circle">2</div>
+                                <div class="step-label">Validação</div>
+                            </div>
+                            <div class="step active">
+                                <div class="step-circle">3</div>
+                                <div class="step-label">Análise</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-circle">4</div>
+                                <div class="step-label">Aprovação</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-circle">5</div>
+                                <div class="step-label">Finalização</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção 4: Tabela -->
+                <div class="demo-section">
+                    <h2 class="demo-title">
+                        <i class="fas fa-table"></i>
+                        Lista de Solicitações
+                    </h2>
+                    
+                    <div class="table-container">
+                        <div class="table-header">
+                            <h3>Solicitações Recentes</h3>
+                            <div class="d-flex gap-3">
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-download"></i>
+                                    Exportar
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-plus"></i>
+                                    Nova
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Solicitante</th>
+                                    <th>Tipo</th>
+                                    <th>Status</th>
+                                    <th>Data</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#SOL-2024-001</td>
+                                    <td>João Silva</td>
+                                    <td>Material de Escritório</td>
+                                    <td><span class="badge badge-success">Aprovado</span></td>
+                                    <td>15/01/2024</td>
+                                    <td>
+                                        <button class="btn btn-icon btn-sm btn-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-icon btn-sm btn-primary">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#SOL-2024-002</td>
+                                    <td>Maria Santos</td>
+                                    <td>Equipamento TI</td>
+                                    <td><span class="badge badge-warning">Pendente</span></td>
+                                    <td>14/01/2024</td>
+                                    <td>
+                                        <button class="btn btn-icon btn-sm btn-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-icon btn-sm btn-primary">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#SOL-2024-003</td>
+                                    <td>Pedro Costa</td>
+                                    <td>Serviços Técnicos</td>
+                                    <td><span class="badge badge-info">Em Análise</span></td>
+                                    <td>13/01/2024</td>
+                                    <td>
+                                        <button class="btn btn-icon btn-sm btn-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-icon btn-sm btn-primary">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#SOL-2024-004</td>
+                                    <td>Ana Oliveira</td>
+                                    <td>Consultoria</td>
+                                    <td><span class="badge badge-error">Rejeitado</span></td>
+                                    <td>12/01/2024</td>
+                                    <td>
+                                        <button class="btn btn-icon btn-sm btn-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn btn-icon btn-sm btn-primary">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Seção 5: Cards e Componentes -->
+                <div class="demo-section">
+                    <h2 class="demo-title">
+                        <i class="fas fa-th-large"></i>
+                        Cards e Componentes
+                    </h2>
+                    
+                    <div class="dashboard-grid grid-cols-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Últimas Atividades</h3>
+                                <p class="card-subtitle">Ações recentes no sistema</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-direction-column gap-3">
+                                    <div class="d-flex gap-3 items-center">
+                                        <div class="metric-icon bg-success text-white">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Solicitação aprovada</strong>
+                                            <br>
+                                            <small class="text-muted">2 horas atrás</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-3 items-center">
+                                        <div class="metric-icon bg-warning text-white">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Pendência criada</strong>
+                                            <br>
+                                            <small class="text-muted">4 horas atrás</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-3 items-center">
+                                        <div class="metric-icon bg-info text-white">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Novo usuário</strong>
+                                            <br>
+                                            <small class="text-muted">1 dia atrás</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-sm btn-primary">Ver todas</button>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Status do Sistema</h3>
+                                <p class="card-subtitle">Monitoramento em tempo real</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-direction-column gap-4">
+                                    <div class="d-flex justify-between items-center">
+                                        <span>API Principal</span>
+                                        <span class="badge badge-success">Online</span>
+                                    </div>
+                                    <div class="d-flex justify-between items-center">
+                                        <span>Banco de Dados</span>
+                                        <span class="badge badge-success">Online</span>
+                                    </div>
+                                    <div class="d-flex justify-between items-center">
+                                        <span>Serviço de E-mail</span>
+                                        <span class="badge badge-warning">Lento</span>
+                                    </div>
+                                    <div class="d-flex justify-between items-center">
+                                        <span>Backup</span>
+                                        <span class="badge badge-info">Executando</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Ações Rápidas</h3>
+                                <p class="card-subtitle">Funcionalidades frequentes</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-direction-column gap-3">
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
+                                        Nova Solicitação
+                                    </button>
+                                    <button class="btn btn-secondary">
+                                        <i class="fas fa-search"></i>
+                                        Buscar Processo
+                                    </button>
+                                    <button class="btn btn-accent">
+                                        <i class="fas fa-chart-bar"></i>
+                                        Gerar Relatório
+                                    </button>
+                                    <button class="btn btn-secondary">
+                                        <i class="fas fa-download"></i>
+                                        Exportar Dados
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção 6: Notificações -->
+                <div class="demo-section">
+                    <h2 class="demo-title">
+                        <i class="fas fa-bell"></i>
+                        Sistema de Notificações
+                    </h2>
+                    
+                    <div class="notification notification-success">
+                        <div class="notification-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Processo finalizado com sucesso!</div>
+                            <div>A solicitação #SOL-2024-001 foi processada e aprovada.</div>
+                        </div>
+                        <button class="notification-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="notification notification-warning">
+                        <div class="notification-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Atenção necessária</div>
+                            <div>Existem 3 solicitações pendentes há mais de 5 dias.</div>
+                        </div>
+                        <button class="notification-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="notification notification-info">
+                        <div class="notification-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Atualização do sistema</div>
+                            <div>Uma nova versão do SILIC estará disponível em 2 horas.</div>
+                        </div>
+                        <button class="notification-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Seção 7: Formulário -->
+                <div class="demo-section">
+                    <h2 class="demo-title">
+                        <i class="fas fa-edit"></i>
+                        Formulários
+                    </h2>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Nova Solicitação</h3>
+                            <p class="card-subtitle">Preencha os dados da solicitação</p>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Tipo de Solicitação</label>
+                                        <select class="form-select">
+                                            <option>Selecione...</option>
+                                            <option>Material de Escritório</option>
+                                            <option>Equipamento TI</option>
+                                            <option>Serviços Técnicos</option>
+                                            <option>Consultoria</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Prioridade</label>
+                                        <select class="form-select">
+                                            <option>Normal</option>
+                                            <option>Alta</option>
+                                            <option>Urgente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Título da Solicitação</label>
+                                    <input type="text" class="form-input" placeholder="Digite o título...">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Descrição</label>
+                                    <textarea class="form-textarea" placeholder="Descreva detalhadamente sua solicitação..."></textarea>
+                                    <small class="form-help">Mínimo de 50 caracteres</small>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Data Limite</label>
+                                        <input type="date" class="form-input">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Orçamento Estimado</label>
+                                        <input type="number" class="form-input" placeholder="R$ 0,00">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex gap-3 justify-end">
+                                <button class="btn btn-secondary">Cancelar</button>
+                                <button class="btn btn-primary">Salvar Rascunho</button>
+                                <button class="btn btn-accent">Enviar Solicitação</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal de Exemplo -->
+    <div class="modal-overlay" id="exampleModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Detalhes da Solicitação</h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Este é um exemplo de modal do design system. Aqui você pode exibir informações detalhadas, formulários ou qualquer outro conteúdo.</p>
+                
+                <div class="form-group">
+                    <label class="form-label">Campo de exemplo</label>
+                    <input type="text" class="form-input" placeholder="Digite algo...">
+                </div>
+                
+                <div class="notification notification-info">
+                    <div class="notification-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Informação importante</div>
+                        <div>Esta é uma notificação dentro do modal.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                <button class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle sidebar
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('sidebar-collapsed');
+        });
+        
+        // Responsive sidebar
+        if (window.innerWidth <= 1200) {
+            document.getElementById('sidebar').classList.add('collapsed');
+            document.getElementById('mainContent').classList.add('sidebar-collapsed');
+        }
+        
+        // Example modal functions
+        function openModal() {
+            document.getElementById('exampleModal').classList.add('active');
+        }
+        
+        function closeModal() {
+            document.getElementById('exampleModal').classList.remove('active');
+        }
+        
+        // Close modal on overlay click
+        document.getElementById('exampleModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Notification close buttons
+        document.querySelectorAll('.notification-close').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.notification').style.display = 'none';
+            });
+        });
+        
+        // Add click handler to table view buttons
+        document.querySelectorAll('.table .btn-secondary').forEach(button => {
+            button.addEventListener('click', openModal);
+        });
+        
+        // Simulate loading state
+        function simulateLoading(element) {
+            element.classList.add('loading-skeleton');
+            setTimeout(() => {
+                element.classList.remove('loading-skeleton');
+            }, 2000);
+        }
+        
+        // Add animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards and metric cards
+        document.querySelectorAll('.card, .metric-card:not(.fade-in)').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

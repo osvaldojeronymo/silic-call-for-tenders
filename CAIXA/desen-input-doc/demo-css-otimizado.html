@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILIC - Solicitação de Serviços - Demo CSS Otimizado</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* CSS Variables - Design System */
+        :root {
+            /* Cores principais CAIXA */
+            --primary: #003366;
+            --primary-light: #0056b3;
+            --primary-dark: #002244;
+            --accent: #F39200;
+            --accent-hover: #E67E22;
+            
+            /* Escala de cinzas */
+            --white: #ffffff;
+            --gray-50: #f8f9fa;
+            --gray-100: #f7f7f7;
+            --gray-200: #e7e7e7;
+            --gray-300: #ddd;
+            --gray-400: #b0b0b0;
+            --gray-500: #717171;
+            --gray-600: #666;
+            --gray-700: #333;
+            --gray-800: #222;
+            --gray-900: #111;
+            
+            /* Estados */
+            --success: #28a745;
+            --warning: #ffc107;
+            --error: #dc3545;
+            
+            /* Sombras */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.15);
+            
+            /* Transições */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.6s ease;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 0 24px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 80px;
+            gap: 20px;
+        }
+
+        .nav-logo .logo {
+            height: 40px;
+            width: auto;
+            background: var(--accent);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            flex: 1;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-voltar-portal {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-decoration: none;
+        }
+
+        .btn-voltar-portal:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .system-title {
+            color: var(--white);
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .system-subtitle {
+            color: var(--white);
+            font-size: 14px;
+            margin: 0;
+            opacity: 0.9;
+            line-height: 1.2;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 100px 20px 120px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 48px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Search Form */
+        .search-form {
+            background: var(--white);
+            border-radius: 32px;
+            padding: 24px;
+            box-shadow: var(--shadow-xl);
+            max-width: 850px;
+            margin: 0 auto;
+            color: var(--gray-700);
+        }
+
+        .search-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            justify-content: center;
+        }
+
+        .tab-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gray-100);
+            border: none;
+            border-radius: 22px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+            color: var(--gray-500);
+        }
+
+        .tab-button:hover {
+            background: var(--gray-200);
+        }
+
+        .tab-button.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .search-container {
+            border-radius: 16px;
+            border: 1px solid var(--gray-300);
+            overflow: hidden;
+        }
+
+        .search-fields {
+            display: flex;
+            background: var(--white);
+        }
+
+        .field-group {
+            flex: 1;
+            position: relative;
+            border-right: 1px solid var(--gray-300);
+            padding: 16px 20px;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .field-group:last-child {
+            border-right: none;
+        }
+
+        .field-group label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            font-size: 14px;
+            color: var(--gray-500);
+            background: transparent;
+            width: 100%;
+            padding: 0;
+        }
+
+        .search-button {
+            background: var(--accent);
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            margin: 16px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .search-button:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+        }
+
+        .search-button i {
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 20px;
+            background: var(--gray-50);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 48px;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .service-icon i {
+            font-size: 32px;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .btn-service {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+
+        .btn-service:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp var(--transition-slow) ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            .nav-text {
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .search-fields {
+                flex-direction: column;
+            }
+            
+            .field-group {
+                border-right: none;
+                border-bottom: 1px solid var(--gray-300);
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Indicador de otimização */
+        .optimization-banner {
+            background: linear-gradient(45deg, var(--success), #20c997);
+            color: white;
+            padding: 16px;
+            text-align: center;
+            font-weight: 600;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10000;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .main-content {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner de Otimização -->
+    <div class="optimization-banner">
+        🚀 CSS OTIMIZADO! Design System com CSS Variables + Performance Melhorada ✨
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <div class="logo">CAIXA</div>
+                </div>
+                <div class="nav-text">
+                    <h1 class="system-title">SILIC 2.0</h1>
+                    <p class="system-subtitle">Sistema de Solicitação de Serviços</p>
+                </div>
+                <div class="nav-actions">
+                    <a href="#" class="btn-voltar-portal">
+                        <i class="fas fa-arrow-left"></i>
+                        Voltar ao Portal
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Solicitação de Serviços</h1>
+                <p class="hero-subtitle">
+                    Sistema otimizado com CSS Variables para melhor performance e manutenibilidade
+                </p>
+                
+                <!-- Search Form -->
+                <div class="search-form">
+                    <div class="search-tabs">
+                        <button class="tab-button active">
+                            <i class="fas fa-search"></i>
+                            Buscar Serviços
+                        </button>
+                        <button class="tab-button">
+                            <i class="fas fa-list"></i>
+                            Listar Todos
+                        </button>
+                    </div>
+                    
+                    <div class="search-container">
+                        <div class="search-fields">
+                            <div class="field-group">
+                                <label>Tipo de Serviço</label>
+                                <input type="text" class="search-input" placeholder="Ex: Manutenção, Limpeza...">
+                            </div>
+                            <div class="field-group">
+                                <label>Localização</label>
+                                <input type="text" class="search-input" placeholder="Digite o local">
+                            </div>
+                            <div class="field-group">
+                                <label>Prioridade</label>
+                                <input type="text" class="search-input" placeholder="Alta, Média, Baixa">
+                            </div>
+                            <div class="field-group">
+                                <label>Prazo</label>
+                                <input type="text" class="search-input" placeholder="Urgente, Normal">
+                            </div>
+                        </div>
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <h2 class="section-title">Serviços Disponíveis</h2>
+                
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Manutenção Predial</h3>
+                        <p>Serviços de manutenção preventiva e corretiva usando CSS Variables otimizadas.</p>
+                        <button class="btn-service">Solicitar Serviço</button>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <h3>Limpeza e Conservação</h3>
+                        <p>Limpeza profissional com design system consistente e performance melhorada.</p>
+                        <button class="btn-service">Solicitar Serviço</button>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Segurança Patrimonial</h3>
+                        <p>Serviços de segurança com transições otimizadas e código mais limpo.</p>
+                        <button class="btn-service">Solicitar Serviço</button>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Suporte Técnico</h3>
+                        <p>Suporte em TI com manutenibilidade aprimorada através de variables CSS.</p>
+                        <button class="btn-service">Solicitar Serviço</button>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Design System</h3>
+                        <p>Agora com CSS Variables centralizadas para cores, sombras e transições.</p>
+                        <button class="btn-service">Ver Otimizações</button>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Performance</h3>
+                        <p>Código mais eficiente, transições padronizadas e melhor manutenibilidade.</p>
+                        <button class="btn-service">Ver Melhorias</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CSS Otimizado ✨</h3>
+                    <p>Design System com CSS Variables, performance melhorada e código mais limpo para melhor manutenibilidade.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CAIXA Econômica Federal - Demonstração CSS Otimizado</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Demonstração das otimizações
+        console.log('🚀 CSS OTIMIZADO!');
+        console.log('✅ CSS Variables implementadas');
+        console.log('✅ Design System centralizado');
+        console.log('✅ Performance melhorada');
+        console.log('✅ Manutenibilidade aumentada');
+        
+        // Animações melhoradas
+        setTimeout(() => {
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.animation = `fadeInUp ${600 + index * 100}ms ease forwards`;
+                }, index * 100);
+            });
+        }, 500);
+
+        // Interatividade dos tabs
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        // Remover banner após 5 segundos
+        setTimeout(() => {
+            const banner = document.querySelector('.optimization-banner');
+            banner.style.animation = 'slideDown 0.5s ease reverse';
+            setTimeout(() => banner.remove(), 500);
+        }, 5000);
+    </script>
+</body>
+</html>

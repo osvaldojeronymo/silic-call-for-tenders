@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Modal Simples</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { padding: 20px; }
+        .test-btn {
+            background: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .test-btn:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste Modal Simples</h1>
+    <button class="test-btn" onclick="mostrarModal()">Abrir Modal de Teste</button>
+    
+    <!-- Modal de Teste -->
+    <div id="modalTeste" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Modal de Teste</h3>
+                <span class="modal-close" onclick="fecharModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>Este é um modal de teste</h4>
+                <p>Se você está vendo este modal corretamente estilizado, os estilos CSS estão funcionando!</p>
+                <div class="detalhes-section">
+                    <h4>📋 Seção de Detalhes</h4>
+                    <div class="detalhes-grid">
+                        <div class="detalhe-item">
+                            <label>Campo 1:</label>
+                            <span>Valor de teste 1</span>
+                        </div>
+                        <div class="detalhe-item">
+                            <label>Campo 2:</label>
+                            <span>Valor de teste 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
+                <button class="btn btn-primary">Ação Primária</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarModal() {
+            document.getElementById('modalTeste').style.display = 'block';
+        }
+        
+        function fecharModal() {
+            document.getElementById('modalTeste').style.display = 'none';
+        }
+        
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalTeste');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        }
+    </script>
+</body>
+</html>

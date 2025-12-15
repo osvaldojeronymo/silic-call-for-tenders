@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Botões Editar</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+        .btn-warning { background-color: #ffc107; color: black; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        .log { 
+            background: #f8f9fa; 
+            border: 1px solid #dee2e6; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 4px; 
+            font-family: monospace; 
+            font-size: 12px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .warning { background-color: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <h1>Diagnóstico - Botões Editar</h1>
+    
+    <h3>Testes Diagnósticos:</h3>
+    <button class="btn btn-warning" onclick="testarEditarImovel()">Testar editarImovel(1)</button>
+    <button class="btn btn-warning" onclick="testarEditarImovelModal()">Testar editarImovelModal()</button>
+    <button class="btn btn-danger" onclick="verificarFormulario()">Verificar Formulário</button>
+    <button class="btn btn-danger" onclick="verificarElementos()">Verificar Elementos DOM</button>
+    
+    <div id="resultado"></div>
+
+    <script src="script.js?v=20250709"></script>
+    <script>
+        function log(msg, type = 'info') {
+            const div = document.getElementById('resultado');
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log ' + (type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : '');
+            logDiv.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${msg}`;
+            div.appendChild(logDiv);
+            console.log(msg);
+        }
+
+        function testarEditarImovel() {
+            log('=== TESTANDO editarImovel(1) ===');
+            
+            if (!window.sistema) {
+                log('ERRO: Sistema não carregado!', 'error');
+                return;
+            }
+            
+            if (typeof window.sistema.editarImovel !== 'function') {
+                log('ERRO: Função editarImovel não existe!', 'error');
+                return;
+            }
+            
+            if (!window.sistema.imoveis || window.sistema.imoveis.length === 0) {
+                log('ERRO: Nenhum imóvel disponível!', 'error');
+                return;
+            }
+            
+            const primeiroImovel = window.sistema.imoveis[0];
+            log(`Testando com imóvel ID: ${primeiroImovel.id} (${primeiroImovel.denominacao})`);
+            
+            try {
+                window.sistema.editarImovel(primeiroImovel.id);
+                log('Função editarImovel() executada sem erros!', 'success');
+                
+                // Verificar se entrou em modo de edição
+                setTimeout(() => {
+                    if (window.sistema.imovelEditando) {
+                        log(`Modo edição ativo: ID ${window.sistema.imovelEditando}`, 'success');
+                    } else {
+                        log('AVISO: Modo edição não foi ativado', 'warning');
+                    }
+                    
+                    // Verificar se formulário foi preenchido
+                    const codigo = document.getElementById('codigoEdificio');
+                    if (codigo && codigo.value) {
+                        log(`Formulário preenchido com código: ${codigo.value}`, 'success');
+                    } else {
+                        log('ERRO: Formulário não foi preenchido', 'error');
+                    }
+                }, 100);
+                
+            } catch (e) {
+                log(`ERRO: ${e.message}`, 'error');
+                console.error(e);
+            }
+        }
+
+        function testarEditarImovelModal() {
+            log('=== TESTANDO editarImovelModal() ===');
+            
+            if (!window.sistema) {
+                log('ERRO: Sistema não carregado!', 'error');
+                return;
+            }
+            
+            if (typeof window.sistema.editarImovelModal !== 'function') {
+                log('ERRO: Função editarImovelModal não existe!', 'error');
+                return;
+            }
+            
+            // Primeiro simular que há um imóvel no modal
+            if (window.sistema.imoveis && window.sistema.imoveis.length > 0) {
+                window.sistema.imovelAtualModal = window.sistema.imoveis[0].id;
+                log(`Simulando imóvel no modal: ID ${window.sistema.imovelAtualModal}`, 'warning');
+            }
+            
+            try {
+                window.sistema.editarImovelModal();
+                log('Função editarImovelModal() executada sem erros!', 'success');
+                
+                // Verificar resultados
+                setTimeout(() => {
+                    if (window.sistema.imovelEditando) {
+                        log(`Modo edição ativo: ID ${window.sistema.imovelEditando}`, 'success');
+                    } else {
+                        log('AVISO: Modo edição não foi ativado', 'warning');
+                    }
+                }, 100);
+                
+            } catch (e) {
+                log(`ERRO: ${e.message}`, 'error');
+                console.error(e);
+            }
+        }
+
+        function verificarFormulario() {
+            log('=== VERIFICANDO FORMULÁRIO ===');
+            
+            const campos = [
+                'codigoEdificio', 'denominacaoEdificio', 'localCidade', 
+                'ruaEndereco', 'cepImovel', 'statusImovel',
+                'inicioValidadeObj', 'objetoValidoAte', 'inscricaoIPTU', 'numeroITR'
+            ];
+            
+            let camposEncontrados = 0;
+            
+            campos.forEach(campo => {
+                const elemento = document.getElementById(campo);
+                if (elemento) {
+                    camposEncontrados++;
+                    log(`✓ ${campo}: ${elemento.value || '(vazio)'}`, 'success');
+                } else {
+                    log(`✗ ${campo}: ELEMENTO NÃO ENCONTRADO`, 'error');
+                }
+            });
+            
+            log(`Total: ${camposEncontrados}/${campos.length} campos encontrados`);
+            
+            // Verificar botão
+            const btnAdicionar = document.getElementById('adicionarImovel');
+            if (btnAdicionar) {
+                log(`✓ Botão "adicionarImovel": "${btnAdicionar.textContent}"`, 'success');
+            } else {
+                log('✗ Botão "adicionarImovel": NÃO ENCONTRADO', 'error');
+            }
+        }
+
+        function verificarElementos() {
+            log('=== VERIFICANDO ELEMENTOS DOM ===');
+            
+            // Verificar se sistema tem função mostrarFormulario
+            if (window.sistema && typeof window.sistema.mostrarFormulario === 'function') {
+                log('✓ Função mostrarFormulario existe', 'success');
+            } else {
+                log('✗ Função mostrarFormulario NÃO EXISTE', 'error');
+            }
+            
+            // Verificar seções do DOM
+            const secoes = ['secaoImoveis', 'secaoFormulario', 'secaoLocadores'];
+            secoes.forEach(secao => {
+                const elemento = document.getElementById(secao);
+                if (elemento) {
+                    log(`✓ Seção ${secao}: encontrada (display: ${getComputedStyle(elemento).display})`, 'success');
+                } else {
+                    log(`✗ Seção ${secao}: NÃO ENCONTRADA`, 'error');
+                }
+            });
+            
+            // Verificar modal
+            const modal = document.getElementById('modalDetalhesImovel');
+            if (modal) {
+                log(`✓ Modal detalhes: encontrado (display: ${modal.style.display})`, 'success');
+            } else {
+                log('✗ Modal detalhes: NÃO ENCONTRADO', 'error');
+            }
+        }
+
+        // Interceptar alertas para ver o que está acontecendo
+        const originalAlert = window.alert;
+        window.alert = function(message) {
+            log(`🚨 ALERT: ${message}`, 'warning');
+            return originalAlert(message);
+        };
+
+        // Aguardar carregamento
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('Página carregada. Iniciando diagnóstico...');
+                if (window.sistema) {
+                    log(`✓ Sistema carregado: ${typeof window.sistema}`, 'success');
+                    log(`✓ Imóveis: ${window.sistema.imoveis ? window.sistema.imoveis.length : 'INDEFINIDO'}`, 'success');
+                } else {
+                    log('✗ Sistema NÃO carregado', 'error');
+                }
+            }, 1000);
+        });
+
+        // Interceptar erros
+        window.addEventListener('error', (event) => {
+            log(`💥 ERRO JavaScript: ${event.message} em ${event.filename}:${event.lineno}`, 'error');
+        });
+    </script>
+</body>
+</html>

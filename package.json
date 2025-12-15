@@ -1,0 +1,39 @@
+{
+  "name": "silic-call-for-tenders",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Form Renderer para o Gerador de Edital CAIXA",
+  "homepage": "https://osvaldojeronymo.github.io/silic-call-for-tenders/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osvaldojeronymo/silic-call-for-tenders.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "deploy": "npm run build && gh-pages -d dist",
+    "convert:excel": ".venv/bin/python scripts/converter-excel-para-json.py",
+    "gerar:dados": ".venv/bin/python scripts/gerar-dados-mockados.py"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "gh-pages": "^6.1.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@rjsf/core": "^6.1.2",
+    "@rjsf/validator-ajv8": "^6.1.2",
+    "@types/node": "^20.11.24",
+    "quill": "^2.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-quill": "^2.0.0"
+  }
+}

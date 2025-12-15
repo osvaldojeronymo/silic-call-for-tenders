@@ -10,6 +10,7 @@
       body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; padding: 2rem; }
       .card { max-width: 640px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; }
       a { color: #0b5fff; text-decoration: none; }
+      .banner { background: #0b5fff; color: #fff; padding: 0.75rem 1rem; border-radius: 6px; display: inline-block; margin-top: 0.75rem; }
     </style>
   </head>
   <body>
@@ -19,6 +20,17 @@
         Se não redirecionar automaticamente, acesse
         <a href="form-renderer.html">form-renderer.html</a>.
       </p>
+      <p>
+        <a class="banner" href="form-renderer.html">Ir para o Gerador de Edital CAIXA</a>
+      </p>
     </div>
+    <script>
+      // Fallback: redireciona após pequeno atraso, caso meta-refresh falhe
+      setTimeout(function(){
+        if (!location.pathname.endsWith('form-renderer.html')) {
+          location.href = 'form-renderer.html';
+        }
+      }, 1000);
+    </script>
   </body>
 </html>

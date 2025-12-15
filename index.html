@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILIC 2.0 - Gestão de Imóveis</title>
+  <script type="module" crossorigin src="/silic-call-for-tenders/assets/main-00Fr0XOw.js"></script>
+  <link rel="modulepreload" crossorigin href="/silic-call-for-tenders/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="/silic-call-for-tenders/assets/main-o6SskY8w.css">
+</head>
+<body>
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="data:image/svg+xml,%3csvg%20width='41'%20height='28'%20viewBox='0%200%2041%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M0%2028H12.1697L25.4954%2014.6743H13.3257L0%2028Z'%20fill='%23F39200'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M27.9999%200L22.7339%205.26605L26.844%2013.3257L40.1697%200H27.9999Z'%20fill='%23F39200'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M7.89893%200H20.0365L26.8439%2013.3257H14.6742L7.89893%200Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M17.4355%2022.7339L25.4952%2014.6743L32.2704%2028H20.1328L17.4355%2022.7339Z'%20fill='white'/%3e%3c/svg%3e" alt="CAIXA" class="logo-icon">
+                <div class="header-title">
+                    <h1>SILIC 2.0</h1>
+                    <p class="subtitle">Protótipo - Gestão de Imóveis</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="voltarPortalBtn" class="btn-voltar-portal" onclick="voltarAoPortal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Voltar ao Portal
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-container">
+        <!-- Dashboard de Estatísticas -->
+        <section class="dashboard-section">
+            <h2 class="section-title">Gestão de Imóveis</h2>
+            
+            <div class="stats-grid">
+                <!-- Card Principal -->
+                <div class="stat-card-main">
+                    <div class="stat-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="totalImoveis">0</div>
+                        <div class="stat-label">Imóveis Cadastrados</div>
+                    </div>
+                </div>
+                
+                <!-- Cards de Status -->
+                
+                <!-- Cards de Status -->
+                <div class="stat-card stat-disponivel">
+                    <div class="stat-icon-small">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number" id="imoveisAtivos">0</div>
+                    <div class="stat-label">Ativos</div>
+                </div>
+                
+                <div class="stat-card stat-prospeccao">
+                    <div class="stat-icon-small">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number" id="imoveisProspeccao">0</div>
+                    <div class="stat-label">Em Prospecção</div>
+                </div>
+                
+                <div class="stat-card stat-mobilizacao">
+                    <div class="stat-icon-small">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="17 11 19 13 23 9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number" id="imoveisMobilizacao">0</div>
+                    <div class="stat-label">Em Mobilização</div>
+                </div>
+                
+                <div class="stat-card stat-desmobilizacao">
+                    <div class="stat-icon-small">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number" id="imoveisDesmobilizacao">0</div>
+                    <div class="stat-label">Em Desmobilização</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Listagem de Imóveis -->
+        <section class="table-section">
+            <div class="section-header">
+                <h3 class="section-subtitle">Lista de Imóveis</h3>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters-container">
+                <div class="filter-group">
+                    <input type="text" id="filtroContrato" class="filter-search" placeholder="🔍 Contrato (ex: 10000000)">
+                    
+                    <select id="filtroUtilizacao" class="filter-select">
+                        <option value="">Todas as utilizações</option>
+                        <option value="Próprio">Próprio</option>
+                        <option value="Terceiro">Terceiro</option>
+                    </select>
+                    
+                    <select id="filtroStatus" class="filter-select">
+                        <option value="">Todos os status</option>
+                        <option value="Ativo">Ativo</option>
+                        <option value="Em Prospecção">Em Prospecção</option>
+                        <option value="Em Mobilização">Em Mobilização</option>
+                        <option value="Em Desmobilização">Em Desmobilização</option>
+                        <option value="Desativado">Desativado</option>
+                    </select>
+                    
+                    <input type="text" id="filtroDenominacao" class="filter-search" placeholder="🔍 Buscar denominação...">
+                    
+                    <input type="date" id="filtroDataInicio" class="filter-date" placeholder="Data início">
+                    
+                    <input type="date" id="filtroDataFim" class="filter-date" placeholder="Data fim">
+                </div>
+                
+                <div class="filter-actions">
+                    <button id="limparFiltrosImoveis" class="btn-clear">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Limpar
+                    </button>
+                    
+                    <button id="pesquisarImoveis" class="btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Pesquisar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabela de Imóveis -->
+            <div class="table-wrapper">
+                <table class="imoveis-table">
+                    <thead>
+                        <tr>
+                            <th>Contrato</th>
+                            <th>Denominação do contrato</th>
+                            <th>Tipo contrato</th>
+                            <th>Utilização principal</th>
+                            <th>Status</th>
+                            <th>Fim da validade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaImoveisBody">
+                        <!-- Dados carregados dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginação -->
+            <div class="pagination-container">
+                <div class="pagination-info">
+                    Mostrando <span id="paginationStart">0</span> a <span id="paginationEnd">0</span> de <span id="paginationTotal">0</span> imóveis
+                </div>
+                <div class="pagination-actions">
+                    <select id="imoveisPorPaginaSelect" class="items-per-page">
+                        <option value="10">10 por página</option>
+                        <option value="25">25 por página</option>
+                        <option value="50">50 por página</option>
+                        <option value="100">100 por página</option>
+                    </select>
+                    <div class="pagination-controls" id="paginationControls">
+                        <!-- Botões de navegação serão inseridos aqui -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Detalhes do Imóvel -->
+    <div id="modalDetalhes" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Detalhes do Imóvel</h2>
+                <button class="modal-close">×</button>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="contrato">Contrato</button>
+                <button class="tab-btn" data-tab="imovel">Imóvel</button>
+                <button class="tab-btn" data-tab="locador">Locador</button>
+                <button class="tab-btn" data-tab="servicos">Solicitar serviços</button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Aba: Dados do Contrato -->
+                <div id="tab-contrato" class="tab-content active">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Número do Contrato</label>
+                            <span id="detNumeroContrato"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Denominação</label>
+                            <span id="detDenominacao"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Tipo de Contrato</label>
+                            <span id="detTipoContrato"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Data de Início</label>
+                            <span id="detDataInicio"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Data de Término</label>
+                            <span id="detDataFim"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Parceiro de Negócios</label>
+                            <span id="detParceiro"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Endereço</label>
+                            <span id="detEnderecoContrato"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Número</label>
+                            <span id="detNumeroEndereco"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aba: Dados do Imóvel -->
+                <div id="tab-imovel" class="tab-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Código Postal</label>
+                            <span id="detCodPostal"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Local</label>
+                            <span id="detLocal"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Rua</label>
+                            <span id="detRua"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Bairro</label>
+                            <span id="detBairro"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Cidade</label>
+                            <span id="detCidade"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Estado</label>
+                            <span id="detEstado"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>CEP</label>
+                            <span id="detCep"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Tipo de Edifício</label>
+                            <span id="detTipoEdificio"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Área</label>
+                            <span id="detArea"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Valor</label>
+                            <span id="detValor"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aba: Dados do Locador -->
+                <div id="tab-locador" class="tab-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Parceiro de Negócios</label>
+                            <span id="detParceiroNegocios"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Tipo ID Fiscal</label>
+                            <span id="detTipoIdFiscal"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Denominação função PN</label>
+                            <span id="detDenominacaoFuncao"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Início da relação</label>
+                            <span id="detInicioRelacao"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Fim da relação</label>
+                            <span id="detFimRelacao"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Nome</label>
+                            <span id="detNomeLocador"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Código postal</label>
+                            <span id="detLocadorCep"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Endereço</label>
+                            <span id="detLocadorEndereco"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Número</label>
+                            <span id="detLocadorNumero"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Bairro</label>
+                            <span id="detLocadorBairro"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Local</label>
+                            <span id="detLocadorLocal"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>UF</label>
+                            <span id="detLocadorUf"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Endereço eletrônico</label>
+                            <span id="detLocadorEmail"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Telefone fixo</label>
+                            <span id="detLocadorTelefoneFixo"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Telefone celular</label>
+                            <span id="detLocadorTelefoneCelular"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aba: Solicitar Serviços -->
+                <div id="tab-servicos" class="tab-content">
+                    <div class="info-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+                        <div class="info-item" style="grid-column: 1 / -1;">
+                            <h4 style="margin:0 0 8px 0; font-weight:600; color:#183153">Selecione o serviço</h4>
+                        </div>
+                        <div class="info-item">
+                            <label>Categoria</label>
+                            <select id="svcCategoria">
+                                <option value="">Selecione...</option>
+                                <option value="contratacao">Contratação</option>
+                                <option value="ato-formal">Ato Formal</option>
+                            </select>
+                        </div>
+                        <div class="info-item">
+                            <label>Ação</label>
+                            <select id="svcAcao" disabled>
+                                <option value="">Selecione...</option>
+                            </select>
+                        </div>
+                        <div class="info-item">
+                            <label>Modalidade</label>
+                            <select id="svcModalidade" disabled>
+                                <option value="">Selecione...</option>
+                            </select>
+                        </div>
+
+                        <div class="info-item" style="grid-column: 1 / -1;">
+                            <div id="servicoDescricao" style="margin-top:.5rem;color:#555"></div>
+                        </div>
+                        <div class="info-item" style="grid-column: 1 / -1; display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                            <div>
+                                <label>Dados que serão enviados</label>
+                                <ul id="dadosPreenchidos" style="list-style: none; padding-left: 0;"></ul>
+                            </div>
+                            <div>
+                                <label>Dados faltantes</label>
+                                <ul id="dadosPendentes" style="list-style: none; padding-left: 0;"></ul>
+                            </div>
+                        </div>
+                        <div class="info-item" style="grid-column: 1 / -1;">
+                            <label>Pré-visualização do payload</label>
+                            <pre id="payloadPreview" style="background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;padding:8px;overflow:auto;max-height:180px"></pre>
+                        </div>
+                        <div class="info-item" style="grid-column: 1 / -1; display:flex; gap:.5rem; align-items:center;">
+                            <button id="btnSolicitarServico" class="btn-primary" disabled>Solicitar serviços</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aba: Dados do Locador -->
+                <div id="tab-locador" class="tab-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Nome Completo</label>
+                            <span id="detNomeLocador"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>CPF/CNPJ</label>
+                            <span id="detCpfCnpj"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Tipo</label>
+                            <span id="detTipoLocador"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Telefone</label>
+                            <span id="detTelefone"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Celular</label>
+                            <span id="detCelular"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>E-mail</label>
+                            <span id="detEmail"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé Moderno -->
+    <footer class="modern-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="footer-brand">
+                    <h4>SILIC 2.0</h4>
+                    <p class="brand-tagline">Soluções para todos os momentos.</p>
+                </div>
+                <div class="footer-contact">
+                    <h5>Contato</h5>
+                    <a class="footer-mail" href="mailto:silic@caixa.gov.br">silic@caixa.gov.br</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <!-- Bootstrap sem scripts inline -->
+    <!-- Toast container -->
+    <div id="toastContainer" style="position:fixed;top:16px;right:16px;z-index:1000;display:flex;flex-direction:column;gap:8px"></div>
+</body>
+</html>

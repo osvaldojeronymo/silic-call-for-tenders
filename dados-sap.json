@@ -1,0 +1,5374 @@
+{
+  "imoveis": [
+    {
+      "id": "imovel_000001",
+      "contrato": {
+        "numero": 10000001,
+        "denominacao": "CT - PAB JUSTIÇA FEDERAL DE NITERÓI, RJ",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "02/01/2000",
+        "fimValidade": "12/07/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127022
+      },
+      "edificio": {
+        "codigo": 20000001,
+        "denominacao": "ED - AG NITERÓI, RJ",
+        "status": "Em Mobilização",
+        "cep": "20040-660",
+        "local": "NITERÓI",
+        "rua": "TRAVESSA PRIMEIRO DE MAIO",
+        "numero": 4787,
+        "bairro": "MEIRELES",
+        "regiao": "RJ",
+        "inicioValidadeObj": "05/01/1981",
+        "objetoValidoAte": "12/07/2028",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C476763",
+        "chavePais": "BR",
+        "endereco": "AG NITERÓI, RJ / TRAVESSA PRIMEIRO DE MAIO 4787 / NITERÓI - RJ",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 440736",
+        "numeroITR": "CÓD. IMÓVEL 3719",
+        "grupoAutorizacoes": 7875
+      },
+      "locadorId": "locador_000022"
+    },
+    {
+      "id": "imovel_000002",
+      "contrato": {
+        "numero": 10000002,
+        "denominacao": "CT - PA PARQUE FORTALEZA, CE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "06/12/2015",
+        "fimValidade": "27/03/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127024
+      },
+      "edificio": {
+        "codigo": 20000002,
+        "denominacao": "ED - AG FORTALEZA, CE",
+        "status": "Ativo",
+        "cep": "60003-784",
+        "local": "FORTALEZA",
+        "rua": "TRAVESSA CENTRAL",
+        "numero": 6996,
+        "bairro": "FUNCIONÁRIOS",
+        "regiao": "CE",
+        "inicioValidadeObj": "18/09/1995",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C873405",
+        "chavePais": "BR",
+        "endereco": "AG FORTALEZA, CE / TRAVESSA CENTRAL 6996 / FORTALEZA - CE",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 112498",
+        "numeroITR": "CÓD. IMÓVEL 4875",
+        "grupoAutorizacoes": 7242
+      },
+      "locadorId": "locador_000024"
+    },
+    {
+      "id": "imovel_000003",
+      "contrato": {
+        "numero": 10000003,
+        "denominacao": "CT - PA VER-O-PESO, RN",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "13/10/1996",
+        "fimValidade": "08/07/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127028
+      },
+      "edificio": {
+        "codigo": 20000003,
+        "denominacao": "ED - AG MOSSORÓ, RN",
+        "status": "Ativo",
+        "cep": "59086-905",
+        "local": "MOSSORÓ",
+        "rua": "AVENIDA TIRADENTES",
+        "numero": 2145,
+        "bairro": "CENTRO",
+        "regiao": "RN",
+        "inicioValidadeObj": "15/03/1990",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C937130",
+        "chavePais": "BR",
+        "endereco": "AG MOSSORÓ, RN / AVENIDA TIRADENTES 2145 / MOSSORÓ - RN",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 879373",
+        "numeroITR": "CÓD. IMÓVEL 1900",
+        "grupoAutorizacoes": 7523
+      },
+      "locadorId": "locador_000028"
+    },
+    {
+      "id": "imovel_000004",
+      "contrato": {
+        "numero": 10000004,
+        "denominacao": "CT - AG PRAÇA DA REPÚBLICA, AL",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "10/04/1998",
+        "fimValidade": "09/06/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127014
+      },
+      "edificio": {
+        "codigo": 20000004,
+        "denominacao": "ED - AG VIÇOSA DE ALAGOAS, AL",
+        "status": "Em Mobilização",
+        "cep": "57017-065",
+        "local": "VIÇOSA DE ALAGOAS",
+        "rua": "PRAÇA REPÚBLICA",
+        "numero": 1133,
+        "bairro": "IPANEMA",
+        "regiao": "AL",
+        "inicioValidadeObj": "18/01/1993",
+        "objetoValidoAte": "09/06/2028",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C124009",
+        "chavePais": "BR",
+        "endereco": "AG VIÇOSA DE ALAGOAS, AL / PRAÇA REPÚBLICA 1133 / VIÇOSA DE ALAGOAS - AL",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 625703",
+        "numeroITR": "CÓD. IMÓVEL 1887",
+        "grupoAutorizacoes": 7718
+      },
+      "locadorId": "locador_000014"
+    },
+    {
+      "id": "imovel_000005",
+      "contrato": {
+        "numero": 10000005,
+        "denominacao": "CT - PAB MAZZEI, SC",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "04/03/2004",
+        "fimValidade": "13/01/2023",
+        "rescisaoEm": "12/09/2023",
+        "parceiroNegocio": 900127027
+      },
+      "edificio": {
+        "codigo": 20000005,
+        "denominacao": "ED - AG BLUMENAU, SC",
+        "status": "Desativado",
+        "cep": "88049-801",
+        "local": "BLUMENAU",
+        "rua": "ALAMEDA JOÃO PESSOA",
+        "numero": 1026,
+        "bairro": "BOA VIAGEM",
+        "regiao": "SC",
+        "inicioValidadeObj": "22/04/1986",
+        "objetoValidoAte": "13/01/2023",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C588882",
+        "chavePais": "BR",
+        "endereco": "AG BLUMENAU, SC / ALAMEDA JOÃO PESSOA 1026 / BLUMENAU - SC",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 129567",
+        "numeroITR": "CÓD. IMÓVEL 8625",
+        "grupoAutorizacoes": 7705
+      },
+      "locadorId": "locador_000027"
+    },
+    {
+      "id": "imovel_000006",
+      "contrato": {
+        "numero": 10000006,
+        "denominacao": "CT - AG CURITIBA, PR",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "05/12/2013",
+        "fimValidade": "03/10/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127027
+      },
+      "edificio": {
+        "codigo": 20000006,
+        "denominacao": "ED - AG CURITIBA, PR",
+        "status": "Ativo",
+        "cep": "80021-426",
+        "local": "CURITIBA",
+        "rua": "ALAMEDA QUINZE DE NOVEMBRO",
+        "numero": 9831,
+        "bairro": "IPANEMA",
+        "regiao": "PR",
+        "inicioValidadeObj": "02/01/1994",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C319989",
+        "chavePais": "BR",
+        "endereco": "AG CURITIBA, PR / ALAMEDA QUINZE DE NOVEMBRO 9831 / CURITIBA - PR",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 445369",
+        "numeroITR": "CÓD. IMÓVEL 2800",
+        "grupoAutorizacoes": 7381
+      },
+      "locadorId": "locador_000027"
+    },
+    {
+      "id": "imovel_000007",
+      "contrato": {
+        "numero": 10000007,
+        "denominacao": "CT - AG BATISTA CAMPOS, CE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "06/01/1992",
+        "fimValidade": "26/12/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127005
+      },
+      "edificio": {
+        "codigo": 20000007,
+        "denominacao": "ED - AG FORTALEZA, CE",
+        "status": "Em Mobilização",
+        "cep": "60093-029",
+        "local": "FORTALEZA",
+        "rua": "ALAMEDA INDEPENDÊNCIA",
+        "numero": 7809,
+        "bairro": "GONZAGA",
+        "regiao": "CE",
+        "inicioValidadeObj": "24/01/1998",
+        "objetoValidoAte": "26/12/2028",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C272523",
+        "chavePais": "BR",
+        "endereco": "AG FORTALEZA, CE / ALAMEDA INDEPENDÊNCIA 7809 / FORTALEZA - CE",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 737975",
+        "numeroITR": "CÓD. IMÓVEL 5292",
+        "grupoAutorizacoes": 7590
+      },
+      "locadorId": "locador_000005"
+    },
+    {
+      "id": "imovel_000008",
+      "contrato": {
+        "numero": 10000008,
+        "denominacao": "CT - AG CONTAGEM, MG",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "21/09/1992",
+        "fimValidade": "16/06/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127004
+      },
+      "edificio": {
+        "codigo": 20000008,
+        "denominacao": "ED - AG CONTAGEM, MG",
+        "status": "Em Mobilização",
+        "cep": "30010-554",
+        "local": "CONTAGEM",
+        "rua": "ESTRADA QUINZE DE NOVEMBRO",
+        "numero": 9632,
+        "bairro": "COPACABANA",
+        "regiao": "MG",
+        "inicioValidadeObj": "26/06/1999",
+        "objetoValidoAte": "16/06/2027",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C665398",
+        "chavePais": "BR",
+        "endereco": "AG CONTAGEM, MG / ESTRADA QUINZE DE NOVEMBRO 9632 / CONTAGEM - MG",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 951181",
+        "numeroITR": "CÓD. IMÓVEL 6825",
+        "grupoAutorizacoes": 7247
+      },
+      "locadorId": "locador_000004"
+    },
+    {
+      "id": "imovel_000009",
+      "contrato": {
+        "numero": 10000009,
+        "denominacao": "CT - AG PARI, RN",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "12/06/2014",
+        "fimValidade": "02/09/2022",
+        "rescisaoEm": "30/10/2023",
+        "parceiroNegocio": 900127004
+      },
+      "edificio": {
+        "codigo": 20000009,
+        "denominacao": "ED - AG PARNAMIRIM, RN",
+        "status": "Desativado",
+        "cep": "59041-535",
+        "local": "PARNAMIRIM",
+        "rua": "TRAVESSA BOA VIAGEM",
+        "numero": 7230,
+        "bairro": "PITANGUEIRAS",
+        "regiao": "RN",
+        "inicioValidadeObj": "10/11/1986",
+        "objetoValidoAte": "02/09/2022",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C584399",
+        "chavePais": "BR",
+        "endereco": "AG PARNAMIRIM, RN / TRAVESSA BOA VIAGEM 7230 / PARNAMIRIM - RN",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 752534",
+        "numeroITR": "CÓD. IMÓVEL 6822",
+        "grupoAutorizacoes": 7597
+      },
+      "locadorId": "locador_000004"
+    },
+    {
+      "id": "imovel_000010",
+      "contrato": {
+        "numero": 10000010,
+        "denominacao": "CT - PAB PARAÍSO, SC",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "06/01/1995",
+        "fimValidade": "01/01/2025",
+        "rescisaoEm": "10/04/2025",
+        "parceiroNegocio": 900127003
+      },
+      "edificio": {
+        "codigo": 20000010,
+        "denominacao": "ED - AG JOINVILLE, SC",
+        "status": "Em Desmobilização",
+        "cep": "88034-519",
+        "local": "JOINVILLE",
+        "rua": "ALAMEDA IPANEMA",
+        "numero": 3990,
+        "bairro": "CENTRO HISTÓRICO",
+        "regiao": "SC",
+        "inicioValidadeObj": "09/08/1984",
+        "objetoValidoAte": "01/01/2025",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C524346",
+        "chavePais": "BR",
+        "endereco": "AG JOINVILLE, SC / ALAMEDA IPANEMA 3990 / JOINVILLE - SC",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 744581",
+        "numeroITR": "CÓD. IMÓVEL 9541",
+        "grupoAutorizacoes": 7180
+      },
+      "locadorId": "locador_000003"
+    },
+    {
+      "id": "imovel_000011",
+      "contrato": {
+        "numero": 10000011,
+        "denominacao": "CT - EDIFÍCIO BUSINESS TOWER, RJ",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "08/06/2017",
+        "fimValidade": "03/11/2025",
+        "rescisaoEm": "22/07/2024",
+        "parceiroNegocio": 900127007
+      },
+      "edificio": {
+        "codigo": 20000011,
+        "denominacao": "ED - AG RIO DE JANEIRO, RJ",
+        "status": "Em Desmobilização",
+        "cep": "20059-685",
+        "local": "RIO DE JANEIRO",
+        "rua": "PRAÇA INDEPENDÊNCIA",
+        "numero": 5440,
+        "bairro": "MEIRELES",
+        "regiao": "RJ",
+        "inicioValidadeObj": "09/06/1981",
+        "objetoValidoAte": "03/11/2025",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C606123",
+        "chavePais": "BR",
+        "endereco": "AG RIO DE JANEIRO, RJ / PRAÇA INDEPENDÊNCIA 5440 / RIO DE JANEIRO - RJ",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 550443",
+        "numeroITR": "CÓD. IMÓVEL 5988",
+        "grupoAutorizacoes": 7892
+      },
+      "locadorId": "locador_000007"
+    },
+    {
+      "id": "imovel_000012",
+      "contrato": {
+        "numero": 10000012,
+        "denominacao": "CT - AG JOÃO PESSOA, PB",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "12/09/1999",
+        "fimValidade": "14/05/2023",
+        "rescisaoEm": "04/04/2022",
+        "parceiroNegocio": 900127029
+      },
+      "edificio": {
+        "codigo": 20000012,
+        "denominacao": "ED - AG JOÃO PESSOA, PB",
+        "status": "Em Prospecção",
+        "cep": "58081-652",
+        "local": "JOÃO PESSOA",
+        "rua": "RUA DAS FLORES",
+        "numero": 2971,
+        "bairro": "COPACABANA",
+        "regiao": "PB",
+        "inicioValidadeObj": "26/01/1993",
+        "objetoValidoAte": "14/05/2023",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C608874",
+        "chavePais": "BR",
+        "endereco": "AG JOÃO PESSOA, PB / RUA DAS FLORES 2971 / JOÃO PESSOA - PB",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 549262",
+        "numeroITR": "CÓD. IMÓVEL 4424",
+        "grupoAutorizacoes": 7042
+      },
+      "locadorId": "locador_000029"
+    },
+    {
+      "id": "imovel_000013",
+      "contrato": {
+        "numero": 10000013,
+        "denominacao": "CT - AG BOM RETIRO, SP",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "05/12/1995",
+        "fimValidade": "14/11/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127037
+      },
+      "edificio": {
+        "codigo": 20000013,
+        "denominacao": "ED - AG CAMPINAS, SP",
+        "status": "Ativo",
+        "cep": "01129-428",
+        "local": "CAMPINAS",
+        "rua": "ALAMEDA PAULISTA",
+        "numero": 9041,
+        "bairro": "SAVASSI",
+        "regiao": "SP",
+        "inicioValidadeObj": "18/09/1999",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C972759",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINAS, SP / ALAMEDA PAULISTA 9041 / CAMPINAS - SP",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 649813",
+        "numeroITR": "CÓD. IMÓVEL 9970",
+        "grupoAutorizacoes": 7502
+      },
+      "locadorId": "locador_000037"
+    },
+    {
+      "id": "imovel_000014",
+      "contrato": {
+        "numero": 10000014,
+        "denominacao": "CT - AG PRAÇA PARNAMIRIM, RN",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "17/05/2012",
+        "fimValidade": "18/12/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127006
+      },
+      "edificio": {
+        "codigo": 20000014,
+        "denominacao": "ED - AG PARNAMIRIM, RN",
+        "status": "Ativo",
+        "cep": "59089-329",
+        "local": "PARNAMIRIM",
+        "rua": "ESTRADA REPÚBLICA",
+        "numero": 9957,
+        "bairro": "PITANGUEIRAS",
+        "regiao": "RN",
+        "inicioValidadeObj": "07/04/1995",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C594400",
+        "chavePais": "BR",
+        "endereco": "AG PARNAMIRIM, RN / ESTRADA REPÚBLICA 9957 / PARNAMIRIM - RN",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 797838",
+        "numeroITR": "CÓD. IMÓVEL 6426",
+        "grupoAutorizacoes": 7114
+      },
+      "locadorId": "locador_000006"
+    },
+    {
+      "id": "imovel_000015",
+      "contrato": {
+        "numero": 10000015,
+        "denominacao": "CT - AG FORTALEZA, CE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "27/05/2006",
+        "fimValidade": "06/04/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127001
+      },
+      "edificio": {
+        "codigo": 20000015,
+        "denominacao": "ED - AG FORTALEZA, CE",
+        "status": "Ativo",
+        "cep": "60043-496",
+        "local": "FORTALEZA",
+        "rua": "AVENIDA DAS FLORES",
+        "numero": 2043,
+        "bairro": "GONZAGA",
+        "regiao": "CE",
+        "inicioValidadeObj": "26/09/1997",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C328935",
+        "chavePais": "BR",
+        "endereco": "AG FORTALEZA, CE / AVENIDA DAS FLORES 2043 / FORTALEZA - CE",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 696469",
+        "numeroITR": "CÓD. IMÓVEL 2083",
+        "grupoAutorizacoes": 7914
+      },
+      "locadorId": "locador_000001"
+    },
+    {
+      "id": "imovel_000016",
+      "contrato": {
+        "numero": 10000016,
+        "denominacao": "CT - AG PRAÇA CAUCAIA, CE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "05/01/2003",
+        "fimValidade": "24/09/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127034
+      },
+      "edificio": {
+        "codigo": 20000016,
+        "denominacao": "ED - AG CAUCAIA, CE",
+        "status": "Ativo",
+        "cep": "60065-239",
+        "local": "CAUCAIA",
+        "rua": "ALAMEDA BARÃO DO RIO BRANCO",
+        "numero": 950,
+        "bairro": "JATIÚCA",
+        "regiao": "CE",
+        "inicioValidadeObj": "04/04/1995",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C862093",
+        "chavePais": "BR",
+        "endereco": "AG CAUCAIA, CE / ALAMEDA BARÃO DO RIO BRANCO 950 / CAUCAIA - CE",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 116473",
+        "numeroITR": "CÓD. IMÓVEL 2915",
+        "grupoAutorizacoes": 7355
+      },
+      "locadorId": "locador_000034"
+    },
+    {
+      "id": "imovel_000017",
+      "contrato": {
+        "numero": 10000017,
+        "denominacao": "CT - PAB JUSTIÇA FEDERAL DE VITÓRIA DA CONQUISTA, BA",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "31/03/2017",
+        "fimValidade": "19/04/2024",
+        "rescisaoEm": "21/12/2024",
+        "parceiroNegocio": 900127019
+      },
+      "edificio": {
+        "codigo": 20000017,
+        "denominacao": "ED - AG VITÓRIA DA CONQUISTA, BA",
+        "status": "Em Desmobilização",
+        "cep": "40015-283",
+        "local": "VITÓRIA DA CONQUISTA",
+        "rua": "TRAVESSA DAS FLORES",
+        "numero": 6306,
+        "bairro": "LOURDES",
+        "regiao": "BA",
+        "inicioValidadeObj": "20/04/1983",
+        "objetoValidoAte": "19/04/2024",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C404717",
+        "chavePais": "BR",
+        "endereco": "AG VITÓRIA DA CONQUISTA, BA / TRAVESSA DAS FLORES 6306 / VITÓRIA DA CONQUISTA - BA",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 427220",
+        "numeroITR": "CÓD. IMÓVEL 8907",
+        "grupoAutorizacoes": 7693
+      },
+      "locadorId": "locador_000019"
+    },
+    {
+      "id": "imovel_000018",
+      "contrato": {
+        "numero": 10000018,
+        "denominacao": "CT- AG. TERESINA/PI",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "08/07/1996",
+        "fimValidade": "07/06/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127038
+      },
+      "edificio": {
+        "codigo": 20000018,
+        "denominacao": "ED - AG TERESINA, PI",
+        "status": "Ativo",
+        "cep": "64027-764",
+        "local": "TERESINA",
+        "rua": "RUA PRESIDENTE VARGAS",
+        "numero": 9128,
+        "bairro": "PITANGUEIRAS",
+        "regiao": "PI",
+        "inicioValidadeObj": "04/05/1999",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C212024",
+        "chavePais": "BR",
+        "endereco": "AG TERESINA, PI / RUA PRESIDENTE VARGAS 9128 / TERESINA - PI",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 620304",
+        "numeroITR": "CÓD. IMÓVEL 5967",
+        "grupoAutorizacoes": 7415
+      },
+      "locadorId": "locador_000038"
+    },
+    {
+      "id": "imovel_000019",
+      "contrato": {
+        "numero": 10000019,
+        "denominacao": "CT - AG PARQUE PARNAÍBA, PI",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "16/11/2018",
+        "fimValidade": "28/09/2023",
+        "rescisaoEm": "17/07/2020",
+        "parceiroNegocio": 900127018
+      },
+      "edificio": {
+        "codigo": 20000019,
+        "denominacao": "ED - AG PARNAÍBA, PI",
+        "status": "Desativado",
+        "cep": "64014-545",
+        "local": "PARNAÍBA",
+        "rua": "ALAMEDA DOM PEDRO II",
+        "numero": 7070,
+        "bairro": "MEIRELES",
+        "regiao": "PI",
+        "inicioValidadeObj": "17/08/1992",
+        "objetoValidoAte": "28/09/2023",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C914662",
+        "chavePais": "BR",
+        "endereco": "AG PARNAÍBA, PI / ALAMEDA DOM PEDRO II 7070 / PARNAÍBA - PI",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 850837",
+        "numeroITR": "CÓD. IMÓVEL 3166",
+        "grupoAutorizacoes": 7522
+      },
+      "locadorId": "locador_000018"
+    },
+    {
+      "id": "imovel_000020",
+      "contrato": {
+        "numero": 10000020,
+        "denominacao": "CT - PA VILA MATILDE, AL",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "15/07/2014",
+        "fimValidade": "09/03/2029",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127024
+      },
+      "edificio": {
+        "codigo": 20000020,
+        "denominacao": "ED - AG ARAPIRACA, AL",
+        "status": "Ativo",
+        "cep": "57075-866",
+        "local": "ARAPIRACA",
+        "rua": "AVENIDA IPANEMA",
+        "numero": 7144,
+        "bairro": "BARRA",
+        "regiao": "AL",
+        "inicioValidadeObj": "29/08/1990",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C329406",
+        "chavePais": "BR",
+        "endereco": "AG ARAPIRACA, AL / AVENIDA IPANEMA 7144 / ARAPIRACA - AL",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 617702",
+        "numeroITR": "CÓD. IMÓVEL 4697",
+        "grupoAutorizacoes": 7220
+      },
+      "locadorId": "locador_000024"
+    },
+    {
+      "id": "imovel_000021",
+      "contrato": {
+        "numero": 10000021,
+        "denominacao": "CT - AGÊNCIA MAZZEI, PB",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "30/04/1990",
+        "fimValidade": "05/03/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127020
+      },
+      "edificio": {
+        "codigo": 20000021,
+        "denominacao": "ED - AG CAMPINA GRANDE, PB",
+        "status": "Ativo",
+        "cep": "58093-973",
+        "local": "CAMPINA GRANDE",
+        "rua": "AVENIDA COPACABANA",
+        "numero": 5714,
+        "bairro": "CANDEIAS",
+        "regiao": "PB",
+        "inicioValidadeObj": "31/12/1984",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C718004",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINA GRANDE, PB / AVENIDA COPACABANA 5714 / CAMPINA GRANDE - PB",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 279715",
+        "numeroITR": "CÓD. IMÓVEL 5090",
+        "grupoAutorizacoes": 7605
+      },
+      "locadorId": "locador_000020"
+    },
+    {
+      "id": "imovel_000022",
+      "contrato": {
+        "numero": 10000022,
+        "denominacao": "CT - AG FARIA LIMA, RJ",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "29/06/1998",
+        "fimValidade": "25/10/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127001
+      },
+      "edificio": {
+        "codigo": 20000022,
+        "denominacao": "ED - AG DUQUE DE CAXIAS, RJ",
+        "status": "Em Mobilização",
+        "cep": "20023-344",
+        "local": "DUQUE DE CAXIAS",
+        "rua": "AVENIDA COMERCIAL",
+        "numero": 6069,
+        "bairro": "CENTRO",
+        "regiao": "RJ",
+        "inicioValidadeObj": "25/11/1991",
+        "objetoValidoAte": "25/10/2028",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C776570",
+        "chavePais": "BR",
+        "endereco": "AG DUQUE DE CAXIAS, RJ / AVENIDA COMERCIAL 6069 / DUQUE DE CAXIAS - RJ",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 517876",
+        "numeroITR": "CÓD. IMÓVEL 2548",
+        "grupoAutorizacoes": 7434
+      },
+      "locadorId": "locador_000001"
+    },
+    {
+      "id": "imovel_000023",
+      "contrato": {
+        "numero": 10000023,
+        "denominacao": "CT - AG SANTOS, SP",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "25/04/2000",
+        "fimValidade": "02/06/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127006
+      },
+      "edificio": {
+        "codigo": 20000023,
+        "denominacao": "ED - AG SANTOS, SP",
+        "status": "Ativo",
+        "cep": "01119-255",
+        "local": "SANTOS",
+        "rua": "PRAÇA INDEPENDÊNCIA",
+        "numero": 2719,
+        "bairro": "GONZAGA",
+        "regiao": "SP",
+        "inicioValidadeObj": "18/03/1992",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C932941",
+        "chavePais": "BR",
+        "endereco": "AG SANTOS, SP / PRAÇA INDEPENDÊNCIA 2719 / SANTOS - SP",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 320132",
+        "numeroITR": "CÓD. IMÓVEL 1387",
+        "grupoAutorizacoes": 7357
+      },
+      "locadorId": "locador_000006"
+    },
+    {
+      "id": "imovel_000024",
+      "contrato": {
+        "numero": 10000024,
+        "denominacao": "CT - AG VER-O-PESO, SP",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "07/08/2018",
+        "fimValidade": "07/06/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127032
+      },
+      "edificio": {
+        "codigo": 20000024,
+        "denominacao": "ED - AG CAMPINAS, SP",
+        "status": "Ativo",
+        "cep": "01127-060",
+        "local": "CAMPINAS",
+        "rua": "ESTRADA FREI CANECA",
+        "numero": 534,
+        "bairro": "PONTA VERDE",
+        "regiao": "SP",
+        "inicioValidadeObj": "24/11/1993",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C837068",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINAS, SP / ESTRADA FREI CANECA 534 / CAMPINAS - SP",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 780525",
+        "numeroITR": "CÓD. IMÓVEL 3535",
+        "grupoAutorizacoes": 7065
+      },
+      "locadorId": "locador_000032"
+    },
+    {
+      "id": "imovel_000025",
+      "contrato": {
+        "numero": 10000025,
+        "denominacao": "CT - PA PENHA DE FRANÇA, GO",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "16/04/2005",
+        "fimValidade": "07/07/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127002
+      },
+      "edificio": {
+        "codigo": 20000025,
+        "denominacao": "ED - AG APARECIDA DE GOIÂNIA, GO",
+        "status": "Em Mobilização",
+        "cep": "72011-078",
+        "local": "APARECIDA DE GOIÂNIA",
+        "rua": "AVENIDA COMERCIAL",
+        "numero": 7120,
+        "bairro": "JATIÚCA",
+        "regiao": "GO",
+        "inicioValidadeObj": "02/03/1980",
+        "objetoValidoAte": "07/07/2028",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C911898",
+        "chavePais": "BR",
+        "endereco": "AG APARECIDA DE GOIÂNIA, GO / AVENIDA COMERCIAL 7120 / APARECIDA DE GOIÂNIA - GO",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 452210",
+        "numeroITR": "CÓD. IMÓVEL 7652",
+        "grupoAutorizacoes": 7649
+      },
+      "locadorId": "locador_000002"
+    },
+    {
+      "id": "imovel_000026",
+      "contrato": {
+        "numero": 10000026,
+        "denominacao": "CT - AG TEATRO FEIRA, BA",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "12/03/1999",
+        "fimValidade": "27/04/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127016
+      },
+      "edificio": {
+        "codigo": 20000026,
+        "denominacao": "ED - AG FEIRA DE SANTANA, BA",
+        "status": "Ativo",
+        "cep": "40081-064",
+        "local": "FEIRA DE SANTANA",
+        "rua": "RUA IPANEMA",
+        "numero": 2039,
+        "bairro": "JARDINS",
+        "regiao": "BA",
+        "inicioValidadeObj": "01/12/1983",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C731626",
+        "chavePais": "BR",
+        "endereco": "AG FEIRA DE SANTANA, BA / RUA IPANEMA 2039 / FEIRA DE SANTANA - BA",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 867819",
+        "numeroITR": "CÓD. IMÓVEL 9496",
+        "grupoAutorizacoes": 7603
+      },
+      "locadorId": "locador_000016"
+    },
+    {
+      "id": "imovel_000027",
+      "contrato": {
+        "numero": 10000027,
+        "denominacao": "CT - AG JARDIM SÃO, SP",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "23/03/2008",
+        "fimValidade": "29/07/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127028
+      },
+      "edificio": {
+        "codigo": 20000027,
+        "denominacao": "ED - AG SÃO PAULO, SP",
+        "status": "Ativo",
+        "cep": "01159-223",
+        "local": "SÃO PAULO",
+        "rua": "RUA INDEPENDÊNCIA",
+        "numero": 2164,
+        "bairro": "BOA VIAGEM",
+        "regiao": "SP",
+        "inicioValidadeObj": "17/09/1994",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C350296",
+        "chavePais": "BR",
+        "endereco": "AG SÃO PAULO, SP / RUA INDEPENDÊNCIA 2164 / SÃO PAULO - SP",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 317451",
+        "numeroITR": "CÓD. IMÓVEL 5785",
+        "grupoAutorizacoes": 7351
+      },
+      "locadorId": "locador_000028"
+    },
+    {
+      "id": "imovel_000028",
+      "contrato": {
+        "numero": 10000028,
+        "denominacao": "CT - AG VITAL BRASIL, DF",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "09/07/2012",
+        "fimValidade": "26/09/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127024
+      },
+      "edificio": {
+        "codigo": 20000028,
+        "denominacao": "ED - AG BRASÍLIA, DF",
+        "status": "Em Mobilização",
+        "cep": "70007-273",
+        "local": "BRASÍLIA",
+        "rua": "ALAMEDA COMERCIAL",
+        "numero": 2932,
+        "bairro": "CENTRO HISTÓRICO",
+        "regiao": "DF",
+        "inicioValidadeObj": "15/02/1995",
+        "objetoValidoAte": "26/09/2028",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C351839",
+        "chavePais": "BR",
+        "endereco": "AG BRASÍLIA, DF / ALAMEDA COMERCIAL 2932 / BRASÍLIA - DF",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 435351",
+        "numeroITR": "CÓD. IMÓVEL 9763",
+        "grupoAutorizacoes": 7195
+      },
+      "locadorId": "locador_000024"
+    },
+    {
+      "id": "imovel_000029",
+      "contrato": {
+        "numero": 10000029,
+        "denominacao": "CT - AG CAMPINA GRANDE, PB",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "18/12/1992",
+        "fimValidade": "07/07/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127004
+      },
+      "edificio": {
+        "codigo": 20000029,
+        "denominacao": "ED - AG CAMPINA GRANDE, PB",
+        "status": "Ativo",
+        "cep": "58072-560",
+        "local": "CAMPINA GRANDE",
+        "rua": "ALAMEDA DOM PEDRO II",
+        "numero": 1451,
+        "bairro": "EMBARÉ",
+        "regiao": "PB",
+        "inicioValidadeObj": "23/04/1989",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C709286",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINA GRANDE, PB / ALAMEDA DOM PEDRO II 1451 / CAMPINA GRANDE - PB",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 361574",
+        "numeroITR": "CÓD. IMÓVEL 5091",
+        "grupoAutorizacoes": 7551
+      },
+      "locadorId": "locador_000004"
+    },
+    {
+      "id": "imovel_000030",
+      "contrato": {
+        "numero": 10000030,
+        "denominacao": "CT - AG HEITOR PENTEADO, GO",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "24/06/2015",
+        "fimValidade": "05/10/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127035
+      },
+      "edificio": {
+        "codigo": 20000030,
+        "denominacao": "ED - AG GOIÂNIA, GO",
+        "status": "Ativo",
+        "cep": "72077-825",
+        "local": "GOIÂNIA",
+        "rua": "TRAVESSA COPACABANA",
+        "numero": 2667,
+        "bairro": "JATIÚCA",
+        "regiao": "GO",
+        "inicioValidadeObj": "16/09/1992",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C519199",
+        "chavePais": "BR",
+        "endereco": "AG GOIÂNIA, GO / TRAVESSA COPACABANA 2667 / GOIÂNIA - GO",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 647130",
+        "numeroITR": "CÓD. IMÓVEL 9040",
+        "grupoAutorizacoes": 7742
+      },
+      "locadorId": "locador_000035"
+    },
+    {
+      "id": "imovel_000031",
+      "contrato": {
+        "numero": 10000031,
+        "denominacao": "CT - AG VER-O-PESO, GO",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "28/07/2003",
+        "fimValidade": "04/08/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127031
+      },
+      "edificio": {
+        "codigo": 20000031,
+        "denominacao": "ED - AG APARECIDA DE GOIÂNIA, GO",
+        "status": "Em Mobilização",
+        "cep": "72080-051",
+        "local": "APARECIDA DE GOIÂNIA",
+        "rua": "AVENIDA JOÃO PESSOA",
+        "numero": 171,
+        "bairro": "CANDEIAS",
+        "regiao": "GO",
+        "inicioValidadeObj": "29/11/1989",
+        "objetoValidoAte": "04/08/2025",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C551785",
+        "chavePais": "BR",
+        "endereco": "AG APARECIDA DE GOIÂNIA, GO / AVENIDA JOÃO PESSOA 171 / APARECIDA DE GOIÂNIA - GO",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 444732",
+        "numeroITR": "CÓD. IMÓVEL 7600",
+        "grupoAutorizacoes": 7545
+      },
+      "locadorId": "locador_000031"
+    },
+    {
+      "id": "imovel_000032",
+      "contrato": {
+        "numero": 10000032,
+        "denominacao": "CT - AG PACAEMBU, PI",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "13/12/2012",
+        "fimValidade": "04/10/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127013
+      },
+      "edificio": {
+        "codigo": 20000032,
+        "denominacao": "ED - AG TERESINA, PI",
+        "status": "Ativo",
+        "cep": "64033-251",
+        "local": "TERESINA",
+        "rua": "ALAMEDA DAS FLORES",
+        "numero": 4309,
+        "bairro": "PRAIA DO CANTO",
+        "regiao": "PI",
+        "inicioValidadeObj": "05/12/1986",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C584915",
+        "chavePais": "BR",
+        "endereco": "AG TERESINA, PI / ALAMEDA DAS FLORES 4309 / TERESINA - PI",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 157690",
+        "numeroITR": "CÓD. IMÓVEL 3258",
+        "grupoAutorizacoes": 7132
+      },
+      "locadorId": "locador_000013"
+    },
+    {
+      "id": "imovel_000033",
+      "contrato": {
+        "numero": 10000033,
+        "denominacao": "CT - PA TEATRO MARINGÁ, PR",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "20/07/2009",
+        "fimValidade": "11/09/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127026
+      },
+      "edificio": {
+        "codigo": 20000033,
+        "denominacao": "ED - AG MARINGÁ, PR",
+        "status": "Ativo",
+        "cep": "80013-572",
+        "local": "MARINGÁ",
+        "rua": "RUA REPÚBLICA",
+        "numero": 4027,
+        "bairro": "ONDINA",
+        "regiao": "PR",
+        "inicioValidadeObj": "16/08/1998",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C801754",
+        "chavePais": "BR",
+        "endereco": "AG MARINGÁ, PR / RUA REPÚBLICA 4027 / MARINGÁ - PR",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 580470",
+        "numeroITR": "CÓD. IMÓVEL 9623",
+        "grupoAutorizacoes": 7987
+      },
+      "locadorId": "locador_000026"
+    },
+    {
+      "id": "imovel_000034",
+      "contrato": {
+        "numero": 10000034,
+        "denominacao": "CT - AG ARACAJU, SE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "14/11/1990",
+        "fimValidade": "20/09/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127035
+      },
+      "edificio": {
+        "codigo": 20000034,
+        "denominacao": "ED - AG ARACAJU, SE",
+        "status": "Ativo",
+        "cep": "49083-094",
+        "local": "ARACAJU",
+        "rua": "ALAMEDA FREI CANECA",
+        "numero": 462,
+        "bairro": "IPANEMA",
+        "regiao": "SE",
+        "inicioValidadeObj": "07/09/1980",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C179324",
+        "chavePais": "BR",
+        "endereco": "AG ARACAJU, SE / ALAMEDA FREI CANECA 462 / ARACAJU - SE",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 346390",
+        "numeroITR": "CÓD. IMÓVEL 2084",
+        "grupoAutorizacoes": 7500
+      },
+      "locadorId": "locador_000035"
+    },
+    {
+      "id": "imovel_000035",
+      "contrato": {
+        "numero": 10000035,
+        "denominacao": "CT - AG ITAQUERA, DF",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "12/07/1990",
+        "fimValidade": "12/08/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127002
+      },
+      "edificio": {
+        "codigo": 20000035,
+        "denominacao": "ED - AG BRASÍLIA, DF",
+        "status": "Ativo",
+        "cep": "70026-387",
+        "local": "BRASÍLIA",
+        "rua": "AVENIDA RIO BRANCO",
+        "numero": 2235,
+        "bairro": "FUNCIONÁRIOS",
+        "regiao": "DF",
+        "inicioValidadeObj": "12/05/1991",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C839187",
+        "chavePais": "BR",
+        "endereco": "AG BRASÍLIA, DF / AVENIDA RIO BRANCO 2235 / BRASÍLIA - DF",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 547880",
+        "numeroITR": "CÓD. IMÓVEL 2305",
+        "grupoAutorizacoes": 7977
+      },
+      "locadorId": "locador_000002"
+    },
+    {
+      "id": "imovel_000036",
+      "contrato": {
+        "numero": 10000036,
+        "denominacao": "CT - PA PONTE RASA, GO",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "09/06/2014",
+        "fimValidade": "15/06/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127012
+      },
+      "edificio": {
+        "codigo": 20000036,
+        "denominacao": "ED - AG APARECIDA DE GOIÂNIA, GO",
+        "status": "Ativo",
+        "cep": "72047-147",
+        "local": "APARECIDA DE GOIÂNIA",
+        "rua": "TRAVESSA RIO BRANCO",
+        "numero": 3315,
+        "bairro": "SAVASSI",
+        "regiao": "GO",
+        "inicioValidadeObj": "17/05/1999",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C663851",
+        "chavePais": "BR",
+        "endereco": "AG APARECIDA DE GOIÂNIA, GO / TRAVESSA RIO BRANCO 3315 / APARECIDA DE GOIÂNIA - GO",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 680482",
+        "numeroITR": "CÓD. IMÓVEL 5902",
+        "grupoAutorizacoes": 7597
+      },
+      "locadorId": "locador_000012"
+    },
+    {
+      "id": "imovel_000037",
+      "contrato": {
+        "numero": 10000037,
+        "denominacao": "CT - PA PAES DE BARROS, BA",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "30/09/1991",
+        "fimValidade": "14/04/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127018
+      },
+      "edificio": {
+        "codigo": 20000037,
+        "denominacao": "ED - AG VITÓRIA DA CONQUISTA, BA",
+        "status": "Ativo",
+        "cep": "40047-712",
+        "local": "VITÓRIA DA CONQUISTA",
+        "rua": "TRAVESSA CENTRAL",
+        "numero": 9102,
+        "bairro": "JATIÚCA",
+        "regiao": "BA",
+        "inicioValidadeObj": "04/01/1984",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C347281",
+        "chavePais": "BR",
+        "endereco": "AG VITÓRIA DA CONQUISTA, BA / TRAVESSA CENTRAL 9102 / VITÓRIA DA CONQUISTA - BA",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 363825",
+        "numeroITR": "CÓD. IMÓVEL 9431",
+        "grupoAutorizacoes": 7018
+      },
+      "locadorId": "locador_000018"
+    },
+    {
+      "id": "imovel_000038",
+      "contrato": {
+        "numero": 10000038,
+        "denominacao": "CT - PA ANA COSTA, RN",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "03/10/2011",
+        "fimValidade": "06/01/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127030
+      },
+      "edificio": {
+        "codigo": 20000038,
+        "denominacao": "ED - AG PARNAMIRIM, RN",
+        "status": "Ativo",
+        "cep": "59040-660",
+        "local": "PARNAMIRIM",
+        "rua": "TRAVESSA PRINCESA ISABEL",
+        "numero": 4060,
+        "bairro": "LOURDES",
+        "regiao": "RN",
+        "inicioValidadeObj": "29/01/1991",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C158649",
+        "chavePais": "BR",
+        "endereco": "AG PARNAMIRIM, RN / TRAVESSA PRINCESA ISABEL 4060 / PARNAMIRIM - RN",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 303968",
+        "numeroITR": "CÓD. IMÓVEL 8294",
+        "grupoAutorizacoes": 7753
+      },
+      "locadorId": "locador_000030"
+    },
+    {
+      "id": "imovel_000039",
+      "contrato": {
+        "numero": 10000039,
+        "denominacao": "CT - AG VITÓRIA, ES",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "22/06/2018",
+        "fimValidade": "08/08/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127024
+      },
+      "edificio": {
+        "codigo": 20000039,
+        "denominacao": "ED - AG VITÓRIA, ES",
+        "status": "Ativo",
+        "cep": "29074-517",
+        "local": "VITÓRIA",
+        "rua": "TRAVESSA PRIMEIRO DE MAIO",
+        "numero": 9364,
+        "bairro": "ONDINA",
+        "regiao": "ES",
+        "inicioValidadeObj": "10/07/1996",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C633776",
+        "chavePais": "BR",
+        "endereco": "AG VITÓRIA, ES / TRAVESSA PRIMEIRO DE MAIO 9364 / VITÓRIA - ES",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 786617",
+        "numeroITR": "CÓD. IMÓVEL 1013",
+        "grupoAutorizacoes": 7709
+      },
+      "locadorId": "locador_000024"
+    },
+    {
+      "id": "imovel_000040",
+      "contrato": {
+        "numero": 10000040,
+        "denominacao": "CT - PA JARDIM ARAPIRACA, AL",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "18/01/2006",
+        "fimValidade": "07/10/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127040
+      },
+      "edificio": {
+        "codigo": 20000040,
+        "denominacao": "ED - AG ARAPIRACA, AL",
+        "status": "Ativo",
+        "cep": "57096-360",
+        "local": "ARAPIRACA",
+        "rua": "AVENIDA JOÃO PESSOA",
+        "numero": 6034,
+        "bairro": "LOURDES",
+        "regiao": "AL",
+        "inicioValidadeObj": "06/04/1989",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C398049",
+        "chavePais": "BR",
+        "endereco": "AG ARAPIRACA, AL / AVENIDA JOÃO PESSOA 6034 / ARAPIRACA - AL",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 198029",
+        "numeroITR": "CÓD. IMÓVEL 8820",
+        "grupoAutorizacoes": 7137
+      },
+      "locadorId": "locador_000040"
+    },
+    {
+      "id": "imovel_000041",
+      "contrato": {
+        "numero": 10000041,
+        "denominacao": "CT - AG SÃO PAULO, SP",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "03/04/2016",
+        "fimValidade": "27/05/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127029
+      },
+      "edificio": {
+        "codigo": 20000041,
+        "denominacao": "ED - AG SÃO PAULO, SP",
+        "status": "Ativo",
+        "cep": "01104-945",
+        "local": "SÃO PAULO",
+        "rua": "RUA ATLÂNTICA",
+        "numero": 2217,
+        "bairro": "LEBLON",
+        "regiao": "SP",
+        "inicioValidadeObj": "01/12/1982",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C948477",
+        "chavePais": "BR",
+        "endereco": "AG SÃO PAULO, SP / RUA ATLÂNTICA 2217 / SÃO PAULO - SP",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 414816",
+        "numeroITR": "CÓD. IMÓVEL 2031",
+        "grupoAutorizacoes": 7887
+      },
+      "locadorId": "locador_000029"
+    },
+    {
+      "id": "imovel_000042",
+      "contrato": {
+        "numero": 10000042,
+        "denominacao": "CT - AG CASA VERDE, PB",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "19/03/2004",
+        "fimValidade": "18/02/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127037
+      },
+      "edificio": {
+        "codigo": 20000042,
+        "denominacao": "ED - AG JOÃO PESSOA, PB",
+        "status": "Em Mobilização",
+        "cep": "58043-155",
+        "local": "JOÃO PESSOA",
+        "rua": "ESTRADA REPÚBLICA",
+        "numero": 6101,
+        "bairro": "IPANEMA",
+        "regiao": "PB",
+        "inicioValidadeObj": "27/07/1995",
+        "objetoValidoAte": "18/02/2027",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C411832",
+        "chavePais": "BR",
+        "endereco": "AG JOÃO PESSOA, PB / ESTRADA REPÚBLICA 6101 / JOÃO PESSOA - PB",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 275090",
+        "numeroITR": "CÓD. IMÓVEL 9693",
+        "grupoAutorizacoes": 7966
+      },
+      "locadorId": "locador_000037"
+    },
+    {
+      "id": "imovel_000043",
+      "contrato": {
+        "numero": 10000043,
+        "denominacao": "CT - AG MANDAQUI, PE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "05/10/2016",
+        "fimValidade": "31/07/2023",
+        "rescisaoEm": "29/05/2020",
+        "parceiroNegocio": 900127002
+      },
+      "edificio": {
+        "codigo": 20000043,
+        "denominacao": "ED - AG RECIFE, PE",
+        "status": "Desativado",
+        "cep": "50021-639",
+        "local": "RECIFE",
+        "rua": "RUA FREI CANECA",
+        "numero": 2481,
+        "bairro": "SAVASSI",
+        "regiao": "PE",
+        "inicioValidadeObj": "09/12/1984",
+        "objetoValidoAte": "31/07/2023",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C237289",
+        "chavePais": "BR",
+        "endereco": "AG RECIFE, PE / RUA FREI CANECA 2481 / RECIFE - PE",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 389497",
+        "numeroITR": "CÓD. IMÓVEL 2754",
+        "grupoAutorizacoes": 7394
+      },
+      "locadorId": "locador_000002"
+    },
+    {
+      "id": "imovel_000044",
+      "contrato": {
+        "numero": 10000044,
+        "denominacao": "CT - AG AROUCHE, GO",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "31/12/1993",
+        "fimValidade": "29/10/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127021
+      },
+      "edificio": {
+        "codigo": 20000044,
+        "denominacao": "ED - AG GOIÂNIA, GO",
+        "status": "Ativo",
+        "cep": "72075-740",
+        "local": "GOIÂNIA",
+        "rua": "PRAÇA PRIMEIRO DE MAIO",
+        "numero": 6229,
+        "bairro": "GONZAGA",
+        "regiao": "GO",
+        "inicioValidadeObj": "03/04/1980",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C990933",
+        "chavePais": "BR",
+        "endereco": "AG GOIÂNIA, GO / PRAÇA PRIMEIRO DE MAIO 6229 / GOIÂNIA - GO",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 672055",
+        "numeroITR": "CÓD. IMÓVEL 5392",
+        "grupoAutorizacoes": 7477
+      },
+      "locadorId": "locador_000021"
+    },
+    {
+      "id": "imovel_000045",
+      "contrato": {
+        "numero": 10000045,
+        "denominacao": "CT - AG RIO DE JANEIRO, RJ",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "24/12/1990",
+        "fimValidade": "20/11/2022",
+        "rescisaoEm": "12/06/2023",
+        "parceiroNegocio": 900127038
+      },
+      "edificio": {
+        "codigo": 20000045,
+        "denominacao": "ED - AG RIO DE JANEIRO, RJ",
+        "status": "Em Prospecção",
+        "cep": "20009-169",
+        "local": "RIO DE JANEIRO",
+        "rua": "PRAÇA COMERCIAL",
+        "numero": 4513,
+        "bairro": "GONZAGA",
+        "regiao": "RJ",
+        "inicioValidadeObj": "18/11/1995",
+        "objetoValidoAte": "20/11/2022",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C564565",
+        "chavePais": "BR",
+        "endereco": "AG RIO DE JANEIRO, RJ / PRAÇA COMERCIAL 4513 / RIO DE JANEIRO - RJ",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 959266",
+        "numeroITR": "CÓD. IMÓVEL 4112",
+        "grupoAutorizacoes": 7911
+      },
+      "locadorId": "locador_000038"
+    },
+    {
+      "id": "imovel_000046",
+      "contrato": {
+        "numero": 10000046,
+        "denominacao": "CT - AGÊNCIA AROUCHE, MT",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "29/01/1991",
+        "fimValidade": "05/10/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127004
+      },
+      "edificio": {
+        "codigo": 20000046,
+        "denominacao": "ED - AG CUIABÁ, MT",
+        "status": "Ativo",
+        "cep": "78093-594",
+        "local": "CUIABÁ",
+        "rua": "TRAVESSA COMERCIAL",
+        "numero": 699,
+        "bairro": "CENTRO",
+        "regiao": "MT",
+        "inicioValidadeObj": "30/09/2000",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C787338",
+        "chavePais": "BR",
+        "endereco": "AG CUIABÁ, MT / TRAVESSA COMERCIAL 699 / CUIABÁ - MT",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 957787",
+        "numeroITR": "CÓD. IMÓVEL 4397",
+        "grupoAutorizacoes": 7715
+      },
+      "locadorId": "locador_000004"
+    },
+    {
+      "id": "imovel_000047",
+      "contrato": {
+        "numero": 10000047,
+        "denominacao": "CT - AG VILA GUILHERME, SP",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "25/04/2014",
+        "fimValidade": "25/08/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127003
+      },
+      "edificio": {
+        "codigo": 20000047,
+        "denominacao": "ED - AG CAMPINAS, SP",
+        "status": "Ativo",
+        "cep": "01129-666",
+        "local": "CAMPINAS",
+        "rua": "ESTRADA MAIN",
+        "numero": 8509,
+        "bairro": "GONZAGA",
+        "regiao": "SP",
+        "inicioValidadeObj": "20/08/1996",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C752962",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINAS, SP / ESTRADA MAIN 8509 / CAMPINAS - SP",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 714589",
+        "numeroITR": "CÓD. IMÓVEL 9435",
+        "grupoAutorizacoes": 7704
+      },
+      "locadorId": "locador_000003"
+    },
+    {
+      "id": "imovel_000048",
+      "contrato": {
+        "numero": 10000048,
+        "denominacao": "CT - PAB VER-O-PESO, SC",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "13/09/2017",
+        "fimValidade": "25/12/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127031
+      },
+      "edificio": {
+        "codigo": 20000048,
+        "denominacao": "ED - AG JOINVILLE, SC",
+        "status": "Ativo",
+        "cep": "88085-414",
+        "local": "JOINVILLE",
+        "rua": "ALAMEDA LIBERDADE",
+        "numero": 2444,
+        "bairro": "ALDEOTA",
+        "regiao": "SC",
+        "inicioValidadeObj": "20/11/1990",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C622912",
+        "chavePais": "BR",
+        "endereco": "AG JOINVILLE, SC / ALAMEDA LIBERDADE 2444 / JOINVILLE - SC",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 790464",
+        "numeroITR": "CÓD. IMÓVEL 6762",
+        "grupoAutorizacoes": 7786
+      },
+      "locadorId": "locador_000031"
+    },
+    {
+      "id": "imovel_000049",
+      "contrato": {
+        "numero": 10000049,
+        "denominacao": "CT - PAB ARTUR ALVIM, MA",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "19/09/1994",
+        "fimValidade": "17/11/2025",
+        "rescisaoEm": "01/10/2024",
+        "parceiroNegocio": 900127037
+      },
+      "edificio": {
+        "codigo": 20000049,
+        "denominacao": "ED - AG SÃO LUÍS, MA",
+        "status": "Em Desmobilização",
+        "cep": "65075-798",
+        "local": "SÃO LUÍS",
+        "rua": "TRAVESSA PAULISTA",
+        "numero": 4724,
+        "bairro": "PITANGUEIRAS",
+        "regiao": "MA",
+        "inicioValidadeObj": "20/10/1981",
+        "objetoValidoAte": "17/11/2025",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C111276",
+        "chavePais": "BR",
+        "endereco": "AG SÃO LUÍS, MA / TRAVESSA PAULISTA 4724 / SÃO LUÍS - MA",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 466594",
+        "numeroITR": "CÓD. IMÓVEL 9352",
+        "grupoAutorizacoes": 7884
+      },
+      "locadorId": "locador_000037"
+    },
+    {
+      "id": "imovel_000050",
+      "contrato": {
+        "numero": 10000050,
+        "denominacao": "CT - AG FARIA LIMA, PR",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "10/07/1991",
+        "fimValidade": "16/03/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127027
+      },
+      "edificio": {
+        "codigo": 20000050,
+        "denominacao": "ED - AG MARINGÁ, PR",
+        "status": "Ativo",
+        "cep": "80080-336",
+        "local": "MARINGÁ",
+        "rua": "AVENIDA AFONSO PENA",
+        "numero": 4370,
+        "bairro": "FUNCIONÁRIOS",
+        "regiao": "PR",
+        "inicioValidadeObj": "31/08/1988",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C185459",
+        "chavePais": "BR",
+        "endereco": "AG MARINGÁ, PR / AVENIDA AFONSO PENA 4370 / MARINGÁ - PR",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 339432",
+        "numeroITR": "CÓD. IMÓVEL 3793",
+        "grupoAutorizacoes": 7211
+      },
+      "locadorId": "locador_000027"
+    },
+    {
+      "id": "imovel_000051",
+      "contrato": {
+        "numero": 10000051,
+        "denominacao": "CT - AG BLUMENAU, SC",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "27/07/1990",
+        "fimValidade": "11/09/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127007
+      },
+      "edificio": {
+        "codigo": 20000051,
+        "denominacao": "ED - AG BLUMENAU, SC",
+        "status": "Ativo",
+        "cep": "88001-882",
+        "local": "BLUMENAU",
+        "rua": "ALAMEDA CENTRAL",
+        "numero": 7556,
+        "bairro": "BOA VIAGEM",
+        "regiao": "SC",
+        "inicioValidadeObj": "23/08/1984",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C432192",
+        "chavePais": "BR",
+        "endereco": "AG BLUMENAU, SC / ALAMEDA CENTRAL 7556 / BLUMENAU - SC",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 692159",
+        "numeroITR": "CÓD. IMÓVEL 5070",
+        "grupoAutorizacoes": 7159
+      },
+      "locadorId": "locador_000007"
+    },
+    {
+      "id": "imovel_000052",
+      "contrato": {
+        "numero": 10000052,
+        "denominacao": "CT - AG PARQUE MARINGÁ, PR",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "27/08/1998",
+        "fimValidade": "29/11/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127036
+      },
+      "edificio": {
+        "codigo": 20000052,
+        "denominacao": "ED - AG MARINGÁ, PR",
+        "status": "Ativo",
+        "cep": "80036-198",
+        "local": "MARINGÁ",
+        "rua": "AVENIDA IPANEMA",
+        "numero": 2121,
+        "bairro": "PRAIA DO CANTO",
+        "regiao": "PR",
+        "inicioValidadeObj": "20/09/1987",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C212394",
+        "chavePais": "BR",
+        "endereco": "AG MARINGÁ, PR / AVENIDA IPANEMA 2121 / MARINGÁ - PR",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 211339",
+        "numeroITR": "CÓD. IMÓVEL 2612",
+        "grupoAutorizacoes": 7957
+      },
+      "locadorId": "locador_000036"
+    },
+    {
+      "id": "imovel_000053",
+      "contrato": {
+        "numero": 10000053,
+        "denominacao": "CT - AG VITÓRIA DA CONQUISTA, BA",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "21/04/1996",
+        "fimValidade": "15/04/2021",
+        "rescisaoEm": "03/12/2023",
+        "parceiroNegocio": 900127032
+      },
+      "edificio": {
+        "codigo": 20000053,
+        "denominacao": "ED - AG VITÓRIA DA CONQUISTA, BA",
+        "status": "Em Prospecção",
+        "cep": "40048-995",
+        "local": "VITÓRIA DA CONQUISTA",
+        "rua": "PRAÇA BOA VIAGEM",
+        "numero": 4584,
+        "bairro": "JARDINS",
+        "regiao": "BA",
+        "inicioValidadeObj": "27/11/1981",
+        "objetoValidoAte": "15/04/2021",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C216479",
+        "chavePais": "BR",
+        "endereco": "AG VITÓRIA DA CONQUISTA, BA / PRAÇA BOA VIAGEM 4584 / VITÓRIA DA CONQUISTA - BA",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 246733",
+        "numeroITR": "CÓD. IMÓVEL 4847",
+        "grupoAutorizacoes": 7533
+      },
+      "locadorId": "locador_000032"
+    },
+    {
+      "id": "imovel_000054",
+      "contrato": {
+        "numero": 10000054,
+        "denominacao": "CT - AG UBERLÂNDIA, MG",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "23/02/1997",
+        "fimValidade": "27/05/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127039
+      },
+      "edificio": {
+        "codigo": 20000054,
+        "denominacao": "ED - AG UBERLÂNDIA, MG",
+        "status": "Ativo",
+        "cep": "30004-972",
+        "local": "UBERLÂNDIA",
+        "rua": "PRAÇA RIO BRANCO",
+        "numero": 210,
+        "bairro": "FUNCIONÁRIOS",
+        "regiao": "MG",
+        "inicioValidadeObj": "11/08/1995",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C926275",
+        "chavePais": "BR",
+        "endereco": "AG UBERLÂNDIA, MG / PRAÇA RIO BRANCO 210 / UBERLÂNDIA - MG",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 568918",
+        "numeroITR": "CÓD. IMÓVEL 5860",
+        "grupoAutorizacoes": 7419
+      },
+      "locadorId": "locador_000039"
+    },
+    {
+      "id": "imovel_000055",
+      "contrato": {
+        "numero": 10000055,
+        "denominacao": "CT - AG PENHA DE FRANÇA, RN",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "24/12/2002",
+        "fimValidade": "17/06/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127031
+      },
+      "edificio": {
+        "codigo": 20000055,
+        "denominacao": "ED - AG NATAL, RN",
+        "status": "Ativo",
+        "cep": "59005-172",
+        "local": "NATAL",
+        "rua": "PRAÇA ATLÂNTICA",
+        "numero": 8945,
+        "bairro": "FUNCIONÁRIOS",
+        "regiao": "RN",
+        "inicioValidadeObj": "29/01/1983",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C516489",
+        "chavePais": "BR",
+        "endereco": "AG NATAL, RN / PRAÇA ATLÂNTICA 8945 / NATAL - RN",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 898503",
+        "numeroITR": "CÓD. IMÓVEL 5710",
+        "grupoAutorizacoes": 7476
+      },
+      "locadorId": "locador_000031"
+    },
+    {
+      "id": "imovel_000056",
+      "contrato": {
+        "numero": 10000056,
+        "denominacao": "CT - AG JABOATÃO DOS GUARARAPES, PE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "19/06/2004",
+        "fimValidade": "24/12/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127006
+      },
+      "edificio": {
+        "codigo": 20000056,
+        "denominacao": "ED - AG JABOATÃO DOS GUARARAPES, PE",
+        "status": "Ativo",
+        "cep": "50050-939",
+        "local": "JABOATÃO DOS GUARARAPES",
+        "rua": "RUA SETE DE SETEMBRO",
+        "numero": 7284,
+        "bairro": "LOURDES",
+        "regiao": "PE",
+        "inicioValidadeObj": "29/08/1997",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C628198",
+        "chavePais": "BR",
+        "endereco": "AG JABOATÃO DOS GUARARAPES, PE / RUA SETE DE SETEMBRO 7284 / JABOATÃO DOS GUARARAPES - PE",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 262081",
+        "numeroITR": "CÓD. IMÓVEL 1155",
+        "grupoAutorizacoes": 7550
+      },
+      "locadorId": "locador_000006"
+    },
+    {
+      "id": "imovel_000057",
+      "contrato": {
+        "numero": 10000057,
+        "denominacao": "CT - AG SERRA, ES",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "30/03/2010",
+        "fimValidade": "11/03/2024",
+        "rescisaoEm": "11/06/2024",
+        "parceiroNegocio": 900127014
+      },
+      "edificio": {
+        "codigo": 20000057,
+        "denominacao": "ED - AG SERRA, ES",
+        "status": "Em Desmobilização",
+        "cep": "29079-523",
+        "local": "SERRA",
+        "rua": "ESTRADA BARÃO DO RIO BRANCO",
+        "numero": 36,
+        "bairro": "ALDEOTA",
+        "regiao": "ES",
+        "inicioValidadeObj": "25/07/1997",
+        "objetoValidoAte": "11/03/2024",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C850151",
+        "chavePais": "BR",
+        "endereco": "AG SERRA, ES / ESTRADA BARÃO DO RIO BRANCO 36 / SERRA - ES",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 953599",
+        "numeroITR": "CÓD. IMÓVEL 8343",
+        "grupoAutorizacoes": 7424
+      },
+      "locadorId": "locador_000014"
+    },
+    {
+      "id": "imovel_000058",
+      "contrato": {
+        "numero": 10000058,
+        "denominacao": "CT - AG LONDRINA, PR",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "16/12/2008",
+        "fimValidade": "17/10/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127009
+      },
+      "edificio": {
+        "codigo": 20000058,
+        "denominacao": "ED - AG LONDRINA, PR",
+        "status": "Ativo",
+        "cep": "80002-584",
+        "local": "LONDRINA",
+        "rua": "PRAÇA DAS FLORES",
+        "numero": 9645,
+        "bairro": "FUNCIONÁRIOS",
+        "regiao": "PR",
+        "inicioValidadeObj": "20/11/1994",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C692059",
+        "chavePais": "BR",
+        "endereco": "AG LONDRINA, PR / PRAÇA DAS FLORES 9645 / LONDRINA - PR",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 336662",
+        "numeroITR": "CÓD. IMÓVEL 3412",
+        "grupoAutorizacoes": 7529
+      },
+      "locadorId": "locador_000009"
+    },
+    {
+      "id": "imovel_000059",
+      "contrato": {
+        "numero": 10000059,
+        "denominacao": "CT - AG PRAÇA JOÃO, PB",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "08/06/1996",
+        "fimValidade": "24/01/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127012
+      },
+      "edificio": {
+        "codigo": 20000059,
+        "denominacao": "ED - AG JOÃO PESSOA, PB",
+        "status": "Ativo",
+        "cep": "58042-750",
+        "local": "JOÃO PESSOA",
+        "rua": "RUA INDUSTRIAL",
+        "numero": 3380,
+        "bairro": "ALDEOTA",
+        "regiao": "PB",
+        "inicioValidadeObj": "30/12/1990",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C142442",
+        "chavePais": "BR",
+        "endereco": "AG JOÃO PESSOA, PB / RUA INDUSTRIAL 3380 / JOÃO PESSOA - PB",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 325900",
+        "numeroITR": "CÓD. IMÓVEL 6336",
+        "grupoAutorizacoes": 7588
+      },
+      "locadorId": "locador_000012"
+    },
+    {
+      "id": "imovel_000060",
+      "contrato": {
+        "numero": 10000060,
+        "denominacao": "CT - AG VILA FORMOSA, SP",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "24/03/2002",
+        "fimValidade": "31/03/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127026
+      },
+      "edificio": {
+        "codigo": 20000060,
+        "denominacao": "ED - AG CAMPINAS, SP",
+        "status": "Ativo",
+        "cep": "01144-056",
+        "local": "CAMPINAS",
+        "rua": "TRAVESSA DOM PEDRO II",
+        "numero": 2275,
+        "bairro": "EMBARÉ",
+        "regiao": "SP",
+        "inicioValidadeObj": "15/09/1981",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C288905",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINAS, SP / TRAVESSA DOM PEDRO II 2275 / CAMPINAS - SP",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 147013",
+        "numeroITR": "CÓD. IMÓVEL 2140",
+        "grupoAutorizacoes": 7547
+      },
+      "locadorId": "locador_000026"
+    },
+    {
+      "id": "imovel_000061",
+      "contrato": {
+        "numero": 10000061,
+        "denominacao": "CT - AG PACAEMBU, ES",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "22/05/2005",
+        "fimValidade": "14/04/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127025
+      },
+      "edificio": {
+        "codigo": 20000061,
+        "denominacao": "ED - AG SERRA, ES",
+        "status": "Ativo",
+        "cep": "29046-823",
+        "local": "SERRA",
+        "rua": "AVENIDA RIO BRANCO",
+        "numero": 2867,
+        "bairro": "ONDINA",
+        "regiao": "ES",
+        "inicioValidadeObj": "09/05/1991",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C540063",
+        "chavePais": "BR",
+        "endereco": "AG SERRA, ES / AVENIDA RIO BRANCO 2867 / SERRA - ES",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 638986",
+        "numeroITR": "CÓD. IMÓVEL 8421",
+        "grupoAutorizacoes": 7274
+      },
+      "locadorId": "locador_000025"
+    },
+    {
+      "id": "imovel_000062",
+      "contrato": {
+        "numero": 10000062,
+        "denominacao": "CONTRATO AG. PARAÍSO",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "21/07/1998",
+        "fimValidade": "28/11/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127037
+      },
+      "edificio": {
+        "codigo": 20000062,
+        "denominacao": "ED - AG SÃO PAULO, SP",
+        "status": "Em Mobilização",
+        "cep": "01193-709",
+        "local": "SÃO PAULO",
+        "rua": "TRAVESSA BARÃO DO RIO BRANCO",
+        "numero": 2556,
+        "bairro": "BOA VIAGEM",
+        "regiao": "SP",
+        "inicioValidadeObj": "02/06/1984",
+        "objetoValidoAte": "28/11/2025",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C433896",
+        "chavePais": "BR",
+        "endereco": "AG SÃO PAULO, SP / TRAVESSA BARÃO DO RIO BRANCO 2556 / SÃO PAULO - SP",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 976094",
+        "numeroITR": "CÓD. IMÓVEL 6136",
+        "grupoAutorizacoes": 7370
+      },
+      "locadorId": "locador_000037"
+    },
+    {
+      "id": "imovel_000063",
+      "contrato": {
+        "numero": 10000063,
+        "denominacao": "CT - AG JUAZEIRO DO NORTE, CE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "13/12/2005",
+        "fimValidade": "09/12/2029",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127027
+      },
+      "edificio": {
+        "codigo": 20000063,
+        "denominacao": "ED - AG JUAZEIRO DO NORTE, CE",
+        "status": "Ativo",
+        "cep": "60076-528",
+        "local": "JUAZEIRO DO NORTE",
+        "rua": "TRAVESSA IPANEMA",
+        "numero": 8059,
+        "bairro": "BARRA",
+        "regiao": "CE",
+        "inicioValidadeObj": "13/08/1993",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C416529",
+        "chavePais": "BR",
+        "endereco": "AG JUAZEIRO DO NORTE, CE / TRAVESSA IPANEMA 8059 / JUAZEIRO DO NORTE - CE",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 437963",
+        "numeroITR": "CÓD. IMÓVEL 2800",
+        "grupoAutorizacoes": 7000
+      },
+      "locadorId": "locador_000027"
+    },
+    {
+      "id": "imovel_000064",
+      "contrato": {
+        "numero": 10000064,
+        "denominacao": "CT - AGÊNCIA VILA GUILHERME, AL",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "23/07/1995",
+        "fimValidade": "22/02/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127032
+      },
+      "edificio": {
+        "codigo": 20000064,
+        "denominacao": "ED - AG MACEIÓ, AL",
+        "status": "Ativo",
+        "cep": "57007-160",
+        "local": "MACEIÓ",
+        "rua": "AVENIDA AFONSO PENA",
+        "numero": 2104,
+        "bairro": "GONZAGA",
+        "regiao": "AL",
+        "inicioValidadeObj": "04/10/1987",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C343255",
+        "chavePais": "BR",
+        "endereco": "AG MACEIÓ, AL / AVENIDA AFONSO PENA 2104 / MACEIÓ - AL",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 378195",
+        "numeroITR": "CÓD. IMÓVEL 8453",
+        "grupoAutorizacoes": 7068
+      },
+      "locadorId": "locador_000032"
+    },
+    {
+      "id": "imovel_000065",
+      "contrato": {
+        "numero": 10000065,
+        "denominacao": "CT - AG PERDIZES, SP",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "05/03/2007",
+        "fimValidade": "11/07/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127001
+      },
+      "edificio": {
+        "codigo": 20000065,
+        "denominacao": "ED - AG SANTOS, SP",
+        "status": "Ativo",
+        "cep": "01114-004",
+        "local": "SANTOS",
+        "rua": "ESTRADA FREI CANECA",
+        "numero": 5351,
+        "bairro": "CONSOLAÇÃO",
+        "regiao": "SP",
+        "inicioValidadeObj": "25/12/1999",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C791529",
+        "chavePais": "BR",
+        "endereco": "AG SANTOS, SP / ESTRADA FREI CANECA 5351 / SANTOS - SP",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 243292",
+        "numeroITR": "CÓD. IMÓVEL 2921",
+        "grupoAutorizacoes": 7565
+      },
+      "locadorId": "locador_000001"
+    },
+    {
+      "id": "imovel_000066",
+      "contrato": {
+        "numero": 10000066,
+        "denominacao": "CT - AG PARI, CE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "23/05/2007",
+        "fimValidade": "08/03/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127025
+      },
+      "edificio": {
+        "codigo": 20000066,
+        "denominacao": "ED - AG FORTALEZA, CE",
+        "status": "Ativo",
+        "cep": "60007-523",
+        "local": "FORTALEZA",
+        "rua": "ESTRADA GETÚLIO VARGAS",
+        "numero": 3272,
+        "bairro": "EMBARÉ",
+        "regiao": "CE",
+        "inicioValidadeObj": "03/11/1993",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C186700",
+        "chavePais": "BR",
+        "endereco": "AG FORTALEZA, CE / ESTRADA GETÚLIO VARGAS 3272 / FORTALEZA - CE",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 184544",
+        "numeroITR": "CÓD. IMÓVEL 1833",
+        "grupoAutorizacoes": 7850
+      },
+      "locadorId": "locador_000025"
+    },
+    {
+      "id": "imovel_000067",
+      "contrato": {
+        "numero": 10000067,
+        "denominacao": "CT - AG PRAÇA DA REPÚBLICA, AL",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "17/07/1995",
+        "fimValidade": "08/05/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127007
+      },
+      "edificio": {
+        "codigo": 20000067,
+        "denominacao": "ED - AG ARAPIRACA, AL",
+        "status": "Ativo",
+        "cep": "57062-489",
+        "local": "ARAPIRACA",
+        "rua": "AVENIDA RIO BRANCO",
+        "numero": 8061,
+        "bairro": "SAVASSI",
+        "regiao": "AL",
+        "inicioValidadeObj": "10/12/1993",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C527413",
+        "chavePais": "BR",
+        "endereco": "AG ARAPIRACA, AL / AVENIDA RIO BRANCO 8061 / ARAPIRACA - AL",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 619760",
+        "numeroITR": "CÓD. IMÓVEL 1102",
+        "grupoAutorizacoes": 7154
+      },
+      "locadorId": "locador_000007"
+    },
+    {
+      "id": "imovel_000068",
+      "contrato": {
+        "numero": 10000068,
+        "denominacao": "CT - AG NOSSA SENHORA DO SOCORRO, SE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "22/06/2003",
+        "fimValidade": "22/02/2024",
+        "rescisaoEm": "22/06/2025",
+        "parceiroNegocio": 900127027
+      },
+      "edificio": {
+        "codigo": 20000068,
+        "denominacao": "ED - AG NOSSA SENHORA DO SOCORRO, SE",
+        "status": "Em Desmobilização",
+        "cep": "49056-511",
+        "local": "NOSSA SENHORA DO SOCORRO",
+        "rua": "TRAVESSA RIO BRANCO",
+        "numero": 9615,
+        "bairro": "ALDEOTA",
+        "regiao": "SE",
+        "inicioValidadeObj": "21/05/1984",
+        "objetoValidoAte": "22/02/2024",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C796751",
+        "chavePais": "BR",
+        "endereco": "AG NOSSA SENHORA DO SOCORRO, SE / TRAVESSA RIO BRANCO 9615 / NOSSA SENHORA DO SOCORRO - SE",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 476497",
+        "numeroITR": "CÓD. IMÓVEL 6115",
+        "grupoAutorizacoes": 7226
+      },
+      "locadorId": "locador_000027"
+    },
+    {
+      "id": "imovel_000069",
+      "contrato": {
+        "numero": 10000069,
+        "denominacao": "CT - AG PAES DE BARROS, RN",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "30/12/2008",
+        "fimValidade": "17/06/2023",
+        "rescisaoEm": "10/07/2020",
+        "parceiroNegocio": 900127019
+      },
+      "edificio": {
+        "codigo": 20000069,
+        "denominacao": "ED - AG NATAL, RN",
+        "status": "Desativado",
+        "cep": "59083-243",
+        "local": "NATAL",
+        "rua": "RUA DOM PEDRO II",
+        "numero": 6921,
+        "bairro": "EMBARÉ",
+        "regiao": "RN",
+        "inicioValidadeObj": "28/03/2000",
+        "objetoValidoAte": "17/06/2023",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C666901",
+        "chavePais": "BR",
+        "endereco": "AG NATAL, RN / RUA DOM PEDRO II 6921 / NATAL - RN",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 487380",
+        "numeroITR": "CÓD. IMÓVEL 2080",
+        "grupoAutorizacoes": 7261
+      },
+      "locadorId": "locador_000019"
+    },
+    {
+      "id": "imovel_000070",
+      "contrato": {
+        "numero": 10000070,
+        "denominacao": "SIPAT 8876 8035 Contrato pág. GELOG",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "13/07/1997",
+        "fimValidade": "28/12/2024",
+        "rescisaoEm": "24/11/2024",
+        "parceiroNegocio": 900127005
+      },
+      "edificio": {
+        "codigo": 20000070,
+        "denominacao": "ED - AG BELO HORIZONTE, MG",
+        "status": "Em Desmobilização",
+        "cep": "30018-138",
+        "local": "BELO HORIZONTE",
+        "rua": "TRAVESSA JOÃO PESSOA",
+        "numero": 6918,
+        "bairro": "CANDEIAS",
+        "regiao": "MG",
+        "inicioValidadeObj": "29/05/1985",
+        "objetoValidoAte": "28/12/2024",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C498581",
+        "chavePais": "BR",
+        "endereco": "AG BELO HORIZONTE, MG / TRAVESSA JOÃO PESSOA 6918 / BELO HORIZONTE - MG",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 173582",
+        "numeroITR": "CÓD. IMÓVEL 1091",
+        "grupoAutorizacoes": 7013
+      },
+      "locadorId": "locador_000005"
+    },
+    {
+      "id": "imovel_000071",
+      "contrato": {
+        "numero": 10000071,
+        "denominacao": "CT - AG EDUCANDOS, ES",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "09/01/1998",
+        "fimValidade": "29/10/2025",
+        "rescisaoEm": "25/05/2024",
+        "parceiroNegocio": 900127006
+      },
+      "edificio": {
+        "codigo": 20000071,
+        "denominacao": "ED - AG VILA VELHA, ES",
+        "status": "Em Desmobilização",
+        "cep": "29081-536",
+        "local": "VILA VELHA",
+        "rua": "ALAMEDA INDEPENDÊNCIA",
+        "numero": 172,
+        "bairro": "COPACABANA",
+        "regiao": "ES",
+        "inicioValidadeObj": "25/07/1993",
+        "objetoValidoAte": "29/10/2025",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C672846",
+        "chavePais": "BR",
+        "endereco": "AG VILA VELHA, ES / ALAMEDA INDEPENDÊNCIA 172 / VILA VELHA - ES",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 281744",
+        "numeroITR": "CÓD. IMÓVEL 5847",
+        "grupoAutorizacoes": 7745
+      },
+      "locadorId": "locador_000006"
+    },
+    {
+      "id": "imovel_000072",
+      "contrato": {
+        "numero": 10000072,
+        "denominacao": "CT - AG CASA VERDE, ES",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "12/10/2001",
+        "fimValidade": "16/03/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127014
+      },
+      "edificio": {
+        "codigo": 20000072,
+        "denominacao": "ED - AG VILA VELHA, ES",
+        "status": "Ativo",
+        "cep": "29087-875",
+        "local": "VILA VELHA",
+        "rua": "TRAVESSA INDUSTRIAL",
+        "numero": 4228,
+        "bairro": "ONDINA",
+        "regiao": "ES",
+        "inicioValidadeObj": "08/09/1983",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C777128",
+        "chavePais": "BR",
+        "endereco": "AG VILA VELHA, ES / TRAVESSA INDUSTRIAL 4228 / VILA VELHA - ES",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 605601",
+        "numeroITR": "CÓD. IMÓVEL 4577",
+        "grupoAutorizacoes": 7287
+      },
+      "locadorId": "locador_000014"
+    },
+    {
+      "id": "imovel_000073",
+      "contrato": {
+        "numero": 10000073,
+        "denominacao": "CT - AG VILA CAMPINA, PB",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "21/05/2013",
+        "fimValidade": "24/12/2029",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127037
+      },
+      "edificio": {
+        "codigo": 20000073,
+        "denominacao": "ED - AG CAMPINA GRANDE, PB",
+        "status": "Ativo",
+        "cep": "58057-229",
+        "local": "CAMPINA GRANDE",
+        "rua": "RUA TIRADENTES",
+        "numero": 6275,
+        "bairro": "ONDINA",
+        "regiao": "PB",
+        "inicioValidadeObj": "27/08/1990",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C531677",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINA GRANDE, PB / RUA TIRADENTES 6275 / CAMPINA GRANDE - PB",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 562542",
+        "numeroITR": "CÓD. IMÓVEL 6089",
+        "grupoAutorizacoes": 7893
+      },
+      "locadorId": "locador_000037"
+    },
+    {
+      "id": "imovel_000074",
+      "contrato": {
+        "numero": 10000074,
+        "denominacao": "CT - AG BELAS ARTES, PE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "11/12/1997",
+        "fimValidade": "24/12/2023",
+        "rescisaoEm": "29/08/2023",
+        "parceiroNegocio": 900127024
+      },
+      "edificio": {
+        "codigo": 20000074,
+        "denominacao": "ED - AG RECIFE, PE",
+        "status": "Em Prospecção",
+        "cep": "50001-238",
+        "local": "RECIFE",
+        "rua": "RUA BARÃO DO RIO BRANCO",
+        "numero": 7091,
+        "bairro": "IPANEMA",
+        "regiao": "PE",
+        "inicioValidadeObj": "05/02/1988",
+        "objetoValidoAte": "24/12/2023",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C853619",
+        "chavePais": "BR",
+        "endereco": "AG RECIFE, PE / RUA BARÃO DO RIO BRANCO 7091 / RECIFE - PE",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 778478",
+        "numeroITR": "CÓD. IMÓVEL 3801",
+        "grupoAutorizacoes": 7466
+      },
+      "locadorId": "locador_000024"
+    },
+    {
+      "id": "imovel_000075",
+      "contrato": {
+        "numero": 10000075,
+        "denominacao": "CT - AG ITAQUERA, AL",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "04/02/2011",
+        "fimValidade": "03/04/2022",
+        "rescisaoEm": "01/05/2021",
+        "parceiroNegocio": 900127009
+      },
+      "edificio": {
+        "codigo": 20000075,
+        "denominacao": "ED - AG MACEIÓ, AL",
+        "status": "Desativado",
+        "cep": "57020-442",
+        "local": "MACEIÓ",
+        "rua": "ALAMEDA QUINZE DE NOVEMBRO",
+        "numero": 4073,
+        "bairro": "IPANEMA",
+        "regiao": "AL",
+        "inicioValidadeObj": "27/04/1988",
+        "objetoValidoAte": "03/04/2022",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C756127",
+        "chavePais": "BR",
+        "endereco": "AG MACEIÓ, AL / ALAMEDA QUINZE DE NOVEMBRO 4073 / MACEIÓ - AL",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 810057",
+        "numeroITR": "CÓD. IMÓVEL 7978",
+        "grupoAutorizacoes": 7067
+      },
+      "locadorId": "locador_000009"
+    },
+    {
+      "id": "imovel_000076",
+      "contrato": {
+        "numero": 10000076,
+        "denominacao": "CT - EDIFÍCIO CORPORATE CENTER, RJ",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "20/07/1992",
+        "fimValidade": "19/01/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127023
+      },
+      "edificio": {
+        "codigo": 20000076,
+        "denominacao": "ED - AG DUQUE DE CAXIAS, RJ",
+        "status": "Ativo",
+        "cep": "20095-495",
+        "local": "DUQUE DE CAXIAS",
+        "rua": "AVENIDA QUINZE DE NOVEMBRO",
+        "numero": 2016,
+        "bairro": "JARDINS",
+        "regiao": "RJ",
+        "inicioValidadeObj": "04/03/1983",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C104061",
+        "chavePais": "BR",
+        "endereco": "AG DUQUE DE CAXIAS, RJ / AVENIDA QUINZE DE NOVEMBRO 2016 / DUQUE DE CAXIAS - RJ",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 302725",
+        "numeroITR": "CÓD. IMÓVEL 7004",
+        "grupoAutorizacoes": 7355
+      },
+      "locadorId": "locador_000023"
+    },
+    {
+      "id": "imovel_000077",
+      "contrato": {
+        "numero": 10000077,
+        "denominacao": "CT - AGÊNCIA MONÇÕES, GO",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "16/08/2005",
+        "fimValidade": "26/09/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127010
+      },
+      "edificio": {
+        "codigo": 20000077,
+        "denominacao": "ED - AG APARECIDA DE GOIÂNIA, GO",
+        "status": "Em Mobilização",
+        "cep": "72082-191",
+        "local": "APARECIDA DE GOIÂNIA",
+        "rua": "PRAÇA FREI CANECA",
+        "numero": 5318,
+        "bairro": "SAVASSI",
+        "regiao": "GO",
+        "inicioValidadeObj": "04/01/1994",
+        "objetoValidoAte": "26/09/2026",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C133821",
+        "chavePais": "BR",
+        "endereco": "AG APARECIDA DE GOIÂNIA, GO / PRAÇA FREI CANECA 5318 / APARECIDA DE GOIÂNIA - GO",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 832333",
+        "numeroITR": "CÓD. IMÓVEL 4739",
+        "grupoAutorizacoes": 7513
+      },
+      "locadorId": "locador_000010"
+    },
+    {
+      "id": "imovel_000078",
+      "contrato": {
+        "numero": 10000078,
+        "denominacao": "CT - PA UFPA, ES",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "20/11/2012",
+        "fimValidade": "24/02/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127023
+      },
+      "edificio": {
+        "codigo": 20000078,
+        "denominacao": "ED - AG VILA VELHA, ES",
+        "status": "Ativo",
+        "cep": "29014-238",
+        "local": "VILA VELHA",
+        "rua": "TRAVESSA QUINZE DE NOVEMBRO",
+        "numero": 7821,
+        "bairro": "JARDINS",
+        "regiao": "ES",
+        "inicioValidadeObj": "20/12/1983",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C937341",
+        "chavePais": "BR",
+        "endereco": "AG VILA VELHA, ES / TRAVESSA QUINZE DE NOVEMBRO 7821 / VILA VELHA - ES",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 672706",
+        "numeroITR": "CÓD. IMÓVEL 5351",
+        "grupoAutorizacoes": 7171
+      },
+      "locadorId": "locador_000023"
+    },
+    {
+      "id": "imovel_000079",
+      "contrato": {
+        "numero": 10000079,
+        "denominacao": "CT - AG RECIFE, PE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "24/03/2001",
+        "fimValidade": "28/07/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127022
+      },
+      "edificio": {
+        "codigo": 20000079,
+        "denominacao": "ED - AG RECIFE, PE",
+        "status": "Ativo",
+        "cep": "50049-537",
+        "local": "RECIFE",
+        "rua": "ALAMEDA PRINCESA ISABEL",
+        "numero": 1117,
+        "bairro": "FUNCIONÁRIOS",
+        "regiao": "PE",
+        "inicioValidadeObj": "29/09/1995",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C879403",
+        "chavePais": "BR",
+        "endereco": "AG RECIFE, PE / ALAMEDA PRINCESA ISABEL 1117 / RECIFE - PE",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 282027",
+        "numeroITR": "CÓD. IMÓVEL 4321",
+        "grupoAutorizacoes": 7032
+      },
+      "locadorId": "locador_000022"
+    },
+    {
+      "id": "imovel_000080",
+      "contrato": {
+        "numero": 10000080,
+        "denominacao": "CT - AG JABOATÃO DOS GUARARAPES, PE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "17/10/2015",
+        "fimValidade": "15/04/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127025
+      },
+      "edificio": {
+        "codigo": 20000080,
+        "denominacao": "ED - AG JABOATÃO DOS GUARARAPES, PE",
+        "status": "Ativo",
+        "cep": "50099-991",
+        "local": "JABOATÃO DOS GUARARAPES",
+        "rua": "PRAÇA JOÃO PESSOA",
+        "numero": 4941,
+        "bairro": "ONDINA",
+        "regiao": "PE",
+        "inicioValidadeObj": "25/12/1991",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C559540",
+        "chavePais": "BR",
+        "endereco": "AG JABOATÃO DOS GUARARAPES, PE / PRAÇA JOÃO PESSOA 4941 / JABOATÃO DOS GUARARAPES - PE",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 901039",
+        "numeroITR": "CÓD. IMÓVEL 8093",
+        "grupoAutorizacoes": 7583
+      },
+      "locadorId": "locador_000025"
+    },
+    {
+      "id": "imovel_000081",
+      "contrato": {
+        "numero": 10000081,
+        "denominacao": "CT - AG VER-O-PESO, BA",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "28/03/1998",
+        "fimValidade": "28/12/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127025
+      },
+      "edificio": {
+        "codigo": 20000081,
+        "denominacao": "ED - AG SALVADOR, BA",
+        "status": "Ativo",
+        "cep": "40097-181",
+        "local": "SALVADOR",
+        "rua": "PRAÇA COPACABANA",
+        "numero": 7571,
+        "bairro": "LEBLON",
+        "regiao": "BA",
+        "inicioValidadeObj": "20/03/1985",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C632148",
+        "chavePais": "BR",
+        "endereco": "AG SALVADOR, BA / PRAÇA COPACABANA 7571 / SALVADOR - BA",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 285609",
+        "numeroITR": "CÓD. IMÓVEL 5846",
+        "grupoAutorizacoes": 7581
+      },
+      "locadorId": "locador_000025"
+    },
+    {
+      "id": "imovel_000082",
+      "contrato": {
+        "numero": 10000082,
+        "denominacao": "CT - AG HEITOR PENTEADO, PB",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "08/11/2018",
+        "fimValidade": "26/11/2028",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127022
+      },
+      "edificio": {
+        "codigo": 20000082,
+        "denominacao": "ED - AG CAMPINA GRANDE, PB",
+        "status": "Ativo",
+        "cep": "58056-238",
+        "local": "CAMPINA GRANDE",
+        "rua": "TRAVESSA MAIN",
+        "numero": 5841,
+        "bairro": "IPANEMA",
+        "regiao": "PB",
+        "inicioValidadeObj": "17/04/1995",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C537913",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINA GRANDE, PB / TRAVESSA MAIN 5841 / CAMPINA GRANDE - PB",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 586367",
+        "numeroITR": "CÓD. IMÓVEL 1534",
+        "grupoAutorizacoes": 7366
+      },
+      "locadorId": "locador_000022"
+    },
+    {
+      "id": "imovel_000083",
+      "contrato": {
+        "numero": 10000083,
+        "denominacao": "CT - PAE CASA DE PEDRA, PI",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "31/07/2000",
+        "fimValidade": "28/02/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127020
+      },
+      "edificio": {
+        "codigo": 20000083,
+        "denominacao": "ED - AG PARNAÍBA, PI",
+        "status": "Ativo",
+        "cep": "64003-026",
+        "local": "PARNAÍBA",
+        "rua": "TRAVESSA REPÚBLICA",
+        "numero": 4337,
+        "bairro": "CENTRO HISTÓRICO",
+        "regiao": "PI",
+        "inicioValidadeObj": "18/12/1985",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C670950",
+        "chavePais": "BR",
+        "endereco": "AG PARNAÍBA, PI / TRAVESSA REPÚBLICA 4337 / PARNAÍBA - PI",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 772878",
+        "numeroITR": "CÓD. IMÓVEL 6168",
+        "grupoAutorizacoes": 7146
+      },
+      "locadorId": "locador_000020"
+    },
+    {
+      "id": "imovel_000084",
+      "contrato": {
+        "numero": 10000084,
+        "denominacao": "CT - EDIFÍCIO BUSINESS TOWER, MS",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "17/09/2004",
+        "fimValidade": "16/06/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127027
+      },
+      "edificio": {
+        "codigo": 20000084,
+        "denominacao": "ED - AG CAMPO GRANDE, MS",
+        "status": "Ativo",
+        "cep": "79022-043",
+        "local": "CAMPO GRANDE",
+        "rua": "RUA JOÃO PESSOA",
+        "numero": 9108,
+        "bairro": "GONZAGA",
+        "regiao": "MS",
+        "inicioValidadeObj": "09/07/1996",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C317208",
+        "chavePais": "BR",
+        "endereco": "AG CAMPO GRANDE, MS / RUA JOÃO PESSOA 9108 / CAMPO GRANDE - MS",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 130945",
+        "numeroITR": "CÓD. IMÓVEL 4489",
+        "grupoAutorizacoes": 7155
+      },
+      "locadorId": "locador_000027"
+    },
+    {
+      "id": "imovel_000085",
+      "contrato": {
+        "numero": 10000085,
+        "denominacao": "CT - AG VITAL BRASIL, PB",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "12/01/1994",
+        "fimValidade": "27/10/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127031
+      },
+      "edificio": {
+        "codigo": 20000085,
+        "denominacao": "ED - AG CAMPINA GRANDE, PB",
+        "status": "Em Mobilização",
+        "cep": "58030-509",
+        "local": "CAMPINA GRANDE",
+        "rua": "TRAVESSA PAULISTA",
+        "numero": 5272,
+        "bairro": "COPACABANA",
+        "regiao": "PB",
+        "inicioValidadeObj": "30/11/1988",
+        "objetoValidoAte": "27/10/2025",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C227379",
+        "chavePais": "BR",
+        "endereco": "AG CAMPINA GRANDE, PB / TRAVESSA PAULISTA 5272 / CAMPINA GRANDE - PB",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 671659",
+        "numeroITR": "CÓD. IMÓVEL 2057",
+        "grupoAutorizacoes": 7499
+      },
+      "locadorId": "locador_000031"
+    },
+    {
+      "id": "imovel_000086",
+      "contrato": {
+        "numero": 10000086,
+        "denominacao": "CT - AG PORTO ALEGRE, RS",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "07/09/2001",
+        "fimValidade": "10/01/2030",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127034
+      },
+      "edificio": {
+        "codigo": 20000086,
+        "denominacao": "ED - AG PORTO ALEGRE, RS",
+        "status": "Ativo",
+        "cep": "90015-053",
+        "local": "PORTO ALEGRE",
+        "rua": "ALAMEDA SETE DE SETEMBRO",
+        "numero": 7874,
+        "bairro": "ONDINA",
+        "regiao": "RS",
+        "inicioValidadeObj": "02/10/1991",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C919486",
+        "chavePais": "BR",
+        "endereco": "AG PORTO ALEGRE, RS / ALAMEDA SETE DE SETEMBRO 7874 / PORTO ALEGRE - RS",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z003",
+          "nome": "Atendimento Público"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 973379",
+        "numeroITR": "CÓD. IMÓVEL 9623",
+        "grupoAutorizacoes": 7910
+      },
+      "locadorId": "locador_000034"
+    },
+    {
+      "id": "imovel_000087",
+      "contrato": {
+        "numero": 10000087,
+        "denominacao": "CT - AG CAMPO LIMPO, DF",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "26/01/2011",
+        "fimValidade": "05/11/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127009
+      },
+      "edificio": {
+        "codigo": 20000087,
+        "denominacao": "ED - AG BRASÍLIA, DF",
+        "status": "Ativo",
+        "cep": "70065-672",
+        "local": "BRASÍLIA",
+        "rua": "TRAVESSA DAS FLORES",
+        "numero": 5016,
+        "bairro": "CENTRO",
+        "regiao": "DF",
+        "inicioValidadeObj": "17/01/1986",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C396578",
+        "chavePais": "BR",
+        "endereco": "AG BRASÍLIA, DF / TRAVESSA DAS FLORES 5016 / BRASÍLIA - DF",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 293785",
+        "numeroITR": "CÓD. IMÓVEL 2894",
+        "grupoAutorizacoes": 7549
+      },
+      "locadorId": "locador_000009"
+    },
+    {
+      "id": "imovel_000088",
+      "contrato": {
+        "numero": 10000088,
+        "denominacao": "CT - AG VER-O-PESO, BA",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "02/08/2007",
+        "fimValidade": "02/01/2020",
+        "rescisaoEm": "18/10/2022",
+        "parceiroNegocio": 900127010
+      },
+      "edificio": {
+        "codigo": 20000088,
+        "denominacao": "ED - AG SALVADOR, BA",
+        "status": "Desativado",
+        "cep": "40071-692",
+        "local": "SALVADOR",
+        "rua": "TRAVESSA TIRADENTES",
+        "numero": 1774,
+        "bairro": "GONZAGA",
+        "regiao": "BA",
+        "inicioValidadeObj": "14/09/1990",
+        "objetoValidoAte": "02/01/2020",
+        "tipoEdificio": {
+          "codigo": 30,
+          "nome": "Prédio"
+        },
+        "criadoPor": "C835635",
+        "chavePais": "BR",
+        "endereco": "AG SALVADOR, BA / TRAVESSA TIRADENTES 1774 / SALVADOR - BA",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 830915",
+        "numeroITR": "CÓD. IMÓVEL 4880",
+        "grupoAutorizacoes": 7475
+      },
+      "locadorId": "locador_000010"
+    },
+    {
+      "id": "imovel_000089",
+      "contrato": {
+        "numero": 10000089,
+        "denominacao": "CT - PA CASA DE PEDRA, PR",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "02/06/2014",
+        "fimValidade": "24/10/2024",
+        "rescisaoEm": "10/03/2024",
+        "parceiroNegocio": 900127001
+      },
+      "edificio": {
+        "codigo": 20000089,
+        "denominacao": "ED - AG LONDRINA, PR",
+        "status": "Em Desmobilização",
+        "cep": "80073-971",
+        "local": "LONDRINA",
+        "rua": "RUA PRIMEIRO DE MAIO",
+        "numero": 7175,
+        "bairro": "JARDINS",
+        "regiao": "PR",
+        "inicioValidadeObj": "27/02/1980",
+        "objetoValidoAte": "24/10/2024",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C379223",
+        "chavePais": "BR",
+        "endereco": "AG LONDRINA, PR / RUA PRIMEIRO DE MAIO 7175 / LONDRINA - PR",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 547100",
+        "numeroITR": "CÓD. IMÓVEL 5023",
+        "grupoAutorizacoes": 7662
+      },
+      "locadorId": "locador_000001"
+    },
+    {
+      "id": "imovel_000090",
+      "contrato": {
+        "numero": 10000090,
+        "denominacao": "CT - AGÊNCIA ITAQUERA, ES",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "20/11/1990",
+        "fimValidade": "09/04/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127014
+      },
+      "edificio": {
+        "codigo": 20000090,
+        "denominacao": "ED - AG VILA VELHA, ES",
+        "status": "Ativo",
+        "cep": "29091-371",
+        "local": "VILA VELHA",
+        "rua": "PRAÇA AFONSO PENA",
+        "numero": 7642,
+        "bairro": "PITANGUEIRAS",
+        "regiao": "ES",
+        "inicioValidadeObj": "26/12/1992",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C365797",
+        "chavePais": "BR",
+        "endereco": "AG VILA VELHA, ES / PRAÇA AFONSO PENA 7642 / VILA VELHA - ES",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 176262",
+        "numeroITR": "CÓD. IMÓVEL 2030",
+        "grupoAutorizacoes": 7097
+      },
+      "locadorId": "locador_000014"
+    },
+    {
+      "id": "imovel_000091",
+      "contrato": {
+        "numero": 10000091,
+        "denominacao": "CT - AG VILA MATILDE, SC",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "25/11/2010",
+        "fimValidade": "28/07/2020",
+        "rescisaoEm": "30/09/2023",
+        "parceiroNegocio": 900127028
+      },
+      "edificio": {
+        "codigo": 20000091,
+        "denominacao": "ED - AG JOINVILLE, SC",
+        "status": "Desativado",
+        "cep": "88014-878",
+        "local": "JOINVILLE",
+        "rua": "RUA TIRADENTES",
+        "numero": 21,
+        "bairro": "PRAIA DO CANTO",
+        "regiao": "SC",
+        "inicioValidadeObj": "30/12/1994",
+        "objetoValidoAte": "28/07/2020",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C853973",
+        "chavePais": "BR",
+        "endereco": "AG JOINVILLE, SC / RUA TIRADENTES 21 / JOINVILLE - SC",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z004",
+          "nome": "Arquivo"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 291548",
+        "numeroITR": "CÓD. IMÓVEL 8029",
+        "grupoAutorizacoes": 7986
+      },
+      "locadorId": "locador_000028"
+    },
+    {
+      "id": "imovel_000092",
+      "contrato": {
+        "numero": 10000092,
+        "denominacao": "CONTRATO AG. PARAÍSO",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "10/09/1998",
+        "fimValidade": "31/03/2023",
+        "rescisaoEm": "20/05/2022",
+        "parceiroNegocio": 900127015
+      },
+      "edificio": {
+        "codigo": 20000092,
+        "denominacao": "ED - AG BRASÍLIA, DF",
+        "status": "Em Prospecção",
+        "cep": "70034-436",
+        "local": "BRASÍLIA",
+        "rua": "ESTRADA CENTRAL",
+        "numero": 4792,
+        "bairro": "BARRA",
+        "regiao": "DF",
+        "inicioValidadeObj": "12/06/1998",
+        "objetoValidoAte": "31/03/2023",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C486485",
+        "chavePais": "BR",
+        "endereco": "AG BRASÍLIA, DF / ESTRADA CENTRAL 4792 / BRASÍLIA - DF",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 758983",
+        "numeroITR": "CÓD. IMÓVEL 8915",
+        "grupoAutorizacoes": 7187
+      },
+      "locadorId": "locador_000015"
+    },
+    {
+      "id": "imovel_000093",
+      "contrato": {
+        "numero": 10000093,
+        "denominacao": "CT - AG CENTRO EMPRESARIAL, MS",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "17/08/2012",
+        "fimValidade": "23/01/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127021
+      },
+      "edificio": {
+        "codigo": 20000093,
+        "denominacao": "ED - AG CAMPO GRANDE, MS",
+        "status": "Ativo",
+        "cep": "79070-976",
+        "local": "CAMPO GRANDE",
+        "rua": "ESTRADA AFONSO PENA",
+        "numero": 8468,
+        "bairro": "BARRA",
+        "regiao": "MS",
+        "inicioValidadeObj": "18/03/1988",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C866533",
+        "chavePais": "BR",
+        "endereco": "AG CAMPO GRANDE, MS / ESTRADA AFONSO PENA 8468 / CAMPO GRANDE - MS",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 5,
+        "inscricaoIPTU": "IM: INSC. 938579",
+        "numeroITR": "CÓD. IMÓVEL 2497",
+        "grupoAutorizacoes": 7813
+      },
+      "locadorId": "locador_000021"
+    },
+    {
+      "id": "imovel_000094",
+      "contrato": {
+        "numero": 10000094,
+        "denominacao": "CT - AG CAUCAIA, CE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "30/11/2019",
+        "fimValidade": "16/11/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127016
+      },
+      "edificio": {
+        "codigo": 20000094,
+        "denominacao": "ED - AG CAUCAIA, CE",
+        "status": "Ativo",
+        "cep": "60040-574",
+        "local": "CAUCAIA",
+        "rua": "TRAVESSA COMERCIAL",
+        "numero": 2992,
+        "bairro": "CANDEIAS",
+        "regiao": "CE",
+        "inicioValidadeObj": "08/05/1987",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C669095",
+        "chavePais": "BR",
+        "endereco": "AG CAUCAIA, CE / TRAVESSA COMERCIAL 2992 / CAUCAIA - CE",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 2,
+        "inscricaoIPTU": "IM: INSC. 996070",
+        "numeroITR": "CÓD. IMÓVEL 9048",
+        "grupoAutorizacoes": 7820
+      },
+      "locadorId": "locador_000016"
+    },
+    {
+      "id": "imovel_000095",
+      "contrato": {
+        "numero": 10000095,
+        "denominacao": "CT - AG UFPA, RJ",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "11/06/2015",
+        "fimValidade": "31/08/2027",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127019
+      },
+      "edificio": {
+        "codigo": 20000095,
+        "denominacao": "ED - AG NITERÓI, RJ",
+        "status": "Em Mobilização",
+        "cep": "20029-845",
+        "local": "NITERÓI",
+        "rua": "AVENIDA AFONSO PENA",
+        "numero": 4806,
+        "bairro": "FUNCIONÁRIOS",
+        "regiao": "RJ",
+        "inicioValidadeObj": "04/02/1991",
+        "objetoValidoAte": "31/08/2027",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C679425",
+        "chavePais": "BR",
+        "endereco": "AG NITERÓI, RJ / AVENIDA AFONSO PENA 4806 / NITERÓI - RJ",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 3,
+        "inscricaoIPTU": "IM: INSC. 273553",
+        "numeroITR": "CÓD. IMÓVEL 3014",
+        "grupoAutorizacoes": 7635
+      },
+      "locadorId": "locador_000019"
+    },
+    {
+      "id": "imovel_000096",
+      "contrato": {
+        "numero": 10000096,
+        "denominacao": "CT - AG AQUIRI, PI",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "28/10/2018",
+        "fimValidade": "08/05/2025",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127027
+      },
+      "edificio": {
+        "codigo": 20000096,
+        "denominacao": "ED - AG TERESINA, PI",
+        "status": "Ativo",
+        "cep": "64038-178",
+        "local": "TERESINA",
+        "rua": "ALAMEDA FREI CANECA",
+        "numero": 3815,
+        "bairro": "CONSOLAÇÃO",
+        "regiao": "PI",
+        "inicioValidadeObj": "06/10/1989",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C135343",
+        "chavePais": "BR",
+        "endereco": "AG TERESINA, PI / ALAMEDA FREI CANECA 3815 / TERESINA - PI",
+        "estadoConservacao": "Bom",
+        "funcao": {
+          "codigo": "Z002",
+          "nome": "Operacional"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 423054",
+        "numeroITR": "CÓD. IMÓVEL 1696",
+        "grupoAutorizacoes": 7035
+      },
+      "locadorId": "locador_000027"
+    },
+    {
+      "id": "imovel_000097",
+      "contrato": {
+        "numero": 10000097,
+        "denominacao": "CT - AG ARTUR ALVIM, SE",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "24/05/2003",
+        "fimValidade": "04/01/2024",
+        "rescisaoEm": "12/02/2025",
+        "parceiroNegocio": 900127025
+      },
+      "edificio": {
+        "codigo": 20000097,
+        "denominacao": "ED - AG NOSSA SENHORA DO SOCORRO, SE",
+        "status": "Em Desmobilização",
+        "cep": "49092-314",
+        "local": "NOSSA SENHORA DO SOCORRO",
+        "rua": "RUA LIBERDADE",
+        "numero": 2405,
+        "bairro": "JARDINS",
+        "regiao": "SE",
+        "inicioValidadeObj": "11/06/1985",
+        "objetoValidoAte": "04/01/2024",
+        "tipoEdificio": {
+          "codigo": 33,
+          "nome": "Terreno"
+        },
+        "criadoPor": "C396102",
+        "chavePais": "BR",
+        "endereco": "AG NOSSA SENHORA DO SOCORRO, SE / RUA LIBERDADE 2405 / NOSSA SENHORA DO SOCORRO - SE",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Próprio",
+        "utilizacaoPrincipal": "Terceiro",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 566084",
+        "numeroITR": "CÓD. IMÓVEL 2778",
+        "grupoAutorizacoes": 7509
+      },
+      "locadorId": "locador_000025"
+    },
+    {
+      "id": "imovel_000098",
+      "contrato": {
+        "numero": 10000098,
+        "denominacao": "CT - AG VITÓRIA, ES",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "16/11/2011",
+        "fimValidade": "06/04/2026",
+        "rescisaoEm": null,
+        "parceiroNegocio": 900127032
+      },
+      "edificio": {
+        "codigo": 20000098,
+        "denominacao": "ED - AG VITÓRIA, ES",
+        "status": "Ativo",
+        "cep": "29067-296",
+        "local": "VITÓRIA",
+        "rua": "PRAÇA MAIN",
+        "numero": 401,
+        "bairro": "BARRA",
+        "regiao": "ES",
+        "inicioValidadeObj": "17/02/1987",
+        "objetoValidoAte": "31/12/9999",
+        "tipoEdificio": {
+          "codigo": 31,
+          "nome": "Casa"
+        },
+        "criadoPor": "C350365",
+        "chavePais": "BR",
+        "endereco": "AG VITÓRIA, ES / PRAÇA MAIN 401 / VITÓRIA - ES",
+        "estadoConservacao": "Necessita Reforma",
+        "funcao": {
+          "codigo": "Z001",
+          "nome": "Administrativo"
+        },
+        "denominacaoImovel": "Imóvel Alugado",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 976408",
+        "numeroITR": "CÓD. IMÓVEL 2721",
+        "grupoAutorizacoes": 7558
+      },
+      "locadorId": "locador_000032"
+    },
+    {
+      "id": "imovel_000099",
+      "contrato": {
+        "numero": 10000099,
+        "denominacao": "CT - AG MONÇÕES, BA",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "20/09/2000",
+        "fimValidade": "25/01/2023",
+        "rescisaoEm": "18/08/2023",
+        "parceiroNegocio": 900127019
+      },
+      "edificio": {
+        "codigo": 20000099,
+        "denominacao": "ED - AG VITÓRIA DA CONQUISTA, BA",
+        "status": "Em Prospecção",
+        "cep": "40036-942",
+        "local": "VITÓRIA DA CONQUISTA",
+        "rua": "PRAÇA SETE DE SETEMBRO",
+        "numero": 155,
+        "bairro": "PRAIA DO CANTO",
+        "regiao": "BA",
+        "inicioValidadeObj": "04/10/1992",
+        "objetoValidoAte": "25/01/2023",
+        "tipoEdificio": {
+          "codigo": 34,
+          "nome": "Loja"
+        },
+        "criadoPor": "C395367",
+        "chavePais": "BR",
+        "endereco": "AG VITÓRIA DA CONQUISTA, BA / PRAÇA SETE DE SETEMBRO 155 / VITÓRIA DA CONQUISTA - BA",
+        "estadoConservacao": "Regular",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Cedido",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 1,
+        "inscricaoIPTU": "IM: INSC. 804656",
+        "numeroITR": "CÓD. IMÓVEL 1088",
+        "grupoAutorizacoes": 7155
+      },
+      "locadorId": "locador_000019"
+    },
+    {
+      "id": "imovel_000100",
+      "contrato": {
+        "numero": 10000100,
+        "denominacao": "CT - AG PERDIZES, DF",
+        "tipoContrato": "Contrato de Locação - Imóveis",
+        "inicioContrato": "25/01/2016",
+        "fimValidade": "22/12/2025",
+        "rescisaoEm": "09/07/2024",
+        "parceiroNegocio": 900127001
+      },
+      "edificio": {
+        "codigo": 20000100,
+        "denominacao": "ED - AG BRASÍLIA, DF",
+        "status": "Em Desmobilização",
+        "cep": "70033-828",
+        "local": "BRASÍLIA",
+        "rua": "RUA PAULISTA",
+        "numero": 6102,
+        "bairro": "PITANGUEIRAS",
+        "regiao": "DF",
+        "inicioValidadeObj": "25/10/1993",
+        "objetoValidoAte": "22/12/2025",
+        "tipoEdificio": {
+          "codigo": 32,
+          "nome": "Galpão"
+        },
+        "criadoPor": "C120087",
+        "chavePais": "BR",
+        "endereco": "AG BRASÍLIA, DF / RUA PAULISTA 6102 / BRASÍLIA - DF",
+        "estadoConservacao": "Ótimo",
+        "funcao": {
+          "codigo": "Z005",
+          "nome": "Centro de Serviços"
+        },
+        "denominacaoImovel": "Imóvel Foreiro",
+        "utilizacaoPrincipal": "Próprio",
+        "tipoApolice": 4,
+        "inscricaoIPTU": "IM: INSC. 342027",
+        "numeroITR": "CÓD. IMÓVEL 2939",
+        "grupoAutorizacoes": 7705
+      },
+      "locadorId": "locador_000001"
+    }
+  ],
+  "locadores": [
+    {
+      "id": "locador_000001",
+      "parceiroNegocio": 900127001,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "42193320992",
+      "nome": "BEATRIZ HELENA ALVES",
+      "nomeEndereco": "BEATRIZ HELENA ALVES / TRAVESSA GETÚLIO VARGAS 9620 / BELO HORIZONTE - MG",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "TRAVESSA GETÚLIO VARGAS",
+        "numero": 9620,
+        "bairro": "JARDIM CAMBURI",
+        "cidade": "BELO HORIZONTE",
+        "regiao": "MG",
+        "cep": "30097-927"
+      },
+      "email": "beatriz.helena.alves@caixa.com.br",
+      "telefone": "5531358245589",
+      "telefoneCelular": "5531979817991",
+      "inicioRelacao": "27/07/1991",
+      "fimRelacao": "29/01/5438",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000002",
+      "parceiroNegocio": 900127002,
+      "tipoIdFiscal": "CNPJ",
+      "numeroIdFiscal": "00055620740959",
+      "nome": "EMPREENDIMENTOS IMOBILIÁRIOS S/A",
+      "nomeEndereco": "EMPREENDIMENTOS IMOBILIÁRIOS S/A / AVENIDA REPÚBLICA 4693 / ARAPIRACA - AL",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "juridica",
+      "endereco": {
+        "rua": "AVENIDA REPÚBLICA",
+        "numero": 4693,
+        "bairro": "JARDINS",
+        "cidade": "ARAPIRACA",
+        "regiao": "AL",
+        "cep": "57067-757"
+      },
+      "email": "empreendimentos.imobiliários.s@hotmail.com",
+      "telefone": "5582243465133",
+      "telefoneCelular": "5582986677469",
+      "inicioRelacao": "26/07/1997",
+      "fimRelacao": "19/11/2235",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000003",
+      "parceiroNegocio": 900127003,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "07819192579",
+      "nome": "MARCOS VINÍCIUS SOUZA",
+      "nomeEndereco": "MARCOS VINÍCIUS SOUZA / RUA INDEPENDÊNCIA 6966 / LONDRINA - PR",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "RUA INDEPENDÊNCIA",
+        "numero": 6966,
+        "bairro": "PONTA VERDE",
+        "cidade": "LONDRINA",
+        "regiao": "PR",
+        "cep": "80070-977"
+      },
+      "email": "marcos.vinícius.souza@hotmail.com",
+      "telefone": "5541239059388",
+      "telefoneCelular": "5541937058237",
+      "inicioRelacao": "18/01/2007",
+      "fimRelacao": "19/07/3664",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000004",
+      "parceiroNegocio": 900127004,
+      "tipoIdFiscal": "CNPJ",
+      "numeroIdFiscal": "19824792708617",
+      "nome": "SHOPPING PÁTIO SALVADOR LTDA",
+      "nomeEndereco": "SHOPPING PÁTIO SALVADOR LTDA / AVENIDA TIRADENTES 9293 / VITÓRIA DA CONQUISTA - BA",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "juridica",
+      "endereco": {
+        "rua": "AVENIDA TIRADENTES",
+        "numero": 9293,
+        "bairro": "CONSOLAÇÃO",
+        "cidade": "VITÓRIA DA CONQUISTA",
+        "regiao": "BA",
+        "cep": "40074-145"
+      },
+      "email": "shopping.pátio.salvador.ltda@yahoo.com.br",
+      "telefone": "5571301466536",
+      "telefoneCelular": "5571916493052",
+      "inicioRelacao": "12/06/2012",
+      "fimRelacao": "28/07/2859",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000005",
+      "parceiroNegocio": 900127005,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "29099495777",
+      "nome": "JOÃO OLIVEIRA SOUZA",
+      "nomeEndereco": "JOÃO OLIVEIRA SOUZA / AVENIDA INDEPENDÊNCIA 3304 / BELO HORIZONTE - MG",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "AVENIDA INDEPENDÊNCIA",
+        "numero": 3304,
+        "bairro": "PONTA VERDE",
+        "cidade": "BELO HORIZONTE",
+        "regiao": "MG",
+        "cep": "30032-049"
+      },
+      "email": "joão.oliveira.souza@outlook.com",
+      "telefone": "5531215561242",
+      "telefoneCelular": "5531952919842",
+      "inicioRelacao": "14/01/1995",
+      "fimRelacao": "18/05/5698",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000006",
+      "parceiroNegocio": 900127006,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "30511935152",
+      "nome": "ROBERTO CARLOS SILVA",
+      "nomeEndereco": "ROBERTO CARLOS SILVA / RUA JOÃO PESSOA 8641 / FEIRA DE SANTANA - BA",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "RUA JOÃO PESSOA",
+        "numero": 8641,
+        "bairro": "LEBLON",
+        "cidade": "FEIRA DE SANTANA",
+        "regiao": "BA",
+        "cep": "40015-550"
+      },
+      "email": "roberto.carlos.silva@hotmail.com",
+      "telefone": "5571285914592",
+      "telefoneCelular": "5571935985042",
+      "inicioRelacao": "20/11/2008",
+      "fimRelacao": "24/12/2171",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000007",
+      "parceiroNegocio": 900127007,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "26448062220",
+      "nome": "FERNANDA RODRIGUES ALMEIDA",
+      "nomeEndereco": "FERNANDA RODRIGUES ALMEIDA / ESTRADA ATLÂNTICA 1185 / BLUMENAU - SC",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ESTRADA ATLÂNTICA",
+        "numero": 1185,
+        "bairro": "IPANEMA",
+        "cidade": "BLUMENAU",
+        "regiao": "SC",
+        "cep": "88054-495"
+      },
+      "email": "fernanda.rodrigues.almeida@gmail.com",
+      "telefone": "5548224310754",
+      "telefoneCelular": "5548942537286",
+      "inicioRelacao": "01/07/2009",
+      "fimRelacao": "02/12/6644",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000008",
+      "parceiroNegocio": 900127008,
+      "tipoIdFiscal": "CNPJ",
+      "numeroIdFiscal": "79220100064015",
+      "nome": "GALERIA COMERCIAL LTDA",
+      "nomeEndereco": "GALERIA COMERCIAL LTDA / PRAÇA LIBERDADE 9108 / JUAZEIRO DO NORTE - CE",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "juridica",
+      "endereco": {
+        "rua": "PRAÇA LIBERDADE",
+        "numero": 9108,
+        "bairro": "BOA VIAGEM",
+        "cidade": "JUAZEIRO DO NORTE",
+        "regiao": "CE",
+        "cep": "60013-867"
+      },
+      "email": "galeria.comercial.ltda@yahoo.com.br",
+      "telefone": "5585205525774",
+      "telefoneCelular": "5585999432830",
+      "inicioRelacao": "07/01/2003",
+      "fimRelacao": "01/03/7346",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000009",
+      "parceiroNegocio": 900127009,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "53447889207",
+      "nome": "FERNANDA RODRIGUES ALMEIDA",
+      "nomeEndereco": "FERNANDA RODRIGUES ALMEIDA / AVENIDA TIRADENTES 3068 / CAMPO GRANDE - MS",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "AVENIDA TIRADENTES",
+        "numero": 3068,
+        "bairro": "CENTRO",
+        "cidade": "CAMPO GRANDE",
+        "regiao": "MS",
+        "cep": "79037-664"
+      },
+      "email": "fernanda.rodrigues.almeida@outlook.com",
+      "telefone": "5567223121330",
+      "telefoneCelular": "5567956084492",
+      "inicioRelacao": "08/11/2020",
+      "fimRelacao": "09/06/5088",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000010",
+      "parceiroNegocio": 900127010,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "88772098736",
+      "nome": "JOÃO OLIVEIRA SOUZA",
+      "nomeEndereco": "JOÃO OLIVEIRA SOUZA / PRAÇA ATLÂNTICA 2777 / CONTAGEM - MG",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "PRAÇA ATLÂNTICA",
+        "numero": 2777,
+        "bairro": "JARDINS",
+        "cidade": "CONTAGEM",
+        "regiao": "MG",
+        "cep": "30060-305"
+      },
+      "email": "joão.oliveira.souza@caixa.com.br",
+      "telefone": "5531259239808",
+      "telefoneCelular": "5531975126021",
+      "inicioRelacao": "19/02/2015",
+      "fimRelacao": "05/04/3356",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000011",
+      "parceiroNegocio": 900127011,
+      "tipoIdFiscal": "CNPJ",
+      "numeroIdFiscal": "43146024263511",
+      "nome": "EMPREENDIMENTOS IMOBILIÁRIOS S/A",
+      "nomeEndereco": "EMPREENDIMENTOS IMOBILIÁRIOS S/A / TRAVESSA INDEPENDÊNCIA 9726 / VIÇOSA DE ALAGOAS - AL",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "juridica",
+      "endereco": {
+        "rua": "TRAVESSA INDEPENDÊNCIA",
+        "numero": 9726,
+        "bairro": "PRAIA DO CANTO",
+        "cidade": "VIÇOSA DE ALAGOAS",
+        "regiao": "AL",
+        "cep": "57004-793"
+      },
+      "email": "empreendimentos.imobiliários.s@outlook.com",
+      "telefone": "5582245626498",
+      "telefoneCelular": "5582990679080",
+      "inicioRelacao": "31/12/1996",
+      "fimRelacao": "02/02/4387",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000012",
+      "parceiroNegocio": 900127012,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "40375075348",
+      "nome": "JULIANA ALVES PEREIRA",
+      "nomeEndereco": "JULIANA ALVES PEREIRA / PRAÇA RIO BRANCO 8167 / PARNAÍBA - PI",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "PRAÇA RIO BRANCO",
+        "numero": 8167,
+        "bairro": "PONTA VERDE",
+        "cidade": "PARNAÍBA",
+        "regiao": "PI",
+        "cep": "64063-047"
+      },
+      "email": "juliana.alves.pereira@caixa.com.br",
+      "telefone": "5586336811215",
+      "telefoneCelular": "5586919854166",
+      "inicioRelacao": "08/06/1998",
+      "fimRelacao": "16/03/4346",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000013",
+      "parceiroNegocio": 900127013,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "15523658828",
+      "nome": "JULIANA ALVES PEREIRA",
+      "nomeEndereco": "JULIANA ALVES PEREIRA / TRAVESSA ATLÂNTICA 7268 / DUQUE DE CAXIAS - RJ",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "TRAVESSA ATLÂNTICA",
+        "numero": 7268,
+        "bairro": "FUNCIONÁRIOS",
+        "cidade": "DUQUE DE CAXIAS",
+        "regiao": "RJ",
+        "cep": "20041-911"
+      },
+      "email": "juliana.alves.pereira@outlook.com",
+      "telefone": "5521262932068",
+      "telefoneCelular": "5521980489326",
+      "inicioRelacao": "20/09/2013",
+      "fimRelacao": "27/08/3149",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000014",
+      "parceiroNegocio": 900127014,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "66030966121",
+      "nome": "JULIANA ALVES PEREIRA",
+      "nomeEndereco": "JULIANA ALVES PEREIRA / ESTRADA CENTRAL 1482 / UBERLÂNDIA - MG",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ESTRADA CENTRAL",
+        "numero": 1482,
+        "bairro": "CONSOLAÇÃO",
+        "cidade": "UBERLÂNDIA",
+        "regiao": "MG",
+        "cep": "30039-219"
+      },
+      "email": "juliana.alves.pereira@gmail.com",
+      "telefone": "5531350958627",
+      "telefoneCelular": "5531910137662",
+      "inicioRelacao": "14/05/1993",
+      "fimRelacao": "28/07/8935",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000015",
+      "parceiroNegocio": 900127015,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "38923241446",
+      "nome": "JULIANA ALVES PEREIRA",
+      "nomeEndereco": "JULIANA ALVES PEREIRA / RUA PAULISTA 9121 / MARINGÁ - PR",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "RUA PAULISTA",
+        "numero": 9121,
+        "bairro": "CONSOLAÇÃO",
+        "cidade": "MARINGÁ",
+        "regiao": "PR",
+        "cep": "80003-475"
+      },
+      "email": "juliana.alves.pereira@outlook.com",
+      "telefone": "5541250085325",
+      "telefoneCelular": "5541986231514",
+      "inicioRelacao": "01/10/2003",
+      "fimRelacao": "01/05/5529",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000016",
+      "parceiroNegocio": 900127016,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "86206099944",
+      "nome": "FRANCISCO DAS CHAGAS SILVA",
+      "nomeEndereco": "FRANCISCO DAS CHAGAS SILVA / ALAMEDA PRINCESA ISABEL 217 / IMPERATRIZ - MA",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ALAMEDA PRINCESA ISABEL",
+        "numero": 217,
+        "bairro": "CANDEIAS",
+        "cidade": "IMPERATRIZ",
+        "regiao": "MA",
+        "cep": "65015-833"
+      },
+      "email": "francisco.das.chagas.silva@yahoo.com.br",
+      "telefone": "5598399802077",
+      "telefoneCelular": "5598974154971",
+      "inicioRelacao": "09/08/2005",
+      "fimRelacao": "07/05/8359",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000017",
+      "parceiroNegocio": 900127017,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "09638306608",
+      "nome": "RICARDO SANTOS BARBOSA",
+      "nomeEndereco": "RICARDO SANTOS BARBOSA / ALAMEDA PAULISTA 8964 / LONDRINA - PR",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ALAMEDA PAULISTA",
+        "numero": 8964,
+        "bairro": "CONSOLAÇÃO",
+        "cidade": "LONDRINA",
+        "regiao": "PR",
+        "cep": "80019-181"
+      },
+      "email": "ricardo.santos.barbosa@hotmail.com",
+      "telefone": "5541326247057",
+      "telefoneCelular": "5541909040813",
+      "inicioRelacao": "21/09/2018",
+      "fimRelacao": "09/01/7502",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000018",
+      "parceiroNegocio": 900127018,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "99631622589",
+      "nome": "PATRICIA GOMES MARTINS",
+      "nomeEndereco": "PATRICIA GOMES MARTINS / PRAÇA PRINCESA ISABEL 4078 / FEIRA DE SANTANA - BA",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "PRAÇA PRINCESA ISABEL",
+        "numero": 4078,
+        "bairro": "SAVASSI",
+        "cidade": "FEIRA DE SANTANA",
+        "regiao": "BA",
+        "cep": "40062-443"
+      },
+      "email": "patricia.gomes.martins@outlook.com",
+      "telefone": "5571346754425",
+      "telefoneCelular": "5571918765001",
+      "inicioRelacao": "17/02/2008",
+      "fimRelacao": "19/10/9836",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000019",
+      "parceiroNegocio": 900127019,
+      "tipoIdFiscal": "CNPJ",
+      "numeroIdFiscal": "14805622260859",
+      "nome": "ADMINISTRADORA DE BENS IMÓVEIS LTDA",
+      "nomeEndereco": "ADMINISTRADORA DE BENS IMÓVEIS LTDA / ESTRADA DAS FLORES 7430 / CAMPINAS - SP",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "juridica",
+      "endereco": {
+        "rua": "ESTRADA DAS FLORES",
+        "numero": 7430,
+        "bairro": "ALDEOTA",
+        "cidade": "CAMPINAS",
+        "regiao": "SP",
+        "cep": "01121-716"
+      },
+      "email": "administradora.de.bens.imóveis@outlook.com",
+      "telefone": "5511361541834",
+      "telefoneCelular": "5511950126552",
+      "inicioRelacao": "04/07/1994",
+      "fimRelacao": "27/05/3837",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000020",
+      "parceiroNegocio": 900127020,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "09383903607",
+      "nome": "GERALDINA TOLEDO DE VASCONCELOS",
+      "nomeEndereco": "GERALDINA TOLEDO DE VASCONCELOS / RUA QUINZE DE NOVEMBRO 1458 / PELOTAS - RS",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "RUA QUINZE DE NOVEMBRO",
+        "numero": 1458,
+        "bairro": "BOA VIAGEM",
+        "cidade": "PELOTAS",
+        "regiao": "RS",
+        "cep": "90051-382"
+      },
+      "email": "geraldina.toledo.de.vasconcelo@gmail.com",
+      "telefone": "5551261510733",
+      "telefoneCelular": "5551940951521",
+      "inicioRelacao": "03/06/1994",
+      "fimRelacao": "21/06/9960",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000021",
+      "parceiroNegocio": 900127021,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "36337558901",
+      "nome": "JOÃO OLIVEIRA SOUZA",
+      "nomeEndereco": "JOÃO OLIVEIRA SOUZA / PRAÇA COMERCIAL 483 / SÃO LUÍS - MA",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "PRAÇA COMERCIAL",
+        "numero": 483,
+        "bairro": "LEBLON",
+        "cidade": "SÃO LUÍS",
+        "regiao": "MA",
+        "cep": "65028-224"
+      },
+      "email": "joão.oliveira.souza@outlook.com",
+      "telefone": "5598331485540",
+      "telefoneCelular": "5598921744561",
+      "inicioRelacao": "29/09/1995",
+      "fimRelacao": "05/07/9999",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000022",
+      "parceiroNegocio": 900127022,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "11778587295",
+      "nome": "ROBERTO CARLOS SILVA",
+      "nomeEndereco": "ROBERTO CARLOS SILVA / RUA ATLÂNTICA 7760 / BLUMENAU - SC",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "RUA ATLÂNTICA",
+        "numero": 7760,
+        "bairro": "CENTRO HISTÓRICO",
+        "cidade": "BLUMENAU",
+        "regiao": "SC",
+        "cep": "88029-119"
+      },
+      "email": "roberto.carlos.silva@yahoo.com.br",
+      "telefone": "5548254160795",
+      "telefoneCelular": "5548905814171",
+      "inicioRelacao": "30/10/1996",
+      "fimRelacao": "06/09/4617",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000023",
+      "parceiroNegocio": 900127023,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "33325981711",
+      "nome": "LUIZA FERNANDA COSTA",
+      "nomeEndereco": "LUIZA FERNANDA COSTA / ALAMEDA AFONSO PENA 1950 / FLORIANÓPOLIS - SC",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ALAMEDA AFONSO PENA",
+        "numero": 1950,
+        "bairro": "GONZAGA",
+        "cidade": "FLORIANÓPOLIS",
+        "regiao": "SC",
+        "cep": "88020-099"
+      },
+      "email": "luiza.fernanda.costa@outlook.com",
+      "telefone": "5548310825494",
+      "telefoneCelular": "5548952651120",
+      "inicioRelacao": "20/02/1998",
+      "fimRelacao": "27/01/6722",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000024",
+      "parceiroNegocio": 900127024,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "16779082017",
+      "nome": "JOÃO OLIVEIRA SOUZA",
+      "nomeEndereco": "JOÃO OLIVEIRA SOUZA / AVENIDA IPANEMA 7456 / PARNAMIRIM - RN",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "AVENIDA IPANEMA",
+        "numero": 7456,
+        "bairro": "EMBARÉ",
+        "cidade": "PARNAMIRIM",
+        "regiao": "RN",
+        "cep": "59023-109"
+      },
+      "email": "joão.oliveira.souza@outlook.com",
+      "telefone": "5584292040073",
+      "telefoneCelular": "5584935442797",
+      "inicioRelacao": "08/10/2013",
+      "fimRelacao": "20/08/8522",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000025",
+      "parceiroNegocio": 900127025,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "31688065647",
+      "nome": "CLAUDIA MARIA OLIVEIRA",
+      "nomeEndereco": "CLAUDIA MARIA OLIVEIRA / ALAMEDA FREI CANECA 9629 / JOINVILLE - SC",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ALAMEDA FREI CANECA",
+        "numero": 9629,
+        "bairro": "EMBARÉ",
+        "cidade": "JOINVILLE",
+        "regiao": "SC",
+        "cep": "88054-703"
+      },
+      "email": "claudia.maria.oliveira@yahoo.com.br",
+      "telefone": "5548346451105",
+      "telefoneCelular": "5548913581695",
+      "inicioRelacao": "05/02/2015",
+      "fimRelacao": "11/03/4157",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000026",
+      "parceiroNegocio": 900127026,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "94827931062",
+      "nome": "ANTONIO JOSÉ SANTOS",
+      "nomeEndereco": "ANTONIO JOSÉ SANTOS / ALAMEDA MAIN 9872 / LONDRINA - PR",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ALAMEDA MAIN",
+        "numero": 9872,
+        "bairro": "CONSOLAÇÃO",
+        "cidade": "LONDRINA",
+        "regiao": "PR",
+        "cep": "80018-408"
+      },
+      "email": "antonio.josé.santos@yahoo.com.br",
+      "telefone": "5541213607984",
+      "telefoneCelular": "5541940816106",
+      "inicioRelacao": "15/12/2016",
+      "fimRelacao": "22/10/2047",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000027",
+      "parceiroNegocio": 900127027,
+      "tipoIdFiscal": "CNPJ",
+      "numeroIdFiscal": "63150208407096",
+      "nome": "COMERCIAL E ADMINISTRADORA DE IMÓVEIS LTDA",
+      "nomeEndereco": "COMERCIAL E ADMINISTRADORA DE IMÓVEIS LTDA / PRAÇA JOÃO PESSOA 8432 / FORTALEZA - CE",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "juridica",
+      "endereco": {
+        "rua": "PRAÇA JOÃO PESSOA",
+        "numero": 8432,
+        "bairro": "JATIÚCA",
+        "cidade": "FORTALEZA",
+        "regiao": "CE",
+        "cep": "60007-842"
+      },
+      "email": "comercial.e.administradora.de.@hotmail.com",
+      "telefone": "5585318534078",
+      "telefoneCelular": "5585953266335",
+      "inicioRelacao": "23/02/1997",
+      "fimRelacao": "29/10/2983",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000028",
+      "parceiroNegocio": 900127028,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "26727158511",
+      "nome": "ANA PAULA COSTA",
+      "nomeEndereco": "ANA PAULA COSTA / ESTRADA GETÚLIO VARGAS 6380 / LONDRINA - PR",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ESTRADA GETÚLIO VARGAS",
+        "numero": 6380,
+        "bairro": "CANDEIAS",
+        "cidade": "LONDRINA",
+        "regiao": "PR",
+        "cep": "80048-712"
+      },
+      "email": "ana.paula.costa@caixa.com.br",
+      "telefone": "5541358355716",
+      "telefoneCelular": "5541965411924",
+      "inicioRelacao": "27/06/2019",
+      "fimRelacao": "02/02/9972",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000029",
+      "parceiroNegocio": 900127029,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "63901448051",
+      "nome": "GERALDINA TOLEDO DE VASCONCELOS",
+      "nomeEndereco": "GERALDINA TOLEDO DE VASCONCELOS / ALAMEDA DAS FLORES 8231 / CURITIBA - PR",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ALAMEDA DAS FLORES",
+        "numero": 8231,
+        "bairro": "GONZAGA",
+        "cidade": "CURITIBA",
+        "regiao": "PR",
+        "cep": "80029-519"
+      },
+      "email": "geraldina.toledo.de.vasconcelo@gmail.com",
+      "telefone": "5541309511490",
+      "telefoneCelular": "5541988933315",
+      "inicioRelacao": "23/11/2013",
+      "fimRelacao": "03/10/4616",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000030",
+      "parceiroNegocio": 900127030,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "93415051776",
+      "nome": "JOÃO OLIVEIRA SOUZA",
+      "nomeEndereco": "JOÃO OLIVEIRA SOUZA / ESTRADA PAULISTA 7135 / PARNAÍBA - PI",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ESTRADA PAULISTA",
+        "numero": 7135,
+        "bairro": "PRAIA DO CANTO",
+        "cidade": "PARNAÍBA",
+        "regiao": "PI",
+        "cep": "64044-063"
+      },
+      "email": "joão.oliveira.souza@hotmail.com",
+      "telefone": "5586250510352",
+      "telefoneCelular": "5586926620936",
+      "inicioRelacao": "20/08/2000",
+      "fimRelacao": "20/09/9416",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000031",
+      "parceiroNegocio": 900127031,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "76889842118",
+      "nome": "CLAUDIA MARIA OLIVEIRA",
+      "nomeEndereco": "CLAUDIA MARIA OLIVEIRA / PRAÇA ATLÂNTICA 3549 / GOIÂNIA - GO",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "PRAÇA ATLÂNTICA",
+        "numero": 3549,
+        "bairro": "PRAIA DO CANTO",
+        "cidade": "GOIÂNIA",
+        "regiao": "GO",
+        "cep": "72034-971"
+      },
+      "email": "claudia.maria.oliveira@hotmail.com",
+      "telefone": "5562312132569",
+      "telefoneCelular": "5562929205340",
+      "inicioRelacao": "22/02/1993",
+      "fimRelacao": "20/03/5552",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000032",
+      "parceiroNegocio": 900127032,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "72421446515",
+      "nome": "ANA PAULA COSTA",
+      "nomeEndereco": "ANA PAULA COSTA / TRAVESSA COMERCIAL 6918 / SANTOS - SP",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "TRAVESSA COMERCIAL",
+        "numero": 6918,
+        "bairro": "JATIÚCA",
+        "cidade": "SANTOS",
+        "regiao": "SP",
+        "cep": "01170-923"
+      },
+      "email": "ana.paula.costa@yahoo.com.br",
+      "telefone": "5511336463213",
+      "telefoneCelular": "5511918654830",
+      "inicioRelacao": "27/10/2011",
+      "fimRelacao": "13/11/5704",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000033",
+      "parceiroNegocio": 900127033,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "15271734313",
+      "nome": "RICARDO SANTOS BARBOSA",
+      "nomeEndereco": "RICARDO SANTOS BARBOSA / ALAMEDA PRINCESA ISABEL 2501 / SALVADOR - BA",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ALAMEDA PRINCESA ISABEL",
+        "numero": 2501,
+        "bairro": "JATIÚCA",
+        "cidade": "SALVADOR",
+        "regiao": "BA",
+        "cep": "40099-425"
+      },
+      "email": "ricardo.santos.barbosa@gmail.com",
+      "telefone": "5571217548950",
+      "telefoneCelular": "5571903558469",
+      "inicioRelacao": "28/01/2008",
+      "fimRelacao": "11/07/5018",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000034",
+      "parceiroNegocio": 900127034,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "64028946657",
+      "nome": "GERALDINA TOLEDO DE VASCONCELOS",
+      "nomeEndereco": "GERALDINA TOLEDO DE VASCONCELOS / AVENIDA PRINCESA ISABEL 3195 / NITERÓI - RJ",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "AVENIDA PRINCESA ISABEL",
+        "numero": 3195,
+        "bairro": "BOA VIAGEM",
+        "cidade": "NITERÓI",
+        "regiao": "RJ",
+        "cep": "20054-213"
+      },
+      "email": "geraldina.toledo.de.vasconcelo@caixa.com.br",
+      "telefone": "5521298873953",
+      "telefoneCelular": "5521975890779",
+      "inicioRelacao": "27/10/2013",
+      "fimRelacao": "26/12/5854",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000035",
+      "parceiroNegocio": 900127035,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "79989706064",
+      "nome": "JOÃO OLIVEIRA SOUZA",
+      "nomeEndereco": "JOÃO OLIVEIRA SOUZA / RUA FREI CANECA 400 / CAXIAS DO SUL - RS",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "RUA FREI CANECA",
+        "numero": 400,
+        "bairro": "LEBLON",
+        "cidade": "CAXIAS DO SUL",
+        "regiao": "RS",
+        "cep": "90006-021"
+      },
+      "email": "joão.oliveira.souza@gmail.com",
+      "telefone": "5551330553853",
+      "telefoneCelular": "5551993482217",
+      "inicioRelacao": "13/04/1993",
+      "fimRelacao": "16/01/5867",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000036",
+      "parceiroNegocio": 900127036,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "80413218930",
+      "nome": "FERNANDA RODRIGUES ALMEIDA",
+      "nomeEndereco": "FERNANDA RODRIGUES ALMEIDA / RUA LIBERDADE 2816 / VILA VELHA - ES",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "RUA LIBERDADE",
+        "numero": 2816,
+        "bairro": "CONSOLAÇÃO",
+        "cidade": "VILA VELHA",
+        "regiao": "ES",
+        "cep": "29028-261"
+      },
+      "email": "fernanda.rodrigues.almeida@caixa.com.br",
+      "telefone": "5527208232022",
+      "telefoneCelular": "5527944784209",
+      "inicioRelacao": "12/11/2002",
+      "fimRelacao": "03/02/9829",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000037",
+      "parceiroNegocio": 900127037,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "67296804124",
+      "nome": "GERALDINA TOLEDO DE VASCONCELOS",
+      "nomeEndereco": "GERALDINA TOLEDO DE VASCONCELOS / PRAÇA PRINCESA ISABEL 9923 / FORTALEZA - CE",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "PRAÇA PRINCESA ISABEL",
+        "numero": 9923,
+        "bairro": "CENTRO HISTÓRICO",
+        "cidade": "FORTALEZA",
+        "regiao": "CE",
+        "cep": "60022-348"
+      },
+      "email": "geraldina.toledo.de.vasconcelo@caixa.com.br",
+      "telefone": "5585354912670",
+      "telefoneCelular": "5585993056170",
+      "inicioRelacao": "16/07/1998",
+      "fimRelacao": "22/06/8917",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000038",
+      "parceiroNegocio": 900127038,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "64646847023",
+      "nome": "PATRICIA GOMES MARTINS",
+      "nomeEndereco": "PATRICIA GOMES MARTINS / ALAMEDA BOA VIAGEM 7517 / OLINDA - PE",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "ALAMEDA BOA VIAGEM",
+        "numero": 7517,
+        "bairro": "ONDINA",
+        "cidade": "OLINDA",
+        "regiao": "PE",
+        "cep": "50014-167"
+      },
+      "email": "patricia.gomes.martins@outlook.com",
+      "telefone": "5581307179151",
+      "telefoneCelular": "5581979338693",
+      "inicioRelacao": "20/05/2001",
+      "fimRelacao": "16/10/2212",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000039",
+      "parceiroNegocio": 900127039,
+      "tipoIdFiscal": "CPF",
+      "numeroIdFiscal": "13251282727",
+      "nome": "CLAUDIA MARIA OLIVEIRA",
+      "nomeEndereco": "CLAUDIA MARIA OLIVEIRA / RUA IPANEMA 2337 / SANTOS - SP",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "fisica",
+      "endereco": {
+        "rua": "RUA IPANEMA",
+        "numero": 2337,
+        "bairro": "PONTA VERDE",
+        "cidade": "SANTOS",
+        "regiao": "SP",
+        "cep": "01174-146"
+      },
+      "email": "claudia.maria.oliveira@caixa.com.br",
+      "telefone": "5511378473634",
+      "telefoneCelular": "5511947915670",
+      "inicioRelacao": "20/01/1990",
+      "fimRelacao": "11/02/9414",
+      "status": "ativo"
+    },
+    {
+      "id": "locador_000040",
+      "parceiroNegocio": 900127040,
+      "tipoIdFiscal": "CNPJ",
+      "numeroIdFiscal": "96156820365368",
+      "nome": "SHOPPING CENTER RECIFE LTDA",
+      "nomeEndereco": "SHOPPING CENTER RECIFE LTDA / ALAMEDA REPÚBLICA 599 / FEIRA DE SANTANA - BA",
+      "funcaoPN": "Proponente Credor",
+      "tipo": "juridica",
+      "endereco": {
+        "rua": "ALAMEDA REPÚBLICA",
+        "numero": 599,
+        "bairro": "PONTA VERDE",
+        "cidade": "FEIRA DE SANTANA",
+        "regiao": "BA",
+        "cep": "40085-160"
+      },
+      "email": "shopping.center.recife.ltda@gmail.com",
+      "telefone": "5571239457991",
+      "telefoneCelular": "5571973772450",
+      "inicioRelacao": "09/12/2013",
+      "fimRelacao": "02/06/7125",
+      "status": "ativo"
+    }
+  ],
+  "metadados": {
+    "dataGeracao": "2025-11-17T14:17:28.950727",
+    "fonte": "Gerador automático de dados mockados",
+    "versao": "2.0",
+    "totalImoveis": 100,
+    "totalLocadores": 40,
+    "estrutura": "SAP REISCNBP + REISBU"
+  }
+}

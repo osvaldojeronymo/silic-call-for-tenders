@@ -10,6 +10,9 @@ import 'react-quill/dist/quill.snow.css';
 import './form-renderer.css';
 // @ts-ignore - mammoth doesn't ship full TS types for browser build
 import mammoth from 'mammoth/mammoth.browser';
+// Paged.js for A4-like pagination preview
+// @ts-ignore
+import Paged from 'pagedjs';
 
 const editorDropzoneId = 'form-renderer-editor';
 
@@ -212,6 +215,27 @@ export function FormRendererApp() {
     pasteHtml(result.value);
   };
 
+  const [showPagination, setShowPagination] = useState(false);
+  const canvasRef = useRef<HTMLDivElement | null>(null);
+
+  const openPagination = useCallback(async () => {
+    setShowPagination(true);
+    // Give modal time to mount
+    setTimeout(async () => {
+      const mount = canvasRef.current;
+      if (!mount) return;
+      mount.innerHTML = '';
+      const source = document.createElement('div');
+      source.innerHTML = editorContent;
+      // @ts-ignore
+      const previewer = new Paged.Previewer();
+      await previewer.preview(source, [], mount);
+    }, 0);
+  }, [editorContent]);
+
+  const closePagination = useCallback(() => setShowPagination(false), []);
+  const printPagination = useCallback(() => window.print(), []);
+
   const download = useCallback((filename: string, mime: string, content: string) => {
     const blob = new Blob([content], { type: mime });
     const url = URL.createObjectURL(blob);
@@ -297,6 +321,7 @@ export function FormRendererApp() {
               <span style={{ flex: 1 }} />
               <button type="button" onClick={exportAsHtml}>Exportar HTML</button>
               <button type="button" onClick={exportAsTxt}>Exportar TXT</button>
+              <button type="button" onClick={openPagination}>Pré-visualizar (A4 paginado)</button>
             </div>
             <ReactQuill
               ref={quillRef}
@@ -329,6 +354,20 @@ export function FormRendererApp() {
           <ChipPreview field={activeField} value={formData[activeField.id]} />
         ) : null}
       </DragOverlay>
+
+      {showPagination && (
+        <div className="pagination-backdrop" onClick={closePagination}>
+          <div className="pagination-modal" onClick={(e) => e.stopPropagation()}>
+            <header>
+              <strong>Pré-visualização paginada (A4)</strong>
+              <span style={{ flex: 1 }} />
+              <button onClick={printPagination}>Imprimir / PDF</button>
+              <button onClick={closePagination}>Fechar</button>
+            </header>
+            <div ref={canvasRef} className="pagination-canvas" />
+          </div>
+        </div>
+      )}
     </DndContext>
   );
 }

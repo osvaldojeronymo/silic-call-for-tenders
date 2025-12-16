@@ -205,3 +205,45 @@
     max-height: none;
   }
 }
+
+/* Paginated preview modal */
+.pagination-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.pagination-modal {
+  width: 95vw;
+  height: 90vh;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination-modal header {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-canvas {
+  flex: 1;
+  overflow: auto;
+  background: #f2f4f7;
+  padding: 20px;
+}
+
+/* Page look & feel from pagedjs output */
+.pagedjs_page {
+  margin: 0 auto 20px !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,.12);
+}

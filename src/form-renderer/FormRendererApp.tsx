@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Form from '@rjsf/core';
 import validator from '@rjsf/validator-ajv8';
 import ReactQuill from 'react-quill';
@@ -12,6 +12,7 @@ import './form-renderer.css';
 import mammoth from 'mammoth/mammoth.browser';
 // Paged.js for A4-like pagination preview
 import { Previewer } from 'pagedjs';
+import { quickNotes } from '../data/notes';
 
 const editorDropzoneId = 'form-renderer-editor';
 
@@ -143,6 +144,8 @@ export function FormRendererApp() {
   });
   const [focusOnlyEditor, setFocusOnlyEditor] = useState(false);
   const [editorFullscreen, setEditorFullscreen] = useState(false);
+  const [outline, setOutline] = useState<{ id: string; text: string; level: number }[]>([]);
+  const [activeOutlineId, setActiveOutlineId] = useState<string | null>(null);
 
   const handleSectionChange = useCallback((partial: Record<string, unknown>) => {
     setFormData((prev) => ({ ...prev, ...partial }));
@@ -200,6 +203,39 @@ export function FormRendererApp() {
     }
   }, []);
 
+  // Ensure headings in the editor have ids and build outline
+  const ensureHeadingsAndOutline = useCallback(() => {
+    const quill = quillRef.current?.getEditor();
+    if (!quill) return;
+    const root: HTMLElement = quill.root as any;
+    const headings = Array.from(root.querySelectorAll('h1, h2, h3, h4')) as HTMLElement[];
+    const items: { id: string; text: string; level: number }[] = [];
+    headings.forEach((el, idx) => {
+      if (!el.id) el.id = `h-${idx + 1}`;
+      const level = Number(el.tagName.substring(1));
+      items.push({ id: el.id, text: el.innerText.trim() || `Seção ${idx + 1}`, level });
+    });
+    setOutline(items);
+
+    // Track active heading with IntersectionObserver
+    const io = new IntersectionObserver(
+      (entries) => {
+        const vis = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (a.target as HTMLElement).offsetTop - (b.target as HTMLElement).offsetTop);
+        if (vis[0]) setActiveOutlineId((vis[0].target as HTMLElement).id);
+      },
+      { root: root.parentElement || undefined, threshold: 0.1 }
+    );
+    headings.forEach((h) => io.observe(h));
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const cleanup = ensureHeadingsAndOutline();
+    return cleanup;
+  }, [editorContent, ensureHeadingsAndOutline]);
+
   const importDocxFromUrl = useCallback(async (url: string) => {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Falha ao carregar DOCX (${res.status})`);
@@ -251,6 +287,27 @@ export function FormRendererApp() {
 
   const closePagination = useCallback(() => setShowPagination(false), []);
   const printPagination = useCallback(() => window.print(), []);
+  const applyHighlight = useCallback((kind: 'alteracao' | 'mp' | 'srp' | 'clear') => {
+    const quill = quillRef.current?.getEditor();
+    if (!quill) return;
+    const colors: Record<string, string | undefined> = {
+      alteracao: '#dbeafe',
+      mp: '#dcfce7',
+      srp: '#fef3c7',
+      clear: undefined
+    };
+    const color = colors[kind];
+    quill.format('background', color as any);
+  }, []);
+
+  const insertNote = useCallback((html: string) => {
+    const quill = quillRef.current?.getEditor();
+    if (!quill) return;
+    const sel = quill.getSelection(true);
+    const index = sel ? sel.index : quill.getLength() - 1;
+    quill.clipboard.dangerouslyPasteHTML(index, html);
+    setEditorContent(quill.root.innerHTML);
+  }, []);
   
 
   return (
@@ -301,6 +358,18 @@ export function FormRendererApp() {
           >
             <h2>Coluna B · Texto-base (TipTap/Quill)</h2>
             <p className="editor-hint">Arraste um chip e solte dentro do editor para inserir.</p>
+            <div className="editor-legend">
+              <span><span className="legend-dot dot-alteracao" /> Textos Alterados</span>
+              <span><span className="legend-dot dot-mp" /> Margem de Preferência</span>
+              <span><span className="legend-dot dot-srp" /> SRP</span>
+              <span style={{ flex: 1 }} />
+              <div className="editor-tools">
+                <button type="button" onClick={() => applyHighlight('alteracao')}>Marcar Alteração</button>
+                <button type="button" onClick={() => applyHighlight('mp')}>Marcar Margem Pref.</button>
+                <button type="button" onClick={() => applyHighlight('srp')}>Marcar SRP</button>
+                <button type="button" onClick={() => applyHighlight('clear')}>Remover marcação</button>
+              </div>
+            </div>
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
               <button type="button" onClick={() => importDocxFromUrl('edital-base.docx')}>
                 Carregar texto base do DOCX (repo)
@@ -333,18 +402,46 @@ export function FormRendererApp() {
               <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.left} onChange={(e)=>setMargins((m)=>({ ...m, left: Number(e.target.value) }))} title="Esquerda" />
               <button type="button" onClick={() => openPagination(true)}>Exportar PDF (A4)</button>
             </div>
-            <ReactQuill
-              ref={quillRef}
-              theme="snow"
-              value={editorContent}
-              onChange={setEditorContent}
-              placeholder="Clique e comece a editar..."
-            />
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 12 }}>
+              <ReactQuill
+                ref={quillRef}
+                theme="snow"
+                value={editorContent}
+                onChange={setEditorContent}
+                placeholder="Clique e comece a editar..."
+              />
+              <aside className="editor-outline">
+                <h3>Sumário</h3>
+                <ul className="outline-list">
+                  {outline.length === 0 && <li style={{ color: '#64748b' }}>Sem títulos (H1–H4)</li>}
+                  {outline.map((it) => (
+                    <li
+                      key={it.id}
+                      className={`outline-item outline-lv-${it.level} ${activeOutlineId === it.id ? 'active' : ''}`}
+                      onClick={() => {
+                        const el = quillRef.current?.getEditor()?.root.querySelector(`#${it.id}`) as HTMLElement | null;
+                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }}
+                    >
+                      {it.text}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </div>
             <button className="scroll-top-btn" type="button" onClick={() => quillRef.current?.getEditor()?.root?.scrollTo({ top: 0, behavior: 'smooth' })}>Topo</button>
           </section>
 
           <section className={`column column-chips ${focusOnlyEditor ? 'hidden-column' : ''}`}>
             <h2>Coluna C · Dados SILIC</h2>
+            <div className="notes-panel">
+              {quickNotes.map((n) => (
+                <div key={n.id} className="note-item">
+                  <strong>{n.title}</strong>
+                  <button type="button" onClick={() => insertNote(n.html)}>Inserir</button>
+                </div>
+              ))}
+            </div>
             <p>Arraste um campo para o editor ou clique para copiar o valor.</p>
             <div className="chips-list">
               {adaptedSchema.silicFields.map((field) => (

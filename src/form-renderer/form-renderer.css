@@ -79,6 +79,27 @@
   color: #0f172a;
 }
 
+.column header.column-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.column header.column-header h2 { margin: 0; }
+.column-toggle {
+  margin-left: auto;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.column.collapsed {
+  padding-bottom: 0.75rem;
+}
+.column.collapsed .column-body { display: none; }
+
 .column p {
   margin: 0 0 1rem;
   color: #475569;

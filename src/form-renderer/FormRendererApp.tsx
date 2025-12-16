@@ -144,6 +144,8 @@ export function FormRendererApp() {
   });
   const [focusOnlyEditor, setFocusOnlyEditor] = useState(false);
   const [editorFullscreen, setEditorFullscreen] = useState(false);
+  const [collapseA, setCollapseA] = useState(false);
+  const [collapseC, setCollapseC] = useState(false);
   const [outline, setOutline] = useState<{ id: string; text: string; level: number }[]>([]);
   const [activeOutlineId, setActiveOutlineId] = useState<string | null>(null);
 
@@ -338,9 +340,14 @@ export function FormRendererApp() {
         </header>
 
         <div className={`renderer-columns ${focusOnlyEditor ? 'focus-only-editor' : ''}`}>
-          <section className={`column column-preview ${focusOnlyEditor ? 'hidden-column' : ''}`}>
-            <h2>Coluna A · Formulário</h2>
-            <div className="accordion-list">
+          <section className={`column column-preview ${focusOnlyEditor ? 'hidden-column' : ''} ${collapseA ? 'collapsed' : ''}`}>
+            <header className="column-header">
+              <h2>Coluna A · Formulário</h2>
+              <button className="column-toggle" type="button" onClick={() => setCollapseA((v) => !v)}>
+                {collapseA ? 'Expandir' : 'Retrair'}
+              </button>
+            </header>
+            <div className="column-body accordion-list">
               {adaptedSchema.sections.map((section) => (
                 <SectionForm
                   key={section.id}
@@ -412,9 +419,14 @@ export function FormRendererApp() {
             <button className="scroll-top-btn" type="button" onClick={() => quillRef.current?.getEditor()?.root?.scrollTo({ top: 0, behavior: 'smooth' })}>Topo</button>
           </section>
 
-          <section className={`column column-chips ${focusOnlyEditor ? 'hidden-column' : ''}`}>
-            <h2>Coluna C · Dados SILIC</h2>
-            <aside className="editor-outline" aria-label="Sumário">
+          <section className={`column column-chips ${focusOnlyEditor ? 'hidden-column' : ''} ${collapseC ? 'collapsed' : ''}`}>
+            <header className="column-header">
+              <h2>Coluna C · Dados SILIC</h2>
+              <button className="column-toggle" type="button" onClick={() => setCollapseC((v) => !v)}>
+                {collapseC ? 'Expandir' : 'Retrair'}
+              </button>
+            </header>
+            <aside className="column-body editor-outline" aria-label="Sumário">
               <h3>Sumário</h3>
               <ul className="outline-list">
                 {outline.length === 0 && <li style={{ color: '#64748b' }}>Sem títulos (H1–H4)</li>}
@@ -432,7 +444,7 @@ export function FormRendererApp() {
                 ))}
               </ul>
             </aside>
-            <div className="notes-panel">
+            <div className="column-body notes-panel">
               {quickNotes.map((n) => (
                 <div key={n.id} className="note-item">
                   <strong>{n.title}</strong>
@@ -440,8 +452,8 @@ export function FormRendererApp() {
                 </div>
               ))}
             </div>
-            <p>Arraste um campo para o editor ou clique para copiar o valor.</p>
-            <div className="chips-list">
+            <p className="column-body">Arraste um campo para o editor ou clique para copiar o valor.</p>
+            <div className="column-body chips-list">
               {adaptedSchema.silicFields.map((field) => (
                 <SilicChip
                   key={field.id}

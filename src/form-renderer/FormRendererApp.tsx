@@ -141,6 +141,8 @@ export function FormRendererApp() {
   const { setNodeRef: setEditorDropRef, isOver } = useDroppable({
     id: editorDropzoneId
   });
+  const [focusOnlyEditor, setFocusOnlyEditor] = useState(false);
+  const [editorFullscreen, setEditorFullscreen] = useState(false);
 
   const handleSectionChange = useCallback((partial: Record<string, unknown>) => {
     setFormData((prev) => ({ ...prev, ...partial }));
@@ -278,8 +280,8 @@ export function FormRendererApp() {
           </div>
         </header>
 
-        <div className="renderer-columns">
-          <section className="column column-preview">
+        <div className={`renderer-columns ${focusOnlyEditor ? 'focus-only-editor' : ''}`}>
+          <section className={`column column-preview ${focusOnlyEditor ? 'hidden-column' : ''}`}>
             <h2>Coluna A · Formulário</h2>
             <div className="accordion-list">
               {adaptedSchema.sections.map((section) => (
@@ -308,6 +310,12 @@ export function FormRendererApp() {
                 <input type="file" accept=".docx" onChange={onSelectDocx} />
               </label>
               <span style={{ flex: 1 }} />
+              <button type="button" onClick={() => setFocusOnlyEditor((v)=>!v)}>
+                {focusOnlyEditor ? 'Mostrar colunas' : 'Focar no texto'}
+              </button>
+              <button type="button" onClick={() => setEditorFullscreen(true)}>
+                Tela cheia
+              </button>
               <label style={{ display: 'inline-flex', gap: 6, alignItems: 'center' }}>
                 Tamanho: A4
               </label>
@@ -332,9 +340,10 @@ export function FormRendererApp() {
               onChange={setEditorContent}
               placeholder="Clique e comece a editar..."
             />
+            <button className="scroll-top-btn" type="button" onClick={() => quillRef.current?.getEditor()?.root?.scrollTo({ top: 0, behavior: 'smooth' })}>Topo</button>
           </section>
 
-          <section className="column column-chips">
+          <section className={`column column-chips ${focusOnlyEditor ? 'hidden-column' : ''}`}>
             <h2>Coluna C · Dados SILIC</h2>
             <p>Arraste um campo para o editor ou clique para copiar o valor.</p>
             <div className="chips-list">
@@ -367,6 +376,25 @@ export function FormRendererApp() {
               <button onClick={closePagination}>Fechar</button>
             </header>
             <div ref={canvasRef} className="pagination-canvas" />
+          </div>
+        </div>
+      )}
+      {editorFullscreen && (
+        <div className="editor-backdrop" onClick={() => setEditorFullscreen(false)}>
+          <div className="editor-modal" onClick={(e)=>e.stopPropagation()}>
+            <header>
+              <strong>Editor em tela cheia</strong>
+              <span style={{ flex: 1 }} />
+              <button onClick={() => setEditorFullscreen(false)}>Fechar</button>
+            </header>
+            <div className="editor-body">
+              <ReactQuill
+                theme="snow"
+                value={editorContent}
+                onChange={setEditorContent}
+                placeholder="Clique e comece a editar..."
+              />
+            </div>
           </div>
         </div>
       )}

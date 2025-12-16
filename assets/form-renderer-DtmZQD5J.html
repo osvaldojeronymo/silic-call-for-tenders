@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Form Renderer · Gerador de Edital CAIXA</title>
-    <script type="module" crossorigin src="/silic-call-for-tenders/assets/form-renderer-Dc9fRyVY.js"></script>
-    <link rel="stylesheet" crossorigin href="/silic-call-for-tenders/assets/form-renderer-2mLyaOgL.css">
   </head>
   <body>
     <div id="form-renderer-root"></div>
@@ -25,5 +23,6 @@
         window.addEventListener('unhandledrejection', function (e) { showBootError((e && (e.reason && e.reason.message || e.reason)) || e); });
       })();
     </script>
+    <script type="module" src="/src/form-renderer/main.tsx"></script>
   </body>
 </html>

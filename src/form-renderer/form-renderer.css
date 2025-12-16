@@ -178,9 +178,7 @@
   content: '';
 }
 
-.column-editor {
-  min-height: 550px;
-}
+.column-editor { min-height: 550px; }
 
 .column-editor.dropping {
   border-color: #2563eb;
@@ -193,8 +191,14 @@
 
 .column-editor .ql-container {
   min-height: 420px;
+  max-height: 60vh;
+  overflow: auto;
   border-radius: 0 0 0.75rem 0.75rem;
 }
+.column-editor .ql-editor { min-height: 100%; }
+
+/* Em modo "Focar no texto", permita um pouco mais de altura */
+.focus-only-editor .column-editor .ql-container { max-height: 75vh; }
 
 .column-editor .ql-toolbar.ql-snow {
   border-radius: 0.75rem 0.75rem 0 0;

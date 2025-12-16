@@ -212,6 +212,32 @@ export function FormRendererApp() {
     pasteHtml(result.value);
   };
 
+  const download = useCallback((filename: string, mime: string, content: string) => {
+    const blob = new Blob([content], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }, []);
+
+  const exportAsHtml = useCallback(() => {
+    const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Texto base do edital</title></head><body>${editorContent}</body></html>`;
+    const date = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
+    download(`edital-base-${date}.html`, 'text/html;charset=utf-8', html);
+  }, [download, editorContent]);
+
+  const exportAsTxt = useCallback(() => {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = editorContent;
+    const text = tmp.textContent || tmp.innerText || '';
+    const date = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
+    download(`edital-base-${date}.txt`, 'text/plain;charset=utf-8', text);
+  }, [download, editorContent]);
+
   return (
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDragCancel={handleDragCancel}>
       <div className="form-renderer">
@@ -268,6 +294,9 @@ export function FormRendererApp() {
                 <span>ou selecionar arquivo .docx:</span>
                 <input type="file" accept=".docx" onChange={onSelectDocx} />
               </label>
+              <span style={{ flex: 1 }} />
+              <button type="button" onClick={exportAsHtml}>Exportar HTML</button>
+              <button type="button" onClick={exportAsTxt}>Exportar TXT</button>
             </div>
             <ReactQuill
               ref={quillRef}

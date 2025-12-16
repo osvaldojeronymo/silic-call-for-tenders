@@ -360,9 +360,15 @@ export function FormRendererApp() {
         <div className={`renderer-columns ${focusOnlyEditor ? 'focus-only-editor' : ''} ${collapseA ? 'collapsed-a' : ''} ${collapseC ? 'collapsed-c' : ''}`}>
           <section className={`column column-preview ${focusOnlyEditor ? 'hidden-column' : ''} ${collapseA ? 'collapsed' : ''}`}>
             <header className="column-header">
-              <h2>Coluna A · Formulário</h2>
-              <button className="column-toggle" type="button" onClick={() => setCollapseA((v) => !v)}>
-                {collapseA ? 'Expandir' : 'Retrair'}
+              <h2>Formulário</h2>
+              <button
+                className="column-toggle"
+                type="button"
+                aria-label={collapseA ? 'Expandir coluna A' : 'Retrair coluna A'}
+                title={collapseA ? 'Expandir' : 'Retrair'}
+                onClick={() => setCollapseA((v) => !v)}
+              >
+                {collapseA ? '＋' : '－'}
               </button>
             </header>
             <div className="column-body accordion-list">
@@ -439,9 +445,15 @@ export function FormRendererApp() {
 
           <section className={`column column-chips ${focusOnlyEditor ? 'hidden-column' : ''} ${collapseC ? 'collapsed' : ''}`}>
             <header className="column-header">
-              <h2>Coluna C · Dados SILIC</h2>
-              <button className="column-toggle" type="button" onClick={() => setCollapseC((v) => !v)}>
-                {collapseC ? 'Expandir' : 'Retrair'}
+              <h2>Dados SILIC</h2>
+              <button
+                className="column-toggle"
+                type="button"
+                aria-label={collapseC ? 'Expandir coluna C' : 'Retrair coluna C'}
+                title={collapseC ? 'Expandir' : 'Retrair'}
+                onClick={() => setCollapseC((v) => !v)}
+              >
+                {collapseC ? '＋' : '－'}
               </button>
             </header>
             <aside className="column-body editor-outline" aria-label="Sumário">

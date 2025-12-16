@@ -8,17 +8,12 @@ export default defineConfig(({ command }) => ({
   base: command === 'serve' ? '/' : '/silic-call-for-tenders/',
   server: {
     port: 3000,
-    open: '/form-renderer.html'
+    open: '/'
   },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: 'index.html',
-        'form-renderer': 'form-renderer.html'
-      }
-    }
+    // Default Vite behavior: use index.html as the single entry
   },
   resolve: {
     alias: {

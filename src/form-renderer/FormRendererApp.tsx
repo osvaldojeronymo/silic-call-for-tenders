@@ -330,7 +330,11 @@ export function FormRendererApp() {
                 <p className="banner-subtitle">Protótipo - Gerador de Documento</p>
               </div>
             </div>
-            <button className="banner-button" onClick={() => window.history.back()}>
+            <button
+              className="banner-button"
+              type="button"
+              onClick={() => (window.location.href = 'https://osvaldojeronymo.github.io/silic-portal-imoveis/')}
+            >
               Voltar ao Portal de Imóveis
             </button>
           </div>

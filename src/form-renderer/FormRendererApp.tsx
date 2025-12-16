@@ -339,7 +339,7 @@ export function FormRendererApp() {
           </div>
         </header>
 
-        <div className={`renderer-columns ${focusOnlyEditor ? 'focus-only-editor' : ''}`}>
+        <div className={`renderer-columns ${focusOnlyEditor ? 'focus-only-editor' : ''} ${collapseA ? 'collapsed-a' : ''} ${collapseC ? 'collapsed-c' : ''}`}>
           <section className={`column column-preview ${focusOnlyEditor ? 'hidden-column' : ''} ${collapseA ? 'collapsed' : ''}`}>
             <header className="column-header">
               <h2>Coluna A · Formulário</h2>

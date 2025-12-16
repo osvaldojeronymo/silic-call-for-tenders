@@ -497,6 +497,19 @@ export function FormRendererApp() {
         </div>
       </div>
 
+      <footer className="app-footer" role="contentinfo">
+        <div className="footer-grid">
+          <div className="footer-col">
+            <h3 className="footer-title">SILIC 2.0</h3>
+            <p className="footer-subtitle">Soluções para todos os momentos.</p>
+          </div>
+          <div className="footer-col footer-contact">
+            <h4 className="footer-heading">Contato</h4>
+            <p><a href="mailto:silic@caixa.gov.br">silic@caixa.gov.br</a></p>
+          </div>
+        </div>
+      </footer>
+
       <DragOverlay>
         {activeField ? (
           <ChipPreview field={activeField} value={formData[activeField.id]} />

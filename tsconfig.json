@@ -28,7 +28,8 @@
       "@/components/*": ["src/components/*"],
       "@/styles/*": ["src/styles/*"],
       "@/views/*": ["src/views/*"]
-    }
+    },
+    "types": ["vite/client"]
   },
   "include": ["src/**/*", "src/**/*.ts", "*.ts"],
   "exclude": ["node_modules", "dist"]

@@ -146,6 +146,7 @@ export function FormRendererApp() {
   const [editorFullscreen, setEditorFullscreen] = useState(false);
   const [collapseA, setCollapseA] = useState(false);
   const [collapseC, setCollapseC] = useState(false);
+  const logoUrl = useMemo(() => new URL('logo-caixa.svg', import.meta.env.BASE_URL).toString(), []);
   const [outline, setOutline] = useState<{ id: string; text: string; level: number }[]>([]);
   const [activeOutlineId, setActiveOutlineId] = useState<string | null>(null);
 
@@ -319,14 +320,11 @@ export function FormRendererApp() {
           <div className="wrap">
             <div className="brand">
               <div className="logo-mark" aria-hidden>
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 7h8l-8 14H0L4 7z" fill="#f8fafc"/>
-                  <path d="M24 21h-8l8-14h4l-4 14z" fill="#f59e0b"/>
-                </svg>
+                <img className="logo-img" src={logoUrl} alt="CAIXA" />
               </div>
               <div>
-                <h1 className="banner-title">Gerador de Edital</h1>
-                <p className="banner-subtitle">SILIC 2.0 · Protótipo</p>
+                <h1 className="banner-title">SILIC 2.0</h1>
+                <p className="banner-subtitle">Protótipo - Gerador de Documento</p>
               </div>
             </div>
             <button className="banner-button" onClick={() => window.history.back()}>

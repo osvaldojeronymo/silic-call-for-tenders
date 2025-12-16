@@ -315,14 +315,27 @@ export function FormRendererApp() {
   return (
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDragCancel={handleDragCancel}>
       <div className="form-renderer">
-        <header className="renderer-header">
-          <div>
-            <h1>Form Renderer – Gerador de Edital CAIXA</h1>
-            <p>
-              Selecione os campos do SILIC, edite o formulário nas seções e arraste/solte chips para
-              preencher o texto-base do edital.
-            </p>
+        <div className="app-banner">
+          <div className="wrap">
+            <div className="brand">
+              <div className="logo-mark" aria-hidden>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 7h8l-8 14H0L4 7z" fill="#f8fafc"/>
+                  <path d="M24 21h-8l8-14h4l-4 14z" fill="#f59e0b"/>
+                </svg>
+              </div>
+              <div>
+                <h1 className="banner-title">Gerador de Edital</h1>
+                <p className="banner-subtitle">SILIC 2.0 · Protótipo</p>
+              </div>
+            </div>
+            <button className="banner-button" onClick={() => window.history.back()}>
+              Voltar ao Portal de Imóveis
+            </button>
           </div>
+        </div>
+        <header className="renderer-header">
+          <div />
           <div className="drag-mode-toggle">
             <span>Modo de inserção:</span>
             {adaptedSchema.dragModes.map((mode) => (

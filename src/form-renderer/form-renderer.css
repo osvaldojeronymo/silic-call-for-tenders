@@ -10,6 +10,21 @@
   box-sizing: border-box;
 }
 
+/* Top identity banner */
+.app-banner {
+  margin: -2rem -2rem 1rem;
+  padding: 14px 22px;
+  background: linear-gradient(90deg, #1f3b93 0%, #1e40af 40%, #1d4ed8 100%);
+  color: #fff;
+}
+.app-banner .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo-mark { width: 28px; height: 28px; border-radius: 4px; display: grid; place-items: center; background: transparent; }
+.banner-title { margin: 0; font-weight: 800; letter-spacing: 0.3px; font-size: 1.25rem; }
+.banner-subtitle { margin: 0; opacity: .9; font-size: .9rem; }
+.banner-button { background: #fff; color: #1e3a8a; border: 0; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.banner-button:hover { background: #f1f5f9; }
+
 .renderer-header {
   display: flex;
   justify-content: space-between;

@@ -387,7 +387,7 @@ export function FormRendererApp() {
             className={`column column-editor ${isOver ? 'dropping' : ''}`}
             ref={setEditorDropRef}
           >
-            <h2>Coluna B · Texto-base (TipTap/Quill)</h2>
+            <h2>Texto-base</h2>
             <p className="editor-hint">Arraste um chip e solte dentro do editor para inserir.</p>
             <div className="editor-legend">
               <span><span className="legend-dot dot-alteracao" /> Textos Alterados</span>

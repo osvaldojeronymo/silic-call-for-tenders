@@ -402,38 +402,36 @@ export function FormRendererApp() {
               <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.left} onChange={(e)=>setMargins((m)=>({ ...m, left: Number(e.target.value) }))} title="Esquerda" />
               <button type="button" onClick={() => openPagination(true)}>Exportar PDF (A4)</button>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 12 }}>
-              <ReactQuill
-                ref={quillRef}
-                theme="snow"
-                value={editorContent}
-                onChange={setEditorContent}
-                placeholder="Clique e comece a editar..."
-              />
-              <aside className="editor-outline">
-                <h3>Sumário</h3>
-                <ul className="outline-list">
-                  {outline.length === 0 && <li style={{ color: '#64748b' }}>Sem títulos (H1–H4)</li>}
-                  {outline.map((it) => (
-                    <li
-                      key={it.id}
-                      className={`outline-item outline-lv-${it.level} ${activeOutlineId === it.id ? 'active' : ''}`}
-                      onClick={() => {
-                        const el = quillRef.current?.getEditor()?.root.querySelector(`#${it.id}`) as HTMLElement | null;
-                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }}
-                    >
-                      {it.text}
-                    </li>
-                  ))}
-                </ul>
-              </aside>
-            </div>
+            <ReactQuill
+              ref={quillRef}
+              theme="snow"
+              value={editorContent}
+              onChange={setEditorContent}
+              placeholder="Clique e comece a editar..."
+            />
             <button className="scroll-top-btn" type="button" onClick={() => quillRef.current?.getEditor()?.root?.scrollTo({ top: 0, behavior: 'smooth' })}>Topo</button>
           </section>
 
           <section className={`column column-chips ${focusOnlyEditor ? 'hidden-column' : ''}`}>
             <h2>Coluna C · Dados SILIC</h2>
+            <aside className="editor-outline" aria-label="Sumário">
+              <h3>Sumário</h3>
+              <ul className="outline-list">
+                {outline.length === 0 && <li style={{ color: '#64748b' }}>Sem títulos (H1–H4)</li>}
+                {outline.map((it) => (
+                  <li
+                    key={it.id}
+                    className={`outline-item outline-lv-${it.level} ${activeOutlineId === it.id ? 'active' : ''}`}
+                    onClick={() => {
+                      const el = quillRef.current?.getEditor()?.root.querySelector(`#${it.id}`) as HTMLElement | null;
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    {it.text}
+                  </li>
+                ))}
+              </ul>
+            </aside>
             <div className="notes-panel">
               {quickNotes.map((n) => (
                 <div key={n.id} className="note-item">

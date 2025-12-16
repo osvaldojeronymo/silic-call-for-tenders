@@ -3,34 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Redirecionando…</title>
-    <meta http-equiv="refresh" content="0; url=form-renderer.html" />
-    <link rel="canonical" href="/silic-call-for-tenders/assets/form-renderer-DtmZQD5J.html" />
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; padding: 2rem; }
-      .card { max-width: 640px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; }
-      a { color: #0b5fff; text-decoration: none; }
-      .banner { background: #0b5fff; color: #fff; padding: 0.75rem 1rem; border-radius: 6px; display: inline-block; margin-top: 0.75rem; }
-    </style>
+    <title>Form Renderer · Gerador de Edital CAIXA</title>
+    <script type="module" crossorigin src="/silic-call-for-tenders/assets/main-s9sYl5Nf.js"></script>
+    <link rel="stylesheet" crossorigin href="/silic-call-for-tenders/assets/main-Brv1tZQf.css">
   </head>
   <body>
-    <div class="card">
-      <h1>Redirecionando para o Form Renderer…</h1>
-      <p>
-        Se não redirecionar automaticamente, acesse
-        <a href="form-renderer.html">form-renderer.html</a>.
-      </p>
-      <p>
-        <a class="banner" href="form-renderer.html">Ir para o Gerador de Edital CAIXA</a>
-      </p>
+    <div id="form-renderer-root"></div>
+    <div id="boot-error" style="display:none; padding:12px; margin:12px; border-radius:8px; background:#fee2e2; color:#7f1d1d; font-family: ui-sans-serif, system-ui;">
+      <strong>Falha ao inicializar a aplicação.</strong>
+      <div style="margin-top:6px; font-size: 12px; white-space: pre-wrap;" id="boot-error-msg"></div>
+      <div style="margin-top:8px; font-size: 12px;">Tente recarregar com Ctrl+F5. Se persistir, compartilhe esta mensagem.</div>
     </div>
     <script>
-      // Fallback: redireciona após pequeno atraso, caso meta-refresh falhe
-      setTimeout(function(){
-        if (!location.pathname.endsWith('form-renderer.html')) {
-          location.href = 'form-renderer.html';
+      (function () {
+        function showBootError(msg) {
+          var el = document.getElementById('boot-error');
+          var pre = document.getElementById('boot-error-msg');
+          if (el && pre) { pre.textContent = String(msg || 'Erro desconhecido'); el.style.display = 'block'; }
         }
-      }, 1000);
+        window.addEventListener('error', function (e) { showBootError((e && e.message) || e); });
+        window.addEventListener('unhandledrejection', function (e) { showBootError((e && (e.reason && e.reason.message || e.reason)) || e); });
+      })();
     </script>
   </body>
 </html>

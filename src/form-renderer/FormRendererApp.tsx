@@ -8,6 +8,8 @@ import { adaptedSchema } from './schemaAdapter';
 import type { FieldMeta, SectionDescriptor } from './types';
 import 'react-quill/dist/quill.snow.css';
 import './form-renderer.css';
+// @ts-ignore - mammoth doesn't ship full TS types for browser build
+import mammoth from 'mammoth/mammoth.browser';
 
 const editorDropzoneId = 'form-renderer-editor';
 
@@ -184,6 +186,32 @@ export function FormRendererApp() {
     setActiveField(null);
   }, []);
 
+  const pasteHtml = useCallback((html: string) => {
+    const quill = quillRef.current?.getEditor();
+    if (quill) {
+      quill.clipboard.dangerouslyPasteHTML(html);
+      setEditorContent(quill.root.innerHTML);
+    } else {
+      setEditorContent(html);
+    }
+  }, []);
+
+  const importDocxFromUrl = useCallback(async (url: string) => {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Falha ao carregar DOCX (${res.status})`);
+    const arrayBuffer = await res.arrayBuffer();
+    const result = await mammoth.convertToHtml({ arrayBuffer });
+    pasteHtml(result.value);
+  }, [pasteHtml]);
+
+  const onSelectDocx: React.ChangeEventHandler<HTMLInputElement> = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const arrayBuffer = await file.arrayBuffer();
+    const result = await mammoth.convertToHtml({ arrayBuffer });
+    pasteHtml(result.value);
+  };
+
   return (
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDragCancel={handleDragCancel}>
       <div className="form-renderer">
@@ -232,6 +260,15 @@ export function FormRendererApp() {
           >
             <h2>Coluna B · Texto-base (TipTap/Quill)</h2>
             <p className="editor-hint">Arraste um chip e solte dentro do editor para inserir.</p>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
+              <button type="button" onClick={() => importDocxFromUrl('edital-base.docx')}>
+                Carregar texto base do DOCX (repo)
+              </button>
+              <label style={{ display: 'inline-flex', gap: 8, alignItems: 'center' }}>
+                <span>ou selecionar arquivo .docx:</span>
+                <input type="file" accept=".docx" onChange={onSelectDocx} />
+              </label>
+            </div>
             <ReactQuill
               ref={quillRef}
               theme="snow"

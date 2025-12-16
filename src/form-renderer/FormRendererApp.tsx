@@ -146,7 +146,10 @@ export function FormRendererApp() {
   const [editorFullscreen, setEditorFullscreen] = useState(false);
   const [collapseA, setCollapseA] = useState(false);
   const [collapseC, setCollapseC] = useState(false);
-  const logoUrl = useMemo(() => new URL('logo-caixa.svg', import.meta.env.BASE_URL).toString(), []);
+  const logoUrl = useMemo(() => {
+    const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '/');
+    return `${base}logo-caixa.svg`;
+  }, []);
   const [outline, setOutline] = useState<{ id: string; text: string; level: number }[]>([]);
   const [activeOutlineId, setActiveOutlineId] = useState<string | null>(null);
 

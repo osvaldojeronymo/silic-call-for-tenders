@@ -11,8 +11,7 @@ import './form-renderer.css';
 // @ts-ignore - mammoth doesn't ship full TS types for browser build
 import mammoth from 'mammoth/mammoth.browser';
 // Paged.js for A4-like pagination preview
-// @ts-ignore
-import Paged from 'pagedjs';
+import { Previewer } from 'pagedjs';
 
 const editorDropzoneId = 'form-renderer-editor';
 
@@ -217,8 +216,10 @@ export function FormRendererApp() {
 
   const [showPagination, setShowPagination] = useState(false);
   const canvasRef = useRef<HTMLDivElement | null>(null);
+  const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait');
+  const [margins, setMargins] = useState({ top: 20, right: 20, bottom: 20, left: 20 });
 
-  const openPagination = useCallback(async () => {
+  const openPagination = useCallback(async (autoPrint = false) => {
     setShowPagination(true);
     // Give modal time to mount
     setTimeout(async () => {
@@ -227,40 +228,28 @@ export function FormRendererApp() {
       mount.innerHTML = '';
       const source = document.createElement('div');
       source.innerHTML = editorContent;
-      // @ts-ignore
-      const previewer = new Paged.Previewer();
+      const style = document.createElement('style');
+      const { top, right, bottom, left } = margins;
+      style.textContent = `
+        @page {
+          size: A4 ${orientation};
+          margin: ${top}mm ${right}mm ${bottom}mm ${left}mm;
+          @bottom-center { content: counter(page) " / " counter(pages); font-size: 10pt; color: #475569; }
+        }
+        body { counter-reset: page 1; }
+      `;
+      source.prepend(style);
+      const previewer = new Previewer();
       await previewer.preview(source, [], mount);
+      if (autoPrint) {
+        setTimeout(() => window.print(), 0);
+      }
     }, 0);
-  }, [editorContent]);
+  }, [editorContent, orientation, margins]);
 
   const closePagination = useCallback(() => setShowPagination(false), []);
   const printPagination = useCallback(() => window.print(), []);
-
-  const download = useCallback((filename: string, mime: string, content: string) => {
-    const blob = new Blob([content], { type: mime });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  }, []);
-
-  const exportAsHtml = useCallback(() => {
-    const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Texto base do edital</title></head><body>${editorContent}</body></html>`;
-    const date = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
-    download(`edital-base-${date}.html`, 'text/html;charset=utf-8', html);
-  }, [download, editorContent]);
-
-  const exportAsTxt = useCallback(() => {
-    const tmp = document.createElement('div');
-    tmp.innerHTML = editorContent;
-    const text = tmp.textContent || tmp.innerText || '';
-    const date = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
-    download(`edital-base-${date}.txt`, 'text/plain;charset=utf-8', text);
-  }, [download, editorContent]);
+  
 
   return (
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDragCancel={handleDragCancel}>
@@ -319,9 +308,22 @@ export function FormRendererApp() {
                 <input type="file" accept=".docx" onChange={onSelectDocx} />
               </label>
               <span style={{ flex: 1 }} />
-              <button type="button" onClick={exportAsHtml}>Exportar HTML</button>
-              <button type="button" onClick={exportAsTxt}>Exportar TXT</button>
-              <button type="button" onClick={openPagination}>Pré-visualizar (A4 paginado)</button>
+              <label style={{ display: 'inline-flex', gap: 6, alignItems: 'center' }}>
+                Tamanho: A4
+              </label>
+              <label style={{ display: 'inline-flex', gap: 6, alignItems: 'center' }}>
+                Orientação:
+                <select value={orientation} onChange={(e) => setOrientation(e.target.value as 'portrait'|'landscape')}>
+                  <option value="portrait">Retrato</option>
+                  <option value="landscape">Paisagem</option>
+                </select>
+              </label>
+              <label style={{ display: 'inline-flex', gap: 4, alignItems: 'center' }}>Margens (mm):</label>
+              <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.top} onChange={(e)=>setMargins((m)=>({ ...m, top: Number(e.target.value) }))} title="Superior" />
+              <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.right} onChange={(e)=>setMargins((m)=>({ ...m, right: Number(e.target.value) }))} title="Direita" />
+              <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.bottom} onChange={(e)=>setMargins((m)=>({ ...m, bottom: Number(e.target.value) }))} title="Inferior" />
+              <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.left} onChange={(e)=>setMargins((m)=>({ ...m, left: Number(e.target.value) }))} title="Esquerda" />
+              <button type="button" onClick={() => openPagination(true)}>Exportar PDF (A4)</button>
             </div>
             <ReactQuill
               ref={quillRef}

@@ -142,7 +142,13 @@ export function FormRendererApp() {
   const { setNodeRef: setEditorDropRef, isOver } = useDroppable({
     id: editorDropzoneId
   });
-  const [focusOnlyEditor, setFocusOnlyEditor] = useState(false);
+  const [focusOnlyEditor, setFocusOnlyEditor] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('silic.focusOnlyEditor');
+      if (saved !== null) return saved === '1';
+    } catch {}
+    return false;
+  });
   const [editorFullscreen, setEditorFullscreen] = useState(false);
   const initialCollapsed = useCallback((key: 'A' | 'C') => {
     try {
@@ -164,13 +170,39 @@ export function FormRendererApp() {
   }, []);
   const [outline, setOutline] = useState<{ id: string; text: string; level: number }[]>([]);
   const [activeOutlineId, setActiveOutlineId] = useState<string | null>(null);
+  const [editorMaxVh, setEditorMaxVh] = useState<number>(() => {
+    try {
+      const saved = localStorage.getItem('silic.editorMaxVh');
+      if (saved) return Number(saved);
+    } catch {}
+    return 60;
+  });
 
+  useEffect(() => {
+    try { localStorage.setItem('silic.focusOnlyEditor', focusOnlyEditor ? '1' : '0'); } catch {}
+  }, [focusOnlyEditor]);
   useEffect(() => {
     try { localStorage.setItem('silic.collapsedA', collapseA ? '1' : '0'); } catch {}
   }, [collapseA]);
   useEffect(() => {
     try { localStorage.setItem('silic.collapsedC', collapseC ? '1' : '0'); } catch {}
   }, [collapseC]);
+  useEffect(() => {
+    try { localStorage.setItem('silic.editorMaxVh', String(editorMaxVh)); } catch {}
+  }, [editorMaxVh]);
+
+  // Atalhos de teclado: Alt+A (coluna A), Alt+C (coluna C), Alt+F (focar editor)
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (!e.altKey) return;
+      const key = e.key.toLowerCase();
+      if (key === 'a') { setCollapseA((v) => !v); e.preventDefault(); }
+      if (key === 'c') { setCollapseC((v) => !v); e.preventDefault(); }
+      if (key === 'f') { setFocusOnlyEditor((v) => !v); e.preventDefault(); }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
 
   const handleSectionChange = useCallback((partial: Record<string, unknown>) => {
     setFormData((prev) => ({ ...prev, ...partial }));
@@ -405,6 +437,7 @@ export function FormRendererApp() {
           <section
             className={`column column-editor ${isOver ? 'dropping' : ''}`}
             ref={setEditorDropRef}
+            style={{ ['--editor-max-h' as any]: `${editorMaxVh}vh` }}
           >
             <h2>Texto-base</h2>
             <p className="editor-hint">Arraste um chip e solte dentro do editor para inserir.</p>
@@ -443,6 +476,15 @@ export function FormRendererApp() {
                 <select value={orientation} onChange={(e) => setOrientation(e.target.value as 'portrait'|'landscape')}>
                   <option value="portrait">Retrato</option>
                   <option value="landscape">Paisagem</option>
+                </select>
+              </label>
+              <label style={{ display: 'inline-flex', gap: 6, alignItems: 'center' }}>
+                Altura editor:
+                <select value={editorMaxVh} onChange={(e) => setEditorMaxVh(Number(e.target.value))}>
+                  <option value={50}>50vh</option>
+                  <option value={60}>60vh</option>
+                  <option value={75}>75vh</option>
+                  <option value={90}>90vh</option>
                 </select>
               </label>
               <label style={{ display: 'inline-flex', gap: 4, alignItems: 'center' }}>Margens (mm):</label>

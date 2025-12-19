@@ -191,6 +191,16 @@
   font-size: 0.9rem;
 }
 
+/* Controles acima do editor com quebra de linha para telas menores */
+.editor-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.editor-controls > span { flex: 1 1 auto; }
+
 /* Barra de legenda/controles acima do editor como sticky */
 .editor-legend {
   position: sticky;

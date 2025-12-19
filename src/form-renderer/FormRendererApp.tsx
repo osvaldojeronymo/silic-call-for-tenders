@@ -453,7 +453,7 @@ export function FormRendererApp() {
                 <button type="button" onClick={() => applyHighlight('clear')}>Remover marcação</button>
               </div>
             </div>
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
+            <div className="editor-controls">
               <button type="button" onClick={() => importDocxFromUrl('edital-base.docx')}>
                 Carregar texto base do DOCX (repo)
               </button>

@@ -210,6 +210,30 @@
 .column-editor .ql-editor { min-height: 100%; }
 .column-editor .ql-editor { overflow-wrap: anywhere; word-break: break-word; }
 
+/* Imagens e tabelas responsivas dentro do editor */
+.column-editor .ql-editor img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.column-editor .ql-editor table {
+  display: block; /* permite overflow controlar horizontal quando necessário */
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.column-editor .ql-editor th,
+.column-editor .ql-editor td {
+  word-break: break-word;
+}
+
+@media (max-width: 1366px) {
+  .column-editor .ql-editor img,
+  .column-editor .ql-editor table { max-width: 100%; }
+}
+
 /* Toolbar "sticky" para manter seletor/controles visíveis durante rolagem do editor */
 .column-editor .ql-toolbar.ql-snow {
   position: sticky;

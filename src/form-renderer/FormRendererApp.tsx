@@ -144,14 +144,33 @@ export function FormRendererApp() {
   });
   const [focusOnlyEditor, setFocusOnlyEditor] = useState(false);
   const [editorFullscreen, setEditorFullscreen] = useState(false);
-  const [collapseA, setCollapseA] = useState(false);
-  const [collapseC, setCollapseC] = useState(false);
+  const initialCollapsed = useCallback((key: 'A' | 'C') => {
+    try {
+      const saved = localStorage.getItem(`silic.collapsed${key}`);
+      if (saved !== null) return saved === '1';
+    } catch {}
+    const smallViewport =
+      (typeof window !== 'undefined' && (
+        window.matchMedia('(max-width: 1440px)').matches ||
+        window.matchMedia('(max-height: 800px)').matches
+      )) || false;
+    return smallViewport; // padrão: colunas fechadas em telas menores
+  }, []);
+  const [collapseA, setCollapseA] = useState<boolean>(() => initialCollapsed('A'));
+  const [collapseC, setCollapseC] = useState<boolean>(() => initialCollapsed('C'));
   const logoUrl = useMemo(() => {
     const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '/');
     return `${base}logo-caixa.svg`;
   }, []);
   const [outline, setOutline] = useState<{ id: string; text: string; level: number }[]>([]);
   const [activeOutlineId, setActiveOutlineId] = useState<string | null>(null);
+
+  useEffect(() => {
+    try { localStorage.setItem('silic.collapsedA', collapseA ? '1' : '0'); } catch {}
+  }, [collapseA]);
+  useEffect(() => {
+    try { localStorage.setItem('silic.collapsedC', collapseC ? '1' : '0'); } catch {}
+  }, [collapseC]);
 
   const handleSectionChange = useCallback((partial: Record<string, unknown>) => {
     setFormData((prev) => ({ ...prev, ...partial }));

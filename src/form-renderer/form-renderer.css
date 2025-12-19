@@ -81,6 +81,7 @@
   display: grid;
   grid-template-columns: var(--col-a, 1.2fr) 1fr var(--col-c, 0.9fr);
   gap: 1.25rem;
+  overflow-x: hidden;
 }
 
 .renderer-columns.collapsed-a { --col-a: 56px; }
@@ -102,6 +103,7 @@
   box-shadow: 0 15px 45px rgba(15, 23, 42, 0.05);
   display: flex;
   flex-direction: column;
+  min-width: 0; /* evita overflow lateral em grid/flex */
 }
 
 .column h2 {
@@ -189,6 +191,16 @@
   font-size: 0.9rem;
 }
 
+/* Barra de legenda/controles acima do editor como sticky */
+.editor-legend {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #fff;
+  padding: 6px 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
 .column-editor .ql-container {
   min-height: 420px;
   max-height: var(--editor-max-h, 60vh);
@@ -196,6 +208,7 @@
   border-radius: 0 0 0.75rem 0.75rem;
 }
 .column-editor .ql-editor { min-height: 100%; }
+.column-editor .ql-editor { overflow-wrap: anywhere; word-break: break-word; }
 
 /* Toolbar "sticky" para manter seletor/controles visíveis durante rolagem do editor */
 .column-editor .ql-toolbar.ql-snow {

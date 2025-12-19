@@ -313,6 +313,22 @@ export function FormRendererApp() {
   const canvasRef = useRef<HTMLDivElement | null>(null);
   const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait');
   const [margins, setMargins] = useState({ top: 20, right: 20, bottom: 20, left: 20 });
+  const [showAdvancedMargins, setShowAdvancedMargins] = useState(false);
+  const marginPresets = useMemo(
+    () => [
+      { id: 'p20', label: '20–20–20–20', value: { top: 20, right: 20, bottom: 20, left: 20 } },
+      { id: 'p25', label: '25–20–25–20', value: { top: 25, right: 20, bottom: 25, left: 20 } },
+      { id: 'p15', label: '15–15–15–15', value: { top: 15, right: 15, bottom: 15, left: 15 } },
+      { id: 'p30', label: '30–25–30–25', value: { top: 30, right: 25, bottom: 30, left: 25 } },
+    ],
+    []
+  );
+  const selectedPreset = useMemo(() => {
+    const match = marginPresets.find(
+      (p) => p.value.top === margins.top && p.value.right === margins.right && p.value.bottom === margins.bottom && p.value.left === margins.left
+    );
+    return match?.id ?? 'custom';
+  }, [margins, marginPresets]);
 
   const openPagination = useCallback(async (autoPrint = false) => {
     setShowPagination(true);
@@ -487,11 +503,30 @@ export function FormRendererApp() {
                   <option value={90}>90vh</option>
                 </select>
               </label>
-              <label style={{ display: 'inline-flex', gap: 4, alignItems: 'center' }}>Margens (mm):</label>
-              <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.top} onChange={(e)=>setMargins((m)=>({ ...m, top: Number(e.target.value) }))} title="Superior" />
-              <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.right} onChange={(e)=>setMargins((m)=>({ ...m, right: Number(e.target.value) }))} title="Direita" />
-              <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.bottom} onChange={(e)=>setMargins((m)=>({ ...m, bottom: Number(e.target.value) }))} title="Inferior" />
-              <input style={{ width: 56 }} type="number" min={5} max={50} value={margins.left} onChange={(e)=>setMargins((m)=>({ ...m, left: Number(e.target.value) }))} title="Esquerda" />
+              <label style={{ display: 'inline-flex', gap: 6, alignItems: 'center' }}>
+                Margens (mm):
+                <select
+                  value={selectedPreset}
+                  onChange={(e) => {
+                    const id = e.target.value;
+                    const preset = marginPresets.find((p) => p.id === id);
+                    if (preset) setMargins(preset.value);
+                  }}
+                >
+                  {marginPresets.map((p) => (
+                    <option key={p.id} value={p.id}>{p.label}</option>
+                  ))}
+                  <option value="custom">Personalizada</option>
+                </select>
+              </label>
+              {selectedPreset === 'custom' && (
+                <div style={{ display: 'inline-flex', gap: 6, alignItems: 'center' }}>
+                  <input style={{ width: 48 }} type="number" min={5} max={50} value={margins.top} onChange={(e)=>setMargins((m)=>({ ...m, top: Number(e.target.value) }))} title="Superior" />
+                  <input style={{ width: 48 }} type="number" min={5} max={50} value={margins.right} onChange={(e)=>setMargins((m)=>({ ...m, right: Number(e.target.value) }))} title="Direita" />
+                  <input style={{ width: 48 }} type="number" min={5} max={50} value={margins.bottom} onChange={(e)=>setMargins((m)=>({ ...m, bottom: Number(e.target.value) }))} title="Inferior" />
+                  <input style={{ width: 48 }} type="number" min={5} max={50} value={margins.left} onChange={(e)=>setMargins((m)=>({ ...m, left: Number(e.target.value) }))} title="Esquerda" />
+                </div>
+              )}
               <button type="button" onClick={() => openPagination(true)}>Exportar PDF (A4)</button>
             </div>
             <ReactQuill
